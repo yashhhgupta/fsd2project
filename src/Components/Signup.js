@@ -77,47 +77,53 @@ const Signup = () => {
   return (
     <>
       {error && (
-        <ErrorModal title={error.title} message={error.message} onConfirm={errorHandler}></ErrorModal>
+        <ErrorModal
+          title={error.title}
+          message={error.message}
+          onConfirm={errorHandler}
+        ></ErrorModal>
       )}
-    <Card className={classes.input}>
-        <h1 >Sign Up</h1>
-      <form onSubmit={submitHandler}>
-        <label>Username</label>
-        <input
-          type="text"
-          id="username"
-          value={enteredUsername}
-          onChange={usernameChangeHandler}
-        />
-        <label>Email</label>
-        <input
-          type="email"
-          id="email"
-          value={enteredEmail}
-          onChange={emailChangeHandler}
-        />
-        <label>Password</label>
-        <input
-          type="password"
-          id="password"
-          value={enteredPassword}
-          onChange={passwordChangeHandler}
-        />
-        <label>Re-enter Password</label>
-        <input
-          type="password"
-          id="repassword"
-          value={enteredConfirmPassword}
-          onChange={confirmPasswordChangeHandler}
-        />
-        <br></br>
+      <Card className={classes.input}>
         <div class="text-center">
-          <Button variant="light" type="submit">
-            Submit
-          </Button>
+          <h1 style={{ color: "white" }}>Sign Up</h1>
         </div>
-      </form>
-    </Card>
+        <form onSubmit={submitHandler}>
+          <label>Username</label>
+          <input
+            type="text"
+            id="username"
+            value={enteredUsername}
+            onChange={usernameChangeHandler}
+          />
+          <label>Email</label>
+          <input
+            type="email"
+            id="email"
+            value={enteredEmail}
+            onChange={emailChangeHandler}
+          />
+          <label>Password</label>
+          <input
+            type="password"
+            id="password"
+            value={enteredPassword}
+            onChange={passwordChangeHandler}
+          />
+          <label>Re-enter Password</label>
+          <input
+            type="password"
+            id="repassword"
+            value={enteredConfirmPassword}
+            onChange={confirmPasswordChangeHandler}
+          />
+          <br></br>
+          <div class="text-center">
+            <Button variant="light" type="submit">
+              Submit
+            </Button>
+          </div>
+        </form>
+      </Card>
     </>
   );
 };

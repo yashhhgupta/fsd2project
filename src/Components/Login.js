@@ -4,6 +4,9 @@ import classes from "./Signup.module.css";
 const Login = () => {
   return (
     <Card className={classes.input}>
+      <div class="text-center">
+        <h1 style={{ color: "white" }}>Log in</h1>
+      </div>
       <form>
         <label>Username</label>
         <input type="text" id="username" />
