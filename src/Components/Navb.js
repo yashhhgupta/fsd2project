@@ -17,6 +17,7 @@ function Navb() {
           <Nav>
             {/* <Button variant="info">Login</Button>
             <Button variant="info">Signup</Button> */}
+            
             <Nav.Link href="#deets">Login</Nav.Link>
             <Nav.Link href="#memes">Sign up</Nav.Link>
           </Nav>
