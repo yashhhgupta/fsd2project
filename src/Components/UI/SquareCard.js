@@ -12,12 +12,12 @@ function SquareCard(props) {
       <Card.Body>
         <Card.Title>{props.title}</Card.Title>
         <Card.Text>{props.text}</Card.Text>
-        {props.progress && <Progress progress={props.progress}></Progress>}
-        {!props.progress &&
-        <div className="d-flex justify-content-center">
-          <Button variant="dark">Register</Button>
-        </div>
-      }
+        {props.progress > 0 && <Progress progress={props.progress}></Progress>}
+        {props.progress === 0 && (
+          <div className="d-flex justify-content-center">
+            <Button variant="dark">Register</Button>
+          </div>
+        )}
       </Card.Body>
     </Card>
   );
