@@ -114,6 +114,12 @@ const Login = () => {
           </Button>
         </div>
       </form>
+      <div>
+        <p style={{ color: "white" }}>
+          Dont have an account: &nbsp;
+          <a href="/Signup">Signup</a>
+        </p>
+      </div>
     </Card>
   );
 };

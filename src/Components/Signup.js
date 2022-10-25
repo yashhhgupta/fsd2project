@@ -3,6 +3,7 @@ import Card from "./UI/Card";
 import ErrorModal from "./UI/ErrorModal";
 import Button from "react-bootstrap/Button";
 import classes from "./Signup.module.css";
+import {useNavigate} from "react-router-dom";
 
 const Signup = () => {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -10,6 +11,8 @@ const Signup = () => {
   const [enteredPassword, setEnteredPassword] = useState("");
   const [enteredConfirmPassword, setEnteredConfirmPassword] = useState("");
   const [error,setError] = useState();
+  
+  const navigate = useNavigate();
 
   const usernameChangeHandler = (event) => {
     setEnteredUsername(event.target.value);
@@ -72,7 +75,7 @@ const Signup = () => {
       setEnteredEmail("");
       setEnteredPassword("");
       setEnteredConfirmPassword("");
-    
+      navigate("/");
   }
   return (
     <>

@@ -11,16 +11,27 @@ function Navb() {
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">HowToBasic</Navbar.Brand>
+          <Navbar.Brand href="/">
+            <img
+              alt=""
+              src="https://images-platform.99static.com//07LvaO3g4kyq6fDJNuXL2Tz6mCQ=/162x151:2074x2063/fit-in/500x500/projects-files/127/12734/1273474/3ce6ead9-abd5-499e-ab2d-64c7190c912e.jpg"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />
+            {"      "}
+            HowToBasic
+          </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#features">Courses</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
-            <Button variant="info" onClick={ctx.onLogout}>Logout</Button>
-            {/* <Button variant="info">Signup</Button> */}
-            
+            <Button variant="info" onClick={ctx.onLogout}>
+              Logout
+            </Button>
+            {/* <Nav.Link href="/Login">Login</Nav.Link>
+            <Nav.Link href="/Signup">Signup</Nav.Link> */}
             {/* <Nav.Link href="#deets">Logout</Nav.Link> */}
           </Nav>
         </Container>
