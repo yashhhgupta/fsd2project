@@ -1,6 +1,6 @@
 import CourseCards from "./CourseCards";
 import SimpleCarousel from "./UI/SimpleCarousel";
-
+import Footer from "./UI/Footer";
 import Navb from "./Navb";
 
 const Home = (props) => {
@@ -83,6 +83,7 @@ const Home = (props) => {
         <h1>All Courses</h1>
         <CourseCards items={courses}></CourseCards>
       </div>
+      <Footer></Footer>
     </>
   );
 };

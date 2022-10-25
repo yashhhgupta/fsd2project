@@ -109,7 +109,7 @@ const Login = () => {
           />
         </div>
         <div class="text-center">
-          <Button variant="light" type="submit" disabled={!formIsValid}>
+          <Button variant="info" type="submit" disabled={!formIsValid}>
             Submit
           </Button>
         </div>

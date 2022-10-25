@@ -12,9 +12,9 @@ function App() {
       <main>
         {!ctx.isLoggedIn && <Login />}
         {ctx.isLoggedIn && <Home />}
-        {console.log(ctx.isLoggedIn)}
+        {/* {console.log(ctx.isLoggedIn)} */}
       </main>
-      {console.log(ctx.isLoggedIn)}
+      {/* {console.log(ctx.isLoggedIn)} */}
       {/* <Login></Login> */}
       {/* <Signup></Signup> */}
       {/* <Home></Home> */}
