@@ -1,0 +1,38 @@
+.input {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 40rem;
+}
+
+.input label {
+    color: white;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.input input {
+    font: inherit;
+    display: block;
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.input input:focus {
+    outline: none;
+    border-color: #4f005f;
+}
+textarea {
+    width: 100%;
+    height: 20vh;
+    /* font-size: 1.5em; */
+    text-align: left;
+    /* border: 1px solid #000; */
+    resize: none;
+}
+.add {
+    box-sizing: border-box;
+}

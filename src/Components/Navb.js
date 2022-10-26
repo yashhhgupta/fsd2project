@@ -7,7 +7,9 @@ import AuthContext from "../store/auth-context";
 
 function Navb() {
   const ctx = useContext(AuthContext);
+
   return (
+    
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
@@ -24,15 +26,13 @@ function Navb() {
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#features">Courses</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="/RequestForm">Request a Course</Nav.Link>
           </Nav>
           <Nav>
             <Button variant="info" onClick={ctx.onLogout}>
               Logout
             </Button>
-            {/* <Nav.Link href="/Login">Login</Nav.Link>
-            <Nav.Link href="/Signup">Signup</Nav.Link> */}
-            {/* <Nav.Link href="#deets">Logout</Nav.Link> */}
+            
           </Nav>
         </Container>
       </Navbar>

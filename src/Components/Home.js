@@ -1,7 +1,6 @@
 import CourseCards from "./CourseCards";
 import SimpleCarousel from "./UI/SimpleCarousel";
 import Footer from "./UI/Footer";
-import Navb from "./Navb";
 
 const Home = (props) => {
   const courses = [
@@ -72,8 +71,7 @@ const Home = (props) => {
   ];
   return (
     <>
-      <Navb></Navb>
-
+    {/* <Navb></Navb> */}
       <SimpleCarousel></SimpleCarousel>
       <div>
         <h1>My Courses</h1>

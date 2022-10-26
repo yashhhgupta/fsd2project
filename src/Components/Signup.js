@@ -121,11 +121,17 @@ const Signup = () => {
           />
           <br></br>
           <div class="text-center">
-            <Button variant="light" type="submit">
+            <Button variant="info" type="submit">
               Submit
             </Button>
           </div>
         </form>
+        <div>
+          <p style={{ color: "white" }}>
+            Already have an account: &nbsp;
+            <a href="/">Login</a>
+          </p>
+        </div>
       </Card>
     </>
   );
