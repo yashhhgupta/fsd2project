@@ -7,9 +7,7 @@ import AuthContext from "../store/auth-context";
 
 function Navb() {
   const ctx = useContext(AuthContext);
-
   return (
-    
     <>
       <Navbar bg="dark" variant="dark">
         <Container>
