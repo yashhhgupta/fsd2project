@@ -43,7 +43,9 @@ const Signup = () => {
     ) {
       setError({
         title: "Invalid input",
-        message: "Please enter a valid name, email and password (non-empty values).",
+        message:
+          "Please enter a valid name, email and password (non-empty values).",
+        buttontxt: "Okay",
       });
       return;
     }
@@ -55,6 +57,7 @@ const Signup = () => {
       setError({
         title: "Invalid Password",
         message: "Password length must be greater than 8",
+        buttontxt: "Okay",
       });
       return;
     }
@@ -62,6 +65,7 @@ const Signup = () => {
      setError({
        title: "Password Mismatch",
        message: "Please enter the same password in both fields",
+       buttontxt: "Okay",
      });
      return;
     } 
@@ -84,6 +88,7 @@ const Signup = () => {
           title={error.title}
           message={error.message}
           onConfirm={errorHandler}
+          buttontxt={error.buttontxt}
         ></ErrorModal>
       )}
       <Card className={classes.input}>

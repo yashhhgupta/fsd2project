@@ -10,7 +10,7 @@ const initialFormState = {
   description: "",
   imageURL: "",
 };
-
+let CourseData={};
 const AddCourse = () => {
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState();
@@ -37,6 +37,7 @@ const AddCourse = () => {
       setError({
         title: "Invalid input",
         message: "Please enter a valid name, email , date and course details.",
+        buttontxt: "Okay",
       });
       return;
     }
@@ -46,16 +47,17 @@ const AddCourse = () => {
       setError({
         title: "Invalid input",
         message: "Title length can not be greater than 20 characters",
+        buttontxt: "Okay",
       });
       return;
     }
-    const CourseData = {
+    CourseData = {
       title: formState.title,
       text: formState.text,
       description: formState.description,
       imageURL: formState.imageURL,
     };
-    console.log(CourseData);
+    // console.log(CourseData);
     setFormState(initialFormState);
     setError({
       title: "Success",
@@ -72,7 +74,7 @@ const AddCourse = () => {
           message={error.message}
           onConfirm={errorHandler}
           buttontxt={error.buttontxt}
-          onClickHome={() => navigate("/")}
+          onClickHome={() => navigate("/", { state: CourseData })}
         ></ErrorModal>
       )}
 
