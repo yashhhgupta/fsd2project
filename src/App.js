@@ -8,6 +8,7 @@ import Login from "./Components/Login";
 import AuthContext from "./store/auth-context";
 import Navb from "./Components/Navb";
 import {Routes,Route} from "react-router-dom";
+import AddCourse from "./Components/AddCourse";
 function App() {
   const ctx = useContext(AuthContext);
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<Signup />} />
               <Route path="/RequestForm" element={<RequestForm />} />
+              <Route path="/AddCourse" element={<AddCourse />} />
               <Route path="/Message" element={<Message />} />
             </Routes>
           </>

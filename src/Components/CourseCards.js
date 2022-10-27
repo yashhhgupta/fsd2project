@@ -7,7 +7,7 @@ const CourseCards = (props) => {
       {props.items.map((course) => {
         const renderTooltip = (props) => (
           <Tooltip id="button-tooltip" {...props}>
-            {course.details}
+            {course.description}
           </Tooltip>
         );
         return (

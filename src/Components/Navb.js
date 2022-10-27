@@ -23,8 +23,9 @@ function Navb() {
             HowToBasic
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#features">Courses</Nav.Link>
+            <Nav.Link href="">Courses</Nav.Link>
             <Nav.Link href="/RequestForm">Request a Course</Nav.Link>
+            <Nav.Link href="/AddCourse">Add a Course</Nav.Link>
           </Nav>
           <Nav>
             <Button variant="info" onClick={ctx.onLogout}>

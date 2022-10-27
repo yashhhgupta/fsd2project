@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import classes from "./ErrorModal.module.css";
 
 const ErrorModal = (props) => {
+  console.log(props);
   return (
     <div>
       <div className={classes.backdrop}></div>
@@ -14,7 +15,16 @@ const ErrorModal = (props) => {
           <p>{props.message}</p>
         </div>
         <footer className={classes.actions}>
-          <Button variant="info" onClick={props.onConfirm}>Okay</Button>
+          {!props.buttontxt && (
+            <Button variant="info" onClick={props.onConfirm}>
+              Okay
+            </Button>
+          )}
+          {props.buttontxt && (
+            <Button variant="info" onClick={props.onClickHome}>
+              {props.buttontxt}
+            </Button>
+          )}
         </footer>
       </Card>
     </div>
