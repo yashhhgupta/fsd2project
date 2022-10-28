@@ -55,9 +55,6 @@ const Home = (props) => {
   }
   let myCourses = courses.filter((course) => { return course.progress!=null });
   let restCourses = courses.filter((course) => { return course.progress==null})
-  
-  
-  
   return (
     <>
       {/* <Navb></Navb> */}

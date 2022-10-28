@@ -76,6 +76,19 @@ const Login = () => {
   };
   return (
     <Card className={classes.input}>
+      <div className={classes.header} >
+        <h1 style={{ color: "white" }}>
+        <img
+          alt=""
+          src="https://images-platform.99static.com//07LvaO3g4kyq6fDJNuXL2Tz6mCQ=/162x151:2074x2063/fit-in/500x500/projects-files/127/12734/1273474/3ce6ead9-abd5-499e-ab2d-64c7190c912e.jpg"
+          width="50"
+          height="50"
+          className="d-inline-block align-top"
+        />
+        {"      "}
+         HowToBasic</h1>
+      </div>
+
       <div class="text-center">
         <h1 style={{ color: "white" }}>Log in</h1>
       </div>
