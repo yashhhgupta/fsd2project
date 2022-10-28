@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import Card from "./UI/Card";
 import Button from "react-bootstrap/Button";
 import classes from "./RequestForm.module.css";
 import ErrorModal from "./UI/ErrorModal";
-import { useNavigate } from "react-router-dom";
+import { useNavigate} from "react-router-dom";
+import {CoursesContext} from "./Courses"
 const initialFormState = {
   title: "",
   text : "",
@@ -12,6 +13,7 @@ const initialFormState = {
 };
 let CourseData={};
 const AddCourse = () => {
+  const port = useContext(CoursesContext);
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState();
   const navigate = useNavigate();
@@ -66,6 +68,10 @@ const AddCourse = () => {
     })
   };
 
+  const SubmitHandler = () => {
+    port.courses.push(CourseData);
+    navigate("/");
+  }
   return (
     <>
       {error && (
@@ -74,7 +80,7 @@ const AddCourse = () => {
           message={error.message}
           onConfirm={errorHandler}
           buttontxt={error.buttontxt}
-          onClickHome={() => navigate("/", { state: CourseData })}
+          onClickHome={SubmitHandler}
         ></ErrorModal>
       )}
 

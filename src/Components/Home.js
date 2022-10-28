@@ -2,80 +2,52 @@ import CourseCards from "./CourseCards";
 import SimpleCarousel from "./UI/SimpleCarousel";
 import Footer from "./UI/Footer";
 import { useLocation } from "react-router-dom";
-import {useState} from 'react';
+import { useState,useContext } from "react";
+import { CoursesContext } from "./Courses";
 const Home = (props) => {
-
-  
+  const port = useContext(CoursesContext);
+  console.log(port.courses);
   const location = useLocation();
-  const [courses,setCourses] = useState([
-    {
-      title: "Course 1",
-      text: "This is the first course",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-    },
-    {
-      title: "Course 2",
-      text: "This is the second course",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      progress: 0,
-    },
-    {
-      title: "Course 3",
-      text: "This is the third course",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the ",
-    },
-    {
-      title: "Course 4",
-      text: "This is the forth course",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      progress: 90,
-    },
-    {
-      title: "Course 5",
-      text: "This is the fivth course",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. ",
-    },
-    {
-      title: "Course 6",
-      text: "This is the fivth course",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      progress: 30,
-    },
-  ]);
+  const [courses, setCourses] = useState(port.courses);
 
   const registerCourseHandler = (title) => {
-    setCourses(courses.map((course) => {
-      if(course.title === title){
-        course.progress = 0;
-      }
-      return course;
-    }));
+    setCourses(
+      courses.map((course) => {
+        if (course.title === title) {
+          course.progress = 0;
+        }
+        return course;
+      })
+    );
+  };
+
+  if (location.state) {
+    courses.push(location.state);
   }
-
-
-  if(location.state){
-  courses.push(location.state);
-  }
-  let myCourses = courses.filter((course) => { return course.progress!=null });
-  let restCourses = courses.filter((course) => { return course.progress==null})
-
+  let myCourses = courses.filter((course) => {
+    return course.progress !== undefined;
+  });
+  let restCourses = courses.filter((course) => {
+    return course.progress === undefined;
+  });
+  // console.log(courses);
   return (
     <>
       {/* <Navb></Navb> */}
       <SimpleCarousel></SimpleCarousel>
       <div>
         <h1>My Courses</h1>
-        <CourseCards items={myCourses} setc={registerCourseHandler}></CourseCards>
+        <CourseCards
+          items={myCourses}
+          setc={registerCourseHandler}
+        ></CourseCards>
       </div>
       <div>
         <h1>All Courses</h1>
-        <CourseCards items={restCourses} setc={registerCourseHandler}></CourseCards>
+        <CourseCards
+          items={restCourses}
+          setc={registerCourseHandler}
+        ></CourseCards>
       </div>
       <Footer></Footer>
     </>
