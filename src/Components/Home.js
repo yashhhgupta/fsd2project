@@ -7,9 +7,7 @@ const Home = (props) => {
 
   
   const location = useLocation();
-  
-  console.log(location.state);
-  const courses = [
+  const [courses,setCourses] = useState([
     {
       title: "Course 1",
       text: "This is the first course",
@@ -49,23 +47,35 @@ const Home = (props) => {
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
       progress: 30,
     },
-  ];   
+  ]);
+
+  const registerCourseHandler = (title) => {
+    setCourses(courses.map((course) => {
+      if(course.title === title){
+        course.progress = 0;
+      }
+      return course;
+    }));
+  }
+
+
   if(location.state){
   courses.push(location.state);
   }
   let myCourses = courses.filter((course) => { return course.progress!=null });
   let restCourses = courses.filter((course) => { return course.progress==null})
+
   return (
     <>
       {/* <Navb></Navb> */}
       <SimpleCarousel></SimpleCarousel>
       <div>
         <h1>My Courses</h1>
-        <CourseCards items={myCourses}></CourseCards>
+        <CourseCards items={myCourses} setc={registerCourseHandler}></CourseCards>
       </div>
       <div>
         <h1>All Courses</h1>
-        <CourseCards items={restCourses}></CourseCards>
+        <CourseCards items={restCourses} setc={registerCourseHandler}></CourseCards>
       </div>
       <Footer></Footer>
     </>

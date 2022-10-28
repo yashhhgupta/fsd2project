@@ -3,8 +3,10 @@ import Card from "react-bootstrap/Card";
 import Progress from "./Progress"
 import Star from "./Star"
 function SquareCard(props) {
+  const buttonHandler = () => {
+    props.check(props.title);
 
-
+  }
   return (
     <Card
       style={{
@@ -29,7 +31,7 @@ function SquareCard(props) {
         )}
         {(!props.progress && props.progress !== 0) && (
           <div className="d-flex justify-content-center">
-            <Button variant="info" >Register</Button>
+            <Button variant="info" onClick={buttonHandler}>Register</Button>
           </div>
         )}
       </Card.Body>

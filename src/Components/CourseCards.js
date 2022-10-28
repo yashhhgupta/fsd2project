@@ -2,6 +2,10 @@ import SquareCard from "./UI/SquareCard";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 const CourseCards = (props) => {
+
+  const checkHandler = (title) => {
+    props.setc(title);
+  }
   return (
     <div className="row m-2">
       {props.items.map((course) => {
@@ -22,6 +26,7 @@ const CourseCards = (props) => {
                 title={course.title}
                 text={course.text}
                 progress={course.progress}
+                check={checkHandler}
               />
             </div>
           </OverlayTrigger>
