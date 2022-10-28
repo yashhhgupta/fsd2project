@@ -79,7 +79,7 @@ const AddCourse = () => {
       )}
 
       <Card className={classes.input}>
-        <div class="text-center">
+        <div className={classes.header}>
           <h1 style={{ color: "white" }}>Add a Course</h1>
         </div>
         <form onSubmit={handleFormSubmit}>

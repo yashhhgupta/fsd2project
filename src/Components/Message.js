@@ -2,13 +2,20 @@ import Card from "./UI/Card";
 import classes from "./Message.module.css";
 import {useLocation} from "react-router-dom";
 const Message = (props) => {
+  const header ={ 
+    textAlign: "center",
+    color: "white",
+    backgroundColor: "#1b1928"
+  }
   const location = useLocation();
   // console.log(location.state);
   return (
     <Card className={classes.input}>
-      <h1 style={{ color: "white", textAlign: "center" }}>
-        <u>Request Sent</u>
-      </h1>
+      <div style={header}>
+        <h1 style={{ color: "white", textAlign: "center" }}>
+          <u>Request Sent</u>
+        </h1>
+      </div>
       <div style={{ padding: "0% 20% 0% 20%" }}>
         {/* <div class="check"></div> */}
         <br></br>

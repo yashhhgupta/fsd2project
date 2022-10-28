@@ -36,3 +36,8 @@ textarea {
 .add {
     box-sizing: border-box;
 }
+.header {
+    text-align: center;
+    color: white;
+    background-color: #1b1928;
+}

@@ -38,8 +38,8 @@ const RequestForm = () => {
     ) {
       setError({
         title: "Invalid input",
-        message:
-          "Please enter a valid name, email , date and course details.",
+        message: "Please enter a valid name, email , date and course details.",
+        buttontxt: "Okay",
       });
       return;
     }
@@ -49,6 +49,7 @@ const RequestForm = () => {
       setError({
         title: "Invalid Date",
         message: "Date must be greater or equal to current date",
+        buttontxt : "Okay"
       });
       return;
     }
@@ -71,12 +72,13 @@ const RequestForm = () => {
           title={error.title}
           message={error.message}
           onConfirm={errorHandler}
+          buttontxt={error.buttontxt}
         ></ErrorModal>
       )}
 
       <Card className={classes.input}>
-        <div class="text-center">
-          <h1 style={{ color: "white" }}>Request a Course</h1>
+        <div className={classes.header}>
+          <h1>Request a Course</h1>
         </div>
         <form onSubmit={handleFormSubmit}>
           <label>Name</label>
