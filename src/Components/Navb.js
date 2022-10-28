@@ -23,7 +23,7 @@ function Navb() {
             HowToBasic
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#features">Courses</Nav.Link>
+            <Nav.Link href="/Course">Courses</Nav.Link>
             <Nav.Link href="/RequestForm">Request a Course</Nav.Link>
           </Nav>
           <Nav>
