@@ -39,6 +39,7 @@ function App() {
               <Route path="/RequestForm" element={<RequestForm />} />
               <Route path="/AddCourse" element={<AddCourse />} />
               <Route path="/Message" element={<Message />} />
+              <Route path="/Profile" element={<Profile />} />
               <Route path="/Course" element={<SingleCourse course={course} />} />
               <Route path="/Profile" element={<Profile />} />
             </Routes>
