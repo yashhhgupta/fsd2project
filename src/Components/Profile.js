@@ -2,7 +2,7 @@ import React from "react";
 import ProfilePic from "./assets/ProfilePic.jpg";
 import Guitar from "./assets/Guitar.jpg";
 import BasketBall from "./assets/BasketBall.jpg";
-import Chess from "./assets/Chess.jpg";
+// import Chess from "./assets/Chess.jpg";
 import Badge from "./UI/Badge.js";
 import styles from "./Profile.module.css";
 import { propTypes } from "react-bootstrap/esm/Image";
@@ -21,7 +21,7 @@ const Profile = (props) => {
                 <div className={styles.badges}>
                         <Badge name={Guitar} title="Plectrum Guitar for beginners" ></Badge>
                         <Badge name={BasketBall} title="Basics of Basket Ball" ></Badge>
-                        <Badge name={Chess} title="Basics of Chess" ></Badge>
+                        {/* <Badge name={Chess} title="Basics of Chess" ></Badge> */}
                     </div>
                 </div>
             </div> 

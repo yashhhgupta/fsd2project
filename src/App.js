@@ -10,6 +10,7 @@ import Navb from "./Components/Navb";
 import SingleCourse from "./Components/SingleCourse";
 import {Routes,Route} from "react-router-dom";
 import AddCourse from "./Components/AddCourse";
+import Profile from "./Components/Profile";
 function App() {
   const ctx = useContext(AuthContext);
   const course = {
@@ -39,6 +40,7 @@ function App() {
               <Route path="/AddCourse" element={<AddCourse />} />
               <Route path="/Message" element={<Message />} />
               <Route path="/Course" element={<SingleCourse course={course} />} />
+              <Route path="/Profile" element={<Profile />} />
             </Routes>
           </>
         )}
