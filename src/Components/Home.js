@@ -6,7 +6,7 @@ import { useState,useContext } from "react";
 import { CoursesContext } from "./Courses";
 const Home = (props) => {
   const port = useContext(CoursesContext);
-  console.log(port.courses);
+  // console.log(port.courses);
   const location = useLocation();
   const [courses, setCourses] = useState(port.courses);
 
