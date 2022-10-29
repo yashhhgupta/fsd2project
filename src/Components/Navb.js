@@ -13,7 +13,7 @@ function Navb() {
       <Navbar bg="dark" variant="dark">
         <Container>
           <Navbar.Brand>
-            <Link to="/">
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               <img
                 alt=""
                 src="https://images-platform.99static.com//07LvaO3g4kyq6fDJNuXL2Tz6mCQ=/162x151:2074x2063/fit-in/500x500/projects-files/127/12734/1273474/3ce6ead9-abd5-499e-ab2d-64c7190c912e.jpg"
@@ -27,16 +27,36 @@ function Navb() {
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link>
-              <Link to="/RequestForm">Request a Course</Link>
+              <Link
+                to="/RequestForm"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Request a Course
+              </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/AddCourse">Add a Course</Link>
+              <Link
+                to="/AddCourse"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Add a Course
+              </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/Course">Courses</Link>
+              <Link
+                to="/Course"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Courses
+              </Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to="/Profile">Profile</Link>
+              <Link
+                to="/Profile"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                Profile
+              </Link>
             </Nav.Link>
           </Nav>
           <Nav>

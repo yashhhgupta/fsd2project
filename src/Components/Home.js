@@ -1,6 +1,5 @@
 import CourseCards from "./CourseCards";
 import SimpleCarousel from "./UI/SimpleCarousel";
-import Footer from "./UI/Footer";
 import { useLocation } from "react-router-dom";
 import { useState,useContext } from "react";
 import { CoursesContext } from "./Courses";
@@ -86,7 +85,7 @@ const Home = (props) => {
           </h3>
         )}
       </div>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </>
   );
 };

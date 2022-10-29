@@ -8,6 +8,7 @@ import styles from "./Profile.module.css";
 import { CoursesContext } from "./Courses";
 import {useContext} from "react";
 import CourseCards from "./CourseCards";
+import Card from"./UI/Card";
 
 const Profile = (props) => {
   const port = useContext(CoursesContext);
@@ -28,13 +29,29 @@ const Profile = (props) => {
             {/* <Badge name={Chess} title="Basics of Chess" ></Badge> */}
           </div>
         </div>
-        <div>
-          <div>
-            <h1>My Courses</h1>
+        <div style={{ padding: "1%" }}>
+          <Card>
+            <h1
+              style={{
+                textAlign: "center",
+                color: "white",
+                fontWeight: "bold",
+                padding: "1%",
+              }}
+            >
+              My Courses
+            </h1>
+          </Card>
+          {myCourses.length > 0 && (
             <CourseCards
               items={myCourses}
             ></CourseCards>
-          </div>
+          )}
+          {myCourses.length === 0 && (
+            <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
+              No Registered Courses{" "}
+            </h3>
+          )}
         </div>
       </div>
     );

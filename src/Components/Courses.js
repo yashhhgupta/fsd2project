@@ -25,7 +25,7 @@ export const CoursesContext = createContext({
       text: "This is the forth course",
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      // progress: 90,
+      progress: 90,
     },
     {
       title: "Course 5",
@@ -38,7 +38,7 @@ export const CoursesContext = createContext({
       text: "This is the fivth course",
       description:
         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-      // progress: 30,
+      progress: 30,
     },
   ],
 });

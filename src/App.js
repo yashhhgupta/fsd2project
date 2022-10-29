@@ -11,6 +11,7 @@ import SingleCourse from "./Components/SingleCourse";
 import {Routes,Route} from "react-router-dom";
 import AddCourse from "./Components/AddCourse";
 import Profile from "./Components/Profile";
+import Footer from "./Components/UI/Footer";
 function App() {
   const ctx = useContext(AuthContext);
   const course = {
@@ -43,6 +44,7 @@ function App() {
               <Route path="/Course" element={<SingleCourse course={course} />} />
               <Route path="/Profile" element={<Profile />} />
             </Routes>
+            <Footer></Footer>
           </>
         )}
         {!ctx.isLoggedIn && (
