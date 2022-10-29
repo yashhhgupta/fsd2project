@@ -34,6 +34,7 @@ function Navb() {
                 Request a Course
               </Link>
             </Nav.Link>
+            {ctx.isLoggedInAd && (
             <Nav.Link>
               <Link
                 to="/AddCourse"
@@ -42,6 +43,7 @@ function Navb() {
                 Add a Course
               </Link>
             </Nav.Link>
+            )}
             <Nav.Link>
               <Link
                 to="/Course"

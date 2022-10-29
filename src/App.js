@@ -25,6 +25,7 @@ function App() {
     lecture: 1,
     level: "Beginner",
   }
+  // console.log(ctx.isLoggedInAd);
   return (
     <>
       <main>
@@ -38,11 +39,15 @@ function App() {
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<Signup />} />
               <Route path="/RequestForm" element={<RequestForm />} />
-              <Route path="/AddCourse" element={<AddCourse />} />
+              {ctx.isLoggedInAd && (
+                <Route path="/AddCourse" element={<AddCourse />} />
+              )}
               <Route path="/Message" element={<Message />} />
               <Route path="/Profile" element={<Profile />} />
-              <Route path="/Course" element={<SingleCourse course={course} />} />
-              <Route path="/Profile" element={<Profile />} />
+              <Route
+                path="/Course"
+                element={<SingleCourse course={course} />}
+              />
             </Routes>
             <Footer></Footer>
           </>

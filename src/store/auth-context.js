@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom";
 const AuthContext = React.createContext({
   isLoggedIn: false,
   onLogout: () => {},
-  onLogin: (email, password) => {},
+  onLogin: (email, password) => {
+  },
 });
 
 export const AuthContextProvider = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedInAd, setIsLoggedInAd] = useState(false);
   const navigate = useNavigate();
 
 
@@ -23,18 +25,24 @@ export const AuthContextProvider = (props) => {
   const logoutHandler = () => {
     localStorage.removeItem("isLoggedIn");
     setIsLoggedIn(false);
+    setIsLoggedInAd(false);
     navigate("/");
   };
 
-  const loginHandler = () => {
+  const loginHandler = (email, password) => {
     localStorage.setItem("isLoggedIn", "1");
     setIsLoggedIn(true);
+    // console.log(email, password);
+    if (email === "admin123@gmail.com" && password === "admin123") {
+      setIsLoggedInAd(true);
+    } 
   };
 
   return (
     <AuthContext.Provider
       value={{
         isLoggedIn: isLoggedIn,
+        isLoggedInAd: isLoggedInAd,
         onLogout: logoutHandler,
         onLogin: loginHandler,
       }}
