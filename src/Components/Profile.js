@@ -34,17 +34,17 @@ export default function Profile() {
     });
   return (
     <>
-      <section style={{ backgroundColor: "#eee" }}>
-        <MDBContainer className="py-5">
+      <section>
+        <MDBContainer className="py-5" >
           <MDBRow>
             <MDBCol lg="4">
-              <MDBCard className="mb-4">
+              <MDBCard className="mb-4" style={{ backgroundColor:"beige",border:"beige"}}>
                 <MDBCardBody className="text-center">
                   <MDBCardImage
                     src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
                     alt="avatar"
                     className="rounded-circle"
-                    style={{ width: "150px" }}
+                    style={{ width: "150px" ,backgroundColor:"white"}}
                     fluid
                   />
                   <p className="text-muted mb-1">Yash Gupta</p>
@@ -58,8 +58,8 @@ export default function Profile() {
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
-            <MDBCol lg="8">
-              <MDBCard className="mb-4">
+            <MDBCol lg="8" >
+              <MDBCard className="mb-4" style={{ backgroundColor:"beige",border:"beige"}}>
                 <MDBCardBody>
                   <MDBRow>
                     <MDBCol sm="3">

@@ -74,7 +74,22 @@ function Navb() {
             >
               Logout
             </Button>
+            <Link
+              to="/Profile"
+              style={{ textDecoration: "none" }}
+              className={classes.heading}
+            >
+              <img
+                alt=""
+                src={ProfilePic}
+                width="40"
+                height="40"
+                className="d-inline-block align-top"
+              />
+              {"      "}
+              </Link>
           </Nav>
+
         </Container>
       </Navbar>
     </>

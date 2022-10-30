@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 // import classes from "./Signup.module.css";
 import AuthContext from "../store/auth-context";
 import classes from "./Login.module.css";
+
 const emailReducer = (state, action) => {
   if (action.type === "USER_INPUT") {
     return { value: action.val, isValid: action.val.includes("@") };
@@ -75,9 +76,10 @@ const Login = () => {
     // console.log("yes");
   };
   return (
+    <div className={classes.background}>
     <Card className={classes.input}>
       <div className={classes.header} >
-        <h1 style={{ color: "black" }}>
+        <h1 style={{ color: "beige" }}>
         <img
           alt=""
           src="https://images-platform.99static.com//07LvaO3g4kyq6fDJNuXL2Tz6mCQ=/162x151:2074x2063/fit-in/500x500/projects-files/127/12734/1273474/3ce6ead9-abd5-499e-ab2d-64c7190c912e.jpg"
@@ -90,7 +92,7 @@ const Login = () => {
       </div>
 
       <div className={classes.content}>
-        <h1 style={{ color: "black" }}>Log in</h1>
+        <h1 style={{ color: "beige" }}>Log in</h1>
       </div>
       <form onSubmit={submitHandler}>
         <div
@@ -128,12 +130,13 @@ const Login = () => {
         </div>
       </form>
       <div>
-        <p style={{ color: "black" }}>
+        <p style={{ color: "beige" }}>
           Dont have an account: &nbsp;
           <a href="/Signup" className={classes.a}>Signup</a>
         </p>
       </div>
     </Card>
+    </div>
   );
 };
 export default Login;

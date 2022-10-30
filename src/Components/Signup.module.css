@@ -3,11 +3,11 @@
     padding: 1rem;
     width: 90%;
     max-width: 40rem;
-    background-color: #d29a55;
+    background-color: #28282b;
 }
 
 .input label {
-    color : vlack;
+    color : beige;
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -28,27 +28,35 @@
 }
 .header {
     text-align: center;
-    color: black;
-    background-color: #d29a55;
+    color: beige;
+    background-color: #28282b;
 }
 
 .Button {
     color:#404040;
     background-color: beige;
-    border :3px solid black;
+    border :4px solid #28282b;
 }
 
 .Button:hover{
-    background-color: #d29a55;
-    color:black;
-    border :3px solid black;
+    background-color: #28282b;
+    color:beige;
+    border :4px solid beige;
+}
+
+.Button:active {
+    background-color: #28282b;
+    color:beige;
+    border :4px solid beige;
 }
 
 .a{
     text-decoration: none;
-    color:#464646;
+    color:beige;
+    font-size: 20px;
 }
 .a:hover{
-    color: black;
+    color: beige;
     text-decoration: underline;
+    text-shadow: #464646;
 }
