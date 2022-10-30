@@ -1,26 +1,36 @@
-import React from "react";
-import ProfilePic from "./assets/ProfilePic.jpg";
-import Guitar from "./assets/Guitar.jpg";
-import BasketBall from "./assets/BasketBall.jpg";
-// import Chess from "./assets/Chess.jpg";
-import Badge from "./UI/Badge.js";
-import styles from "./Profile.module.css";
-import { CoursesContext } from "./Courses";
-import { useContext } from "react";
-import CourseCards from "./CourseCards";
-import Card from "./UI/Card";
-import Navb from "./Navb";
-import Footer from "./UI/Footer";
 import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardImage,
+  MDBCardText,
   MDBCol,
   MDBContainer,
   MDBRow,
-  MDBCard,
-  MDBCardText,
-  MDBCardBody,
-  MDBCardImage,
-
 } from "mdb-react-ui-kit";
+
+import Badge from "./UI/Badge.js";
+import BasketBall from "./assets/BasketBall.jpg";
+import Card from "./UI/Card";
+import CourseCards from "./Courses/CourseCards";
+import { CoursesContext } from "./Courses/Courses";
+import Footer from "./UI/Footer";
+import Guitar from "./assets/Guitar.jpg";
+import Navb from "./UI/Navb";
+import ProfilePic from "./assets/ProfilePic.jpg";
+import React from "react";
+import styles from "./Profile.module.css";
+import { useContext } from "react";
+
+// import Chess from "./assets/Chess.jpg";
+
+
+
+
+
+
+
+
+
 
 export default function Profile() {
     const port = useContext(CoursesContext);

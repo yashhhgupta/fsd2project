@@ -1,6 +1,6 @@
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import SquareCard from "../UI/SquareCard";
 import Tooltip from "react-bootstrap/Tooltip";
-import SquareCard from "./UI/SquareCard";
 
 const CourseCards = (props) => {
 
@@ -26,6 +26,7 @@ const CourseCards = (props) => {
               <SquareCard
                 title={course.title}
                 text={course.text}
+                imageURL={course.imageURL}
                 progress={course.progress}
                 check={checkHandler}
               />

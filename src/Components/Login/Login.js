@@ -1,8 +1,8 @@
 import React, { useContext, useReducer, useEffect ,useState} from "react";
-import Card from "./UI/Card";
+import Card from "../UI/Card";
 import Button from "react-bootstrap/Button";
 // import classes from "./Signup.module.css";
-import AuthContext from "../store/auth-context";
+import AuthContext from "../../store/auth-context";
 import classes from "./Login.module.css";
 
 const emailReducer = (state, action) => {

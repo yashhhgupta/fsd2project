@@ -5,7 +5,7 @@
     width: 100%;
     height: 100vh;
     z-index: 10;
-    background: beige;
+    background: rgba(0, 0, 0, 0.75);
 }
 
 .modal {
@@ -18,22 +18,18 @@
 }
 
 .header {
-    background: #d29a55;
+    background: black;
     padding: 1rem;
 }
 
 .header h2 {
     margin: 0;
-    color: black;
+    color: white;
 }
 
-.contentmain {
-    border:4px solid #d29a55;
-    border-radius: 10px;
-}
 .content {
     padding: 1rem;
-    color: black;
+    color: white;
 }
 
 .actions {
@@ -42,21 +38,27 @@
     justify-content: flex-end;
 }
 
+.Button {
+    color: #404040;
+    background-color: beige;
+    border: 4px solid #28282b;
+}
+
+.Button:hover {
+    background-color: #28282b;
+    color: beige;
+    border: 4px solid beige;
+}
+
+.Button:active {
+    background-color: #28282b;
+    color: beige;
+    border: 4px solid beige;
+}
+
 @media (min-width: 768px) {
     .modal {
         left: calc(50% - 20rem);
         width: 40rem;
     }
-}
-
-.Button {
-    color:#404040;
-    background-color: #d29a55;
-    border :3px solid #d29a55;
-}
-
-.Button:hover{
-    background-color: #d29a33;
-    color:black;
-    border :3px solid black;
 }

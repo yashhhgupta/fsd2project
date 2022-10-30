@@ -1,9 +1,9 @@
+import Footer from "../UI/Footer";
+import Navb from "../UI/Navb";
 import React from 'react';
-import classes from "./SingleCourse.module.css";
-import Navb from "./Navb";
-import Footer from "./UI/Footer";
-import { useState } from 'react';
 import bootstrap from 'bootstrap';
+import classes from "./SingleCourse.module.css";
+import { useState } from 'react';
 
 const SingleCourse = (props) => {
     const {image , title , description, contentList} = props.course;

@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
+
+import AuthContext from "../../store/auth-context";
+import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
+import {Link} from "react-router-dom"
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
-import AuthContext from "../store/auth-context";
+import ProfilePic from "../assets/ProfilePic.jpg";
 import classes from "./Navb.module.css";
-import ProfilePic from "./assets/ProfilePic.jpg";
-import {Link} from "react-router-dom"
 
 function Navb() {
   const ctx = useContext(AuthContext);

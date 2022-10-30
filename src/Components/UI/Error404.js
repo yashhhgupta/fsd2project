@@ -1,6 +1,5 @@
-
-import Card from "./UI/Card";
 import Button from "react-bootstrap/Button";
+import Card from "./Card";
 import { useNavigate } from "react-router-dom";
 
 const Error404 =()=>{

@@ -1,17 +1,20 @@
-import React,{ useContext} from "react";
-import Home from "./Components/Home";
-import RequestForm from "./Components/RequestForm";
-import Signup from "./Components/Signup";
-import Message from "./Components/Message";
-import Login from "./Components/Login";
-import AuthContext from "./store/auth-context";
-import SingleCourse from "./Components/SingleCourse";
-import {Routes,Route} from "react-router-dom";
-import AddCourse from "./Components/AddCourse";
-import Profile from "./Components/Profile";
-import Error404 from "./Components/Error404";
 import "./App.css";
-import RequestedCourses from "./Components/RequestedCourses";
+
+import React,{ useContext } from "react";
+import {Route, Routes} from "react-router-dom";
+
+import AddCourse from "./Components/Courses/AddCourse";
+import AuthContext from "./store/auth-context";
+import Error404 from "./Components/UI/Error404";
+import Home from "./Components/Home";
+import Login from "./Components/Login/Login";
+import Message from "./Components/RequestCourses/Message";
+import Profile from "./Components/Profile";
+import RequestForm from "./Components/RequestCourses/RequestForm";
+import RequestedCourses from "./Components/RequestCourses/RequestedCourses";
+import Signup from "./Components/Login/Signup";
+import SingleCourse from "./Components/Courses/SingleCourse";
+
 // import Aboutus from "./Components/Aboutus";
 
 

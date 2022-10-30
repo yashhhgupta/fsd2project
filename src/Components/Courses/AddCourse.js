@@ -1,12 +1,13 @@
-import React, { useState,useContext } from "react";
-import Card from "./UI/Card";
+import React, { useContext, useState } from "react";
+
 import Button from "react-bootstrap/Button";
-import ErrorModal from "./UI/ErrorModal";
+import Card from "../UI/Card";
 import {CoursesContext} from "./Courses"
+import ErrorModal from "../UI/ErrorModal";
+import Footer from "../UI/Footer";
+import Navb from "../UI/Navb";
+import classes from "../RequestCourses/RequestForm.module.css";
 import { useNavigate } from "react-router-dom";
-import classes from "./RequestForm.module.css";
-import Navb from "./Navb";
-import Footer from "./UI/Footer";
 
 const initialFormState = {
   title: "",

@@ -1,8 +1,10 @@
-import Navb from "./Navb";
-import Footer from "./UI/Footer";
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
+
+import Card from "../UI/Card";
+import Footer from "../UI/Footer";
+import Navb from "../UI/Navb";
 import { RCC } from "./RequestedCoursesContext";
-import Card from "./UI/Card";
+
 const RequestedCourses=()=>{
     
     const port = useContext(RCC);
@@ -25,7 +27,7 @@ const RequestedCourses=()=>{
                       justifyContent: "space-around",
                     }}
                   >
-                    <img src={course.imageURL} width="200px"></img>
+                    <img src={course.imageURL} alt="No image found" width="200px"></img>
                     <div>
                       <h4>Course Requested by:</h4>
                       <h5>User: {course.name}</h5>

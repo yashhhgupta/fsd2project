@@ -1,12 +1,14 @@
-import CourseCards from "./CourseCards";
-import SimpleCarousel from "./UI/SimpleCarousel";
-import { useLocation } from "react-router-dom";
-import { useState,useContext } from "react";
-import { CoursesContext } from "./Courses";
+import { useContext, useState } from "react";
+
 import Card from "./UI/Card";
-import classes from "./RequestForm.module.css"
+import CourseCards from "./Courses/CourseCards";
+import { CoursesContext } from "./Courses/Courses";
 import Footer from "./UI/Footer";
-import Navb from "./Navb";
+import Navb from "./UI/Navb";
+import SimpleCarousel from "./UI/SimpleCarousel";
+import classes from "./RequestCourses/RequestForm.module.css";
+import { useLocation } from "react-router-dom";
+
 const Home = (props) => {
   const port = useContext(CoursesContext);
   // console.log(port.courses);

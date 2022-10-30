@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Card from "./UI/Card";
-import ErrorModal from "./UI/ErrorModal";
+
 import Button from "react-bootstrap/Button";
+import Card from "../UI/Card";
+import ErrorModal from "../UI/ErrorModal";
 import classes from "./Signup.module.css";
 import {useNavigate} from "react-router-dom";
 

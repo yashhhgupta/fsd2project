@@ -12,21 +12,25 @@ const ErrorModal = (props) => {
           <h2>{props.title}</h2>
         </header>
         <div className={classes.contentmain}>
-        <div className={classes.content}>
-          <p>{props.message}</p>
-        </div>
-        <footer className={classes.actions}>
-          {props.buttontxt==="Okay" && (
-            <Button className={classes.Button} onClick={props.onConfirm}>
-              Okay
-            </Button>
-          )}
-          {props.buttontxt!=="Okay" && (
-            <Button variant="info" onClick={props.onClickHome}>
-              {props.buttontxt}
-            </Button>
-          )}
-        </footer>
+          <div className={classes.content}>
+            <p style={{ color: "black" }}>{props.message}</p>
+          </div>
+          <footer className={classes.actions}>
+            {props.buttontxt === "Okay" && (
+              <Button className={classes.Button} onClick={props.onConfirm}>
+                Okay
+              </Button>
+            )}
+            {props.buttontxt !== "Okay" && (
+              <Button
+                variant="info"
+                onClick={props.onClickHome}
+                className={classes.Button}
+              >
+                {props.buttontxt}
+              </Button>
+            )}
+          </footer>
         </div>
       </Card>
     </div>

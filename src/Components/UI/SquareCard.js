@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import Progress from "./Progress"
 import Star from "./Star";
 import classes from "./SquareCard.module.css";
+
 function SquareCard(props) {
   const buttonHandler = () => {
     props.check(props.title);
@@ -21,7 +22,7 @@ function SquareCard(props) {
     >
       <Card.Img
         variant="top"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-sNGlXGfEerbW8D09xP6155A0fo4QD7MKZg&usqp=CAU"
+        src={props.imageURL}
       />
       <Card.Body>
         <Card.Title style={{ color: "beige" }}>{props.title}</Card.Title>

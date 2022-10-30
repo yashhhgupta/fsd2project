@@ -1,7 +1,8 @@
-import Card from "./UI/Card";
+import Card from "../UI/Card";
+import Footer from "../UI/Footer";
+import Navb from "../UI/Navb";
 import {useLocation} from "react-router-dom";
-import Navb from "./Navb";
-import Footer from "./UI/Footer";
+
 const Message = (props) => {
   
   const location = useLocation();
@@ -20,7 +21,7 @@ const Message = (props) => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src={location.state.imageURL} width="200px"></img>
+                <img src={location.state.imageURL} alt="No image found" width="200px"></img>
                 <div>
                   <h4>Course Requested by:</h4>
                   <h5>User: {location.state.name}</h5>
