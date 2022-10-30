@@ -1,7 +1,7 @@
 import ProgressBar from "react-bootstrap/ProgressBar";
 
 function Progress(props) {
-  return <ProgressBar variant ="info" now={props.progress} />;
+  return <ProgressBar variant ="success" now={props.progress} />;
 }
 
 export default Progress;

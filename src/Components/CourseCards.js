@@ -1,6 +1,7 @@
-import SquareCard from "./UI/SquareCard";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
+import SquareCard from "./UI/SquareCard";
+
 const CourseCards = (props) => {
   return (
     <div className="row m-2">

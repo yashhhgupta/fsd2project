@@ -1,4 +1,14 @@
+.body {
+    background-color: beige;
+}
+.Home {
+    background-color: beige;
+    padding-top:20px;
+}
 .input {
+    /* background-color: #d29a55; */
+    background-color: beige;
+    border: 3px solid #d29a55;
     margin: 2rem auto;
     padding: 1rem;
     width: 90%;
@@ -6,7 +16,7 @@
 }
 
 .input label {
-    color: white;
+    color: black;
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -38,6 +48,29 @@ textarea {
 }
 .header {
     text-align: center;
-    color: white;
-    background-color: #1b1928;
+    color: black;
+    background-color: beige;
+}
+
+.Button {
+    color:#404040;
+    background-color: #d29a55;
+    border :3px solid #d29a55;
+}
+
+.Button:hover{
+    background-color: #d29a33;
+    color:black;
+    border :3px solid black;
+}
+.courses {
+    margin-left:30px;
+    margin-top: 30px;
+    display:flex;
+    border-color:black;
+}
+
+.content {
+    margin-left:40px;
+    padding-top:20px;
 }

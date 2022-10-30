@@ -7,10 +7,11 @@ import {
   MDBRow,
   MDBBtn,
 } from "mdb-react-ui-kit";
+import classes from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <MDBFooter className="text-center" color="white" bgColor="dark">
+    <MDBFooter className={classes.input}>
       <MDBContainer className="p-4">
 
         <section className="">
@@ -32,7 +33,7 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol size="auto">
-                <MDBBtn outline color="light" type="submit" className="mb-4">
+                <MDBBtn outline color="light" type="submit" className={classes.Button}>
                   Subscribe
                 </MDBBtn>
               </MDBCol>
@@ -56,22 +57,22 @@ export default function Footer() {
 
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 1
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 2
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 3
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 4
                   </a>
                 </li>
@@ -83,22 +84,22 @@ export default function Footer() {
 
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 1
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 2
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 3
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 4
                   </a>
                 </li>
@@ -110,22 +111,22 @@ export default function Footer() {
 
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 1
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 2
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 3
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 4
                   </a>
                 </li>
@@ -137,22 +138,22 @@ export default function Footer() {
 
               <ul className="list-unstyled mb-0">
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 1
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 2
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 3
                   </a>
                 </li>
                 <li>
-                  <a href="#!" className="text-white">
+                  <a href="#!" className="text-black">
                     Link 4
                   </a>
                 </li>
@@ -161,16 +162,6 @@ export default function Footer() {
           </MDBRow>
         </section>
       </MDBContainer>
-
-      <div
-        className="text-center p-3"
-        style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
-      >
-        © 2020 Copyright:
-        <a className="text-white" href="https://mdbootstrap.com/">
-          MDBootstrap.com
-        </a>
-      </div>
     </MDBFooter>
   );
 }

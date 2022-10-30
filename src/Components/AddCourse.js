@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Card from "./UI/Card";
 import Button from "react-bootstrap/Button";
-import classes from "./RequestForm.module.css";
 import ErrorModal from "./UI/ErrorModal";
 import { useNavigate } from "react-router-dom";
+import classes from "./RequestForm.module.css";
+
 const initialFormState = {
   title: "",
   text : "",
@@ -67,7 +68,7 @@ const AddCourse = () => {
   };
 
   return (
-    <>
+    <div className={classes.body}>
       {error && (
         <ErrorModal
           title={error.title}
@@ -78,9 +79,10 @@ const AddCourse = () => {
         ></ErrorModal>
       )}
 
+      
       <Card className={classes.input}>
         <div className={classes.header}>
-          <h1 style={{ color: "white" }}>Add a Course</h1>
+          <h1>Add a Course</h1>
         </div>
         <form onSubmit={handleFormSubmit}>
           <label>Course Title</label>
@@ -117,13 +119,13 @@ const AddCourse = () => {
           </div>
           <br></br>
           <div class="text-center">
-            <Button variant="info" type="submit">
+            <Button variant="info" type="submit" className={classes.Button}>
               Submit
             </Button>
           </div>
         </form>
       </Card>
-    </>
+    </div>
   );
 };
 

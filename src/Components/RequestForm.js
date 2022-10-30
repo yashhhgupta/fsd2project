@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import classes from "./RequestForm.module.css";
 import ErrorModal from "./UI/ErrorModal";
 import { useNavigate } from "react-router-dom";
+
 const initialFormState = {
   name: "",
   email: "",
@@ -66,67 +67,67 @@ const RequestForm = () => {
   };
 
   return (
-    <>
-      {error && (
-        <ErrorModal
-          title={error.title}
-          message={error.message}
-          onConfirm={errorHandler}
-          buttontxt={error.buttontxt}
-        ></ErrorModal>
-      )}
-
-      <Card className={classes.input}>
-        <div className={classes.header}>
-          <h1>Request a Course</h1>
-        </div>
-        <form onSubmit={handleFormSubmit}>
-          <label>Name</label>
-          <input
-            type="text"
-            id="name"
-            value={formState.name}
-            onChange={handleFormChange}
-          />
-          <label>Email</label>
-          <input
-            type="email"
-            id="email"
-            value={formState.email}
-            onChange={handleFormChange}
-          />
-          <label for="date">Date</label>
-          <input
-            type="date"
-            id="date"
-            value={formState.date}
-            onChange={handleFormChange}
-          ></input>
-          <label>Course Title</label>
-          <input
-            type="text"
-            id="title"
-            value={formState.title}
-            onChange={handleFormChange}
-          />
-          <label>Description</label>
-          <div>
-            <textarea
-              id="description"
-              className={classes.add}
-              value={formState.description}
+    <div className={classes.body}>
+        {error && (
+          <ErrorModal
+            title={error.title}
+            message={error.message}
+            onConfirm={errorHandler}
+            buttontxt={error.buttontxt}
+          ></ErrorModal>
+        )}
+        
+        <Card className={classes.input}>
+          <div className={classes.header}>
+            <h1>Request a Course</h1>
+          </div>
+          <form onSubmit={handleFormSubmit}>
+            <label>Name</label>
+            <input
+              type="text"
+              id="name"
+              value={formState.name}
               onChange={handleFormChange}
-            ></textarea>
-          </div>
-          <br></br>
-          <div class="text-center">
-            <Button variant="info" type="submit">
-              Submit
-            </Button>
-          </div>
-        </form>
-      </Card>
-    </>
+            />
+            <label>Email</label>
+            <input
+              type="email"
+              id="email"
+              value={formState.email}
+              onChange={handleFormChange}
+            />
+            <label for="date">Date</label>
+            <input
+              type="date"
+              id="date"
+              value={formState.date}
+              onChange={handleFormChange}
+            ></input>
+            <label>Course Title</label>
+            <input
+              type="text"
+              id="title"
+              value={formState.title}
+              onChange={handleFormChange}
+            />
+            <label>Description</label>
+            <div>
+              <textarea
+                id="description"
+                className={classes.add}
+                value={formState.description}
+                onChange={handleFormChange}
+              ></textarea>
+            </div>
+            <br></br>
+            <div class="text-center">
+              <Button variant="info" type="submit" className={classes.Button}>
+                Submit
+              </Button>
+            </div>
+          </form>
+        </Card>
+      </div>
   );
 };
 

@@ -3,6 +3,7 @@ import SimpleCarousel from "./UI/SimpleCarousel";
 import Footer from "./UI/Footer";
 import { useLocation } from "react-router-dom";
 import {useState} from 'react';
+import classes from "./RequestForm.module.css"
 const Home = (props) => {
 
   
@@ -56,19 +57,18 @@ const Home = (props) => {
   let myCourses = courses.filter((course) => { return course.progress!=null });
   let restCourses = courses.filter((course) => { return course.progress==null})
   return (
-    <>
-      {/* <Navb></Navb> */}
+    <div className={classes.Home}>
       <SimpleCarousel></SimpleCarousel>
-      <div>
+      <div className={classes.content}>
         <h1>My Courses</h1>
-        <CourseCards items={myCourses}></CourseCards>
+        <CourseCards items={myCourses} className={classes.courses}></CourseCards>
       </div>
-      <div>
+      <div className={classes.content}>
         <h1>All Courses</h1>
-        <CourseCards items={restCourses}></CourseCards>
+        <CourseCards items={restCourses} className={classes.courses}></CourseCards>
       </div>
       <Footer></Footer>
-    </>
+    </div>
   );
 };
 export default Home;

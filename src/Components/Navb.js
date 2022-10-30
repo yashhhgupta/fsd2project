@@ -4,14 +4,16 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import AuthContext from "../store/auth-context";
+import classes from "./Navb.module.css";
+import ProfilePic from "./assets/ProfilePic.jpg";
 
 function Navb() {
   const ctx = useContext(AuthContext);
   return (
     <>
-      <Navbar bg="dark" variant="dark">
+      <Navbar className={classes.NavbarMain}>
         <Container>
-          <Navbar.Brand href="/">
+          <Navbar.Brand href="/" className={classes.heading}>
             <img
               alt=""
               src="https://images-platform.99static.com//07LvaO3g4kyq6fDJNuXL2Tz6mCQ=/162x151:2074x2063/fit-in/500x500/projects-files/127/12734/1273474/3ce6ead9-abd5-499e-ab2d-64c7190c912e.jpg"
@@ -22,17 +24,25 @@ function Navb() {
             {"      "}
             HowToBasic
           </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/Course">Courses</Nav.Link>
-            <Nav.Link href="/RequestForm">Request a Course</Nav.Link>
-            <Nav.Link href="/AddCourse">Add a Course</Nav.Link>
-            <Nav.Link href="/Profile">Profile</Nav.Link>
+          <Nav>
+            <Nav.Link href="/Course" className={classes.headings1}>Courses</Nav.Link>
+            <Nav.Link href="/RequestForm" className={classes.headings1}>Request a Course</Nav.Link>
+            <Nav.Link href="/AddCourse" className={classes.headings1}>Add a Course</Nav.Link>
           </Nav>
           <Nav>
-            <Button variant="info" onClick={ctx.onLogout}>
+            <Button variant="info" onClick={ctx.onLogout} className={classes.Button}>
               Logout
             </Button>
-            
+            <a href="/Profile">
+              <img
+              alt=""
+              src={ProfilePic}
+              width="40"
+              height="40"
+              // margin-left = "30"
+              className="d-inline-block align-top"
+            />
+            </a>
           </Nav>
         </Container>
       </Navbar>
