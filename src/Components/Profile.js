@@ -9,6 +9,8 @@ import { CoursesContext } from "./Courses";
 import { useContext } from "react";
 import CourseCards from "./CourseCards";
 import Card from "./UI/Card";
+import Navb from "./Navb";
+import Footer from "./UI/Footer";
 import {
   MDBCol,
   MDBContainer,
@@ -17,14 +19,7 @@ import {
   MDBCardText,
   MDBCardBody,
   MDBCardImage,
-  MDBBtn,
-  MDBBreadcrumb,
-  MDBBreadcrumbItem,
-  MDBProgress,
-  MDBProgressBar,
-  MDBIcon,
-  MDBListGroup,
-  MDBListGroupItem,
+
 } from "mdb-react-ui-kit";
 
 export default function Profile() {
@@ -34,8 +29,8 @@ export default function Profile() {
     });
   return (
     <>
-      <section>
-        <MDBContainer className="py-5" >
+      <section style={{ backgroundColor: "#eee" }}>
+        <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="4">
               <MDBCard className="mb-4" style={{ backgroundColor:"beige",border:"beige"}}>
@@ -49,12 +44,7 @@ export default function Profile() {
                   />
                   <p className="text-muted mb-1">Yash Gupta</p>
                   <p className="text-muted mb-4">Agra, Uttar Pradesh</p>
-                  {/* <div className="d-flex justify-content-center mb-2">
-                  <MDBBtn>Follow</MDBBtn>
-                  <MDBBtn outline className="ms-1">
-                    Message
-                  </MDBBtn>
-                </div> */}
+                  
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
@@ -158,6 +148,7 @@ export default function Profile() {
           </h3>
         )}
       </div>
+      <Footer></Footer>
     </>
   );
 }

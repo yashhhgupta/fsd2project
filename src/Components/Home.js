@@ -6,6 +6,7 @@ import { CoursesContext } from "./Courses";
 import Card from "./UI/Card";
 import classes from "./RequestForm.module.css"
 import Footer from "./UI/Footer";
+import Navb from "./Navb";
 const Home = (props) => {
   const port = useContext(CoursesContext);
   // console.log(port.courses);
@@ -34,61 +35,65 @@ const Home = (props) => {
   });
   // console.log(courses);
   return (
-    <div className={classes.Home}>
-      <SimpleCarousel></SimpleCarousel>
-      <div style={{ padding: "1%" }}>
-        <Card>
-          <h1
-            style={{
-              textAlign: "center",
-              fontWeight: "bold",
-              padding: "1%",
-            }}
-          >
-            My Courses
-          </h1>
-        </Card>
-        {myCourses.length > 0 && (
-          <CourseCards
-            items={myCourses}
-            setc={registerCourseHandler}
-          ></CourseCards>
-        )}
-        {myCourses.length === 0 && (
-          <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
-            No Registered Courses{" "}
-          </h3>
-        )}
-      </div>
-      <div style={{ padding: "1%" }}>
-        <Card>
-          <h1
-            style={{
-              textAlign: "center",
-              fontWeight: "bold",
-              padding: "1%",
-            }}
-          >
-            All Courses
-          </h1>
-        </Card>
-        {restCourses.length > 0 && (
-          <CourseCards
-            items={restCourses}
-            setc={registerCourseHandler}
-          ></CourseCards>
-        )}
-        {restCourses.length === 0 && (
-          <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
-            No Registered Courses{" "}
-          </h3>
-        )}
-      </div>
-      {/* <div>
+    <>
+      <Navb></Navb>
+      <div className={classes.Home}>
+        <SimpleCarousel></SimpleCarousel>
+        <div style={{ padding: "1%" }}>
+          <Card>
+            <h1
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                padding: "1%",
+              }}
+            >
+              My Courses
+            </h1>
+          </Card>
+          {myCourses.length > 0 && (
+            <CourseCards
+              items={myCourses}
+              setc={registerCourseHandler}
+            ></CourseCards>
+          )}
+          {myCourses.length === 0 && (
+            <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
+              No Registered Courses{" "}
+            </h3>
+          )}
+        </div>
+        <div style={{ padding: "1%" }}>
+          <Card>
+            <h1
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                padding: "1%",
+              }}
+            >
+              All Courses
+            </h1>
+          </Card>
+          {restCourses.length > 0 && (
+            <CourseCards
+              items={restCourses}
+              setc={registerCourseHandler}
+            ></CourseCards>
+          )}
+          {restCourses.length === 0 && (
+            <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
+              No Registered Courses{" "}
+            </h3>
+          )}
+        </div>
+        {/* <div>
         <h1>All Courses</h1>
         <CourseCards items={restCourses}></CourseCards>
       </div> */}
-    </div>
+      </div>
+      <Footer></Footer>
+    </>
   );
 };
 export default Home;

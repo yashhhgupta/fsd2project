@@ -2,10 +2,8 @@ import React from "react";
 import {
   MDBFooter,
   MDBContainer,
-  MDBInput,
   MDBCol,
   MDBRow,
-  MDBBtn,
 } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
 

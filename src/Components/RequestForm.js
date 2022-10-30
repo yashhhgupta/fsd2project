@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 import classes from "./RequestForm.module.css";
 import ErrorModal from "./UI/ErrorModal";
 import { useNavigate } from "react-router-dom";
+import Navb from "./Navb";
+import Footer from "./UI/Footer";
 
 const initialFormState = {
   name: "",
@@ -67,7 +69,9 @@ const RequestForm = () => {
   };
 
   return (
-    <div className={classes.body}>
+    <>
+      <Navb></Navb>
+      <div className={classes.body}>
         {error && (
           <ErrorModal
             title={error.title}
@@ -76,7 +80,7 @@ const RequestForm = () => {
             buttontxt={error.buttontxt}
           ></ErrorModal>
         )}
-        
+
         <Card className={classes.input}>
           <div className={classes.header}>
             <h1>Request a Course</h1>
@@ -128,6 +132,8 @@ const RequestForm = () => {
           </form>
         </Card>
       </div>
+      <Footer></Footer>
+    </>
   );
 };
 

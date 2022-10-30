@@ -5,6 +5,8 @@ import ErrorModal from "./UI/ErrorModal";
 import {CoursesContext} from "./Courses"
 import { useNavigate } from "react-router-dom";
 import classes from "./RequestForm.module.css";
+import Navb from "./Navb";
+import Footer from "./UI/Footer";
 
 const initialFormState = {
   title: "",
@@ -74,6 +76,8 @@ const AddCourse = () => {
     navigate("/");
   }
   return (
+  <>
+      <Navb></Navb>
     <div className={classes.body}>
       {error && (
         <ErrorModal
@@ -132,6 +136,8 @@ const AddCourse = () => {
         </form>
       </Card>
     </div>
+    <Footer></Footer>
+    </>
   );
 };
 
