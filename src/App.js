@@ -21,12 +21,17 @@ function App() {
     image: "https://images-platform.99static.com//07LvaO3g4kyq6fDJNuXL2Tz6mCQ=/162x151:2074x2063/fit-in/500x500/projects-files/127/12734/1273474/3ce6ead9-abd5-499e-ab2d-64c7190c912e.jpg",
     title: "How to make a sandwich",
     description: "Learn how to make a sandwich",
-    author: "HowToBasic",
-    rating: 4.5,
-    students: 1000,
-    hours: 1,
-    lecture: 1,
-    level: "Beginner",
+    contentList: [
+      "Step 1: Get bread",
+      "Step 2: Get cheese",
+      "Step 3: Get ham",
+      "Step 4: Get butter",
+      "Step 5: Put butter on bread",
+      "Step 6: Put cheese on bread",
+      "Step 7: Put ham on bread",
+      "Step 8: Put bread on top of bread",
+      "Step 9: Eat sandwich",
+    ],
   }
   // console.log(ctx.isLoggedInAd);
   return (
