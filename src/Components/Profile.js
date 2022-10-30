@@ -29,6 +29,7 @@ export default function Profile() {
     });
   return (
     <>
+    <Navb></Navb>
       <section style={{ backgroundColor: "#eee" }}>
         <MDBContainer className="py-5">
           <MDBRow>
