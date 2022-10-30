@@ -47,8 +47,8 @@ export default function Profile() {
                       style={{ width: "150px", backgroundColor: "white" }}
                       fluid
                     />
-                    <p className="text-muted mb-1">Yash Gupta</p>
-                    <p className="text-muted mb-4">Agra, Uttar Pradesh</p>
+                    <p className="text-muted mb-1">Johnatan Smith</p>
+                    <p className="text-muted mb-4">Sri City, Andhra Pradesh</p>
                   </MDBCardBody>
                 </MDBCard>
               </div>
@@ -78,7 +78,7 @@ export default function Profile() {
                       </MDBCol>
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                          example@example.com
+                          johnatan.smith@gmail.com
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
@@ -90,19 +90,7 @@ export default function Profile() {
                       </MDBCol>
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                          (097) 234-5678
-                          <i className="fa-solid fa-pen-to-square mx-3"></i>
-                        </MDBCardText>
-                      </MDBCol>
-                    </MDBRow>
-                    <hr />
-                    <MDBRow>
-                      <MDBCol sm="3">
-                        <MDBCardText>Mobile</MDBCardText>
-                      </MDBCol>
-                      <MDBCol sm="9">
-                        <MDBCardText className="text-muted">
-                          (098) 765-4321
+                          +91 1234567890
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
@@ -114,7 +102,7 @@ export default function Profile() {
                       </MDBCol>
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                          Bay Area, San Francisco, CA
+                          Sri City, Andhra Pradesh
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
