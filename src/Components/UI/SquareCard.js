@@ -10,7 +10,7 @@ function SquareCard(props) {
   return (
     <Card
       style={{
-        width: "20rem",
+        width: "18rem",
         backgroundColor: "#d29a55",
         border: "1rem",
         padding: "1rem",

@@ -11,6 +11,7 @@ import {Routes,Route} from "react-router-dom";
 import AddCourse from "./Components/AddCourse";
 import Profile from "./Components/Profile";
 import Footer from "./Components/UI/Footer";
+
 import "./App.css";
 
 function App() {

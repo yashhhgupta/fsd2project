@@ -41,7 +41,6 @@ const Home = (props) => {
           <h1
             style={{
               textAlign: "center",
-              color: "white",
               fontWeight: "bold",
               padding: "1%",
             }}
@@ -61,10 +60,34 @@ const Home = (props) => {
           </h3>
         )}
       </div>
-      <div>
+      <div style={{ padding: "1%" }}>
+        <Card>
+          <h1
+            style={{
+              textAlign: "center",
+              fontWeight: "bold",
+              padding: "1%",
+            }}
+          >
+            All Courses
+          </h1>
+        </Card>
+        {restCourses.length > 0 && (
+          <CourseCards
+            items={restCourses}
+            setc={registerCourseHandler}
+          ></CourseCards>
+        )}
+        {restCourses.length === 0 && (
+          <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
+            No Registered Courses{" "}
+          </h3>
+        )}
+      </div>
+      {/* <div>
         <h1>All Courses</h1>
         <CourseCards items={restCourses}></CourseCards>
-      </div>
+      </div> */}
     </div>
   );
 };
