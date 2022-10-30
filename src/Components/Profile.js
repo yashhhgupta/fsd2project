@@ -29,85 +29,99 @@ export default function Profile() {
     });
   return (
     <>
-    <Navb></Navb>
+      <Navb></Navb>
       <section style={{ backgroundColor: "#eee" }}>
         <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="4">
-              <MDBCard className="mb-4" style={{ backgroundColor:"beige",border:"beige"}}>
-                <MDBCardBody className="text-center">
-                  <MDBCardImage
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
-                    alt="avatar"
-                    className="rounded-circle"
-                    style={{ width: "150px" ,backgroundColor:"white"}}
-                    fluid
-                  />
-                  <p className="text-muted mb-1">Yash Gupta</p>
-                  <p className="text-muted mb-4">Agra, Uttar Pradesh</p>
-                  
-                </MDBCardBody>
-              </MDBCard>
+              <div className={styles.profilep}>
+                <MDBCard
+                  className="mb-4"
+                  style={{ backgroundColor: "beige", border: "beige" }}
+                >
+                  <MDBCardBody className="text-center">
+                    <MDBCardImage
+                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                      alt="avatar"
+                      className="rounded-circle"
+                      style={{ width: "150px", backgroundColor: "white" }}
+                      fluid
+                    />
+                    <p className="text-muted mb-1">Yash Gupta</p>
+                    <p className="text-muted mb-4">Agra, Uttar Pradesh</p>
+                  </MDBCardBody>
+                </MDBCard>
+              </div>
             </MDBCol>
-            <MDBCol lg="8" >
-              <MDBCard className="mb-4" style={{ backgroundColor:"beige",border:"beige"}}>
-                <MDBCardBody>
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Full Name</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                      <MDBCardText className="text-muted">
-                        Johnatan Smith
-                      </MDBCardText>
-                    </MDBCol>
-                  </MDBRow>
-                  <hr />
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Email</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                      <MDBCardText className="text-muted">
-                        example@example.com
-                      </MDBCardText>
-                    </MDBCol>
-                  </MDBRow>
-                  <hr />
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Phone</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                      <MDBCardText className="text-muted">
-                        (097) 234-5678
-                      </MDBCardText>
-                    </MDBCol>
-                  </MDBRow>
-                  <hr />
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Mobile</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                      <MDBCardText className="text-muted">
-                        (098) 765-4321
-                      </MDBCardText>
-                    </MDBCol>
-                  </MDBRow>
-                  <hr />
-                  <MDBRow>
-                    <MDBCol sm="3">
-                      <MDBCardText>Address</MDBCardText>
-                    </MDBCol>
-                    <MDBCol sm="9">
-                      <MDBCardText className="text-muted">
-                        Bay Area, San Francisco, CA
-                      </MDBCardText>
-                    </MDBCol>
-                  </MDBRow>
-                </MDBCardBody>
-              </MDBCard>
+            <MDBCol lg="8">
+              <div className={styles.profilep}>
+                <MDBCard
+                  className="mb-4"
+                  style={{ backgroundColor: "beige", border: "beige" }}
+                >
+                  <MDBCardBody>
+                    <MDBRow>
+                      <MDBCol sm="3">
+                        <MDBCardText>Full Name</MDBCardText>
+                      </MDBCol>
+                      <MDBCol sm="9">
+                        <MDBCardText className="text-muted">
+                          Johnatan Smith
+                          <i className="fa-solid fa-pen-to-square mx-3"></i>
+                        </MDBCardText>
+                      </MDBCol>
+                    </MDBRow>
+                    <hr />
+                    <MDBRow>
+                      <MDBCol sm="3">
+                        <MDBCardText>Email</MDBCardText>
+                      </MDBCol>
+                      <MDBCol sm="9">
+                        <MDBCardText className="text-muted">
+                          example@example.com
+                          <i className="fa-solid fa-pen-to-square mx-3"></i>
+                        </MDBCardText>
+                      </MDBCol>
+                    </MDBRow>
+                    <hr />
+                    <MDBRow>
+                      <MDBCol sm="3">
+                        <MDBCardText>Phone</MDBCardText>
+                      </MDBCol>
+                      <MDBCol sm="9">
+                        <MDBCardText className="text-muted">
+                          (097) 234-5678
+                          <i className="fa-solid fa-pen-to-square mx-3"></i>
+                        </MDBCardText>
+                      </MDBCol>
+                    </MDBRow>
+                    <hr />
+                    <MDBRow>
+                      <MDBCol sm="3">
+                        <MDBCardText>Mobile</MDBCardText>
+                      </MDBCol>
+                      <MDBCol sm="9">
+                        <MDBCardText className="text-muted">
+                          (098) 765-4321
+                          <i className="fa-solid fa-pen-to-square mx-3"></i>
+                        </MDBCardText>
+                      </MDBCol>
+                    </MDBRow>
+                    <hr />
+                    <MDBRow>
+                      <MDBCol sm="3">
+                        <MDBCardText>Address</MDBCardText>
+                      </MDBCol>
+                      <MDBCol sm="9">
+                        <MDBCardText className="text-muted">
+                          Bay Area, San Francisco, CA
+                          <i className="fa-solid fa-pen-to-square mx-3"></i>
+                        </MDBCardText>
+                      </MDBCol>
+                    </MDBRow>
+                  </MDBCardBody>
+                </MDBCard>
+              </div>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
@@ -125,8 +139,12 @@ export default function Profile() {
           </h1>
         </Card>
         <div className={styles.badges}>
-          <Badge name={Guitar} title="Plectrum Guitar for beginners"></Badge>
-          <Badge name={BasketBall} title="Basics of Basket Ball"></Badge>
+          <div className={styles.innerbadge}>
+            <Badge name={Guitar} title="Plectrum Guitar for beginners"></Badge>
+          </div>
+          <div className={styles.innerbadge}>
+            <Badge name={BasketBall} title="Basics of Basket Ball"></Badge>
+          </div>
           {/* <Badge name={Chess} title="Basics of Chess" ></Badge> */}
         </div>
       </div>

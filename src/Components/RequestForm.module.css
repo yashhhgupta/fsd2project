@@ -3,16 +3,17 @@
 }
 .Home {
     background-color: beige;
-    padding-top:20px;
+    /* padding-top:20px; */
 }
 .input {
     /* background-color: #d29a55; */
     background-color: #28282b;
-    border: 15px solid #d29a55;
+    /* border: 15px solid #d29a55; */
     margin: 2rem auto;
     padding: 1rem;
     width: 90%;
     max-width: 40rem;
+    box-shadow: 0 0px 15px rgba(210, 154, 85, 0.5);
 }
 
 .input label {
@@ -74,9 +75,4 @@ textarea {
     margin-top: 30px;
     display:flex;
     border-color:black;
-}
-
-.content {
-    margin-left:40px;
-    padding-top:20px;
 }

@@ -83,7 +83,7 @@ const Home = (props) => {
           )}
           {restCourses.length === 0 && (
             <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
-              No Registered Courses{" "}
+              All Courses Registered
             </h3>
           )}
         </div>
