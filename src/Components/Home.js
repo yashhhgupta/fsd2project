@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useState,useContext } from "react";
 import { CoursesContext } from "./Courses";
 import Card from "./UI/Card";
+import classes from "./RequestForm.module.css"
 const Home = (props) => {
   const port = useContext(CoursesContext);
   // console.log(port.courses);
@@ -32,8 +33,7 @@ const Home = (props) => {
   });
   // console.log(courses);
   return (
-    <>
-      {/* <Navb></Navb> */}
+    <div className={classes.Home}>
       <SimpleCarousel></SimpleCarousel>
       <div style={{ padding: "1%" }}>
         <Card>
@@ -60,32 +60,11 @@ const Home = (props) => {
           </h3>
         )}
       </div>
-      <div style={{ padding: "1%" }}>
-        <Card>
-          <h1
-            style={{
-              textAlign: "center",
-              color: "white",
-              fontWeight: "bold",
-              padding: "1%",
-            }}
-          >
-            All Courses
-          </h1>
-        </Card>
-        {restCourses.length > 0 && (
-          <CourseCards
-            items={restCourses}
-            setc={registerCourseHandler}
-          ></CourseCards>
-        )}
-        {restCourses.length === 0 && (
-          <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
-            All Courses Registered{" "}
-          </h3>
-        )}
+      <div>
+        <h1>All Courses</h1>
+        <CourseCards items={restCourses}></CourseCards>
       </div>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 };

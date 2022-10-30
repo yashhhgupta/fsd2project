@@ -1,18 +1,8 @@
-button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
+.input {
+    text-align: centre;
+    color : black;
+    background-color: #d29a55;
 }
-
-.on {
-    color: rgb(231, 234, 26);
-}
-
-.off {
-    color: #ccc;
-}
-
 .Button {
     color:#404040;
     background-color: beige;

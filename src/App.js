@@ -1,5 +1,4 @@
 import React,{ useContext} from "react";
-// import "./App.css";
 import Home from "./Components/Home";
 import RequestForm from "./Components/RequestForm";
 import Signup from "./Components/Signup";
@@ -12,6 +11,8 @@ import {Routes,Route} from "react-router-dom";
 import AddCourse from "./Components/AddCourse";
 import Profile from "./Components/Profile";
 import Footer from "./Components/UI/Footer";
+import "./App.css";
+
 function App() {
   const ctx = useContext(AuthContext);
   const course = {
@@ -29,8 +30,6 @@ function App() {
   return (
     <>
       <main>
-        {/* <Navb></Navb> */}
-
         {ctx.isLoggedIn && (
           <>
             <Navb></Navb>

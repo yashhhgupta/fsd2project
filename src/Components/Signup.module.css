@@ -3,10 +3,11 @@
     padding: 1rem;
     width: 90%;
     max-width: 40rem;
+    background-color: #d29a55;
 }
 
 .input label {
-    color : white;
+    color : vlack;
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -27,6 +28,27 @@
 }
 .header {
     text-align: center;
-    color: white;
-    background-color: #1b1928;
+    color: black;
+    background-color: #d29a55;
+}
+
+.Button {
+    color:#404040;
+    background-color: beige;
+    border :3px solid black;
+}
+
+.Button:hover{
+    background-color: #d29a55;
+    color:black;
+    border :3px solid black;
+}
+
+.a{
+    text-decoration: none;
+    color:#464646;
+}
+.a:hover{
+    color: black;
+    text-decoration: underline;
 }

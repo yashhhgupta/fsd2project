@@ -3,6 +3,7 @@
     padding: 1rem;
     width: 90%;
     max-width: 80rem;
+    background-color: #d29a55;
     /* text-align: center; */
 }
 :root {
@@ -14,6 +15,7 @@
 
 body {
     padding: 20px;
+    background-color: beige;
     /* text-align: center; */
 }
 

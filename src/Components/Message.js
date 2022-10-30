@@ -4,16 +4,17 @@ import {useLocation} from "react-router-dom";
 const Message = (props) => {
   const header ={ 
     textAlign: "center",
-    color: "white",
-    backgroundColor: "#1b1928"
+    color: "black",
+    backgroundColor: "#d29a55"
   }
   const location = useLocation();
   // console.log(location.state);
   return (
+    <div className={classes.body}>
     <Card className={classes.input}>
       <div style={header}>
-        <h1 style={{ color: "white", textAlign: "center" }}>
-          <u>Request Sent</u>
+        <h1 style={{ color: "black", textAlign: "center" }}>
+          Request Sent
         </h1>
       </div>
       <div style={{ padding: "0% 20% 0% 20%" }}>
@@ -36,6 +37,7 @@ const Message = (props) => {
         </p>
       </div>
     </Card>
+    </div>
   );
 };
 export default Message;
