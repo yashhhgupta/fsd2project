@@ -9,6 +9,9 @@
 
 .headings1 {
     font-size:17px;
+    /* margin-left: 10px; */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .headings1:hover {
