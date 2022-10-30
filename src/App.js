@@ -5,13 +5,11 @@ import Signup from "./Components/Signup";
 import Message from "./Components/Message";
 import Login from "./Components/Login";
 import AuthContext from "./store/auth-context";
-import Navb from "./Components/Navb";
 import SingleCourse from "./Components/SingleCourse";
 import {Routes,Route} from "react-router-dom";
 import AddCourse from "./Components/AddCourse";
 import Profile from "./Components/Profile";
-import Footer from "./Components/UI/Footer";
-
+import Error404 from "./Components/Error404";
 import "./App.css";
 
 function App() {
@@ -33,7 +31,7 @@ function App() {
       <main>
         {ctx.isLoggedIn && (
           <>
-            <Navb></Navb>
+            
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Login" element={<Login />} />
@@ -48,8 +46,8 @@ function App() {
                 path="/Course"
                 element={<SingleCourse course={course} />}
               />
+              <Route path="*" element={<Error404 />} />
             </Routes>
-            <Footer></Footer>
           </>
         )}
         {!ctx.isLoggedIn && (
