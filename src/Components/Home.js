@@ -5,6 +5,7 @@ import { useState,useContext } from "react";
 import { CoursesContext } from "./Courses";
 import Card from "./UI/Card";
 import classes from "./RequestForm.module.css"
+import Footer from "./UI/Footer";
 const Home = (props) => {
   const port = useContext(CoursesContext);
   // console.log(port.courses);
@@ -64,8 +65,7 @@ const Home = (props) => {
         <h1>All Courses</h1>
         <CourseCards items={restCourses}></CourseCards>
       </div>
-      <Footer></Footer>
-    </>
+    </div>
   );
 };
 export default Home;

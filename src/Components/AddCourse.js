@@ -2,7 +2,6 @@ import React, { useState,useContext } from "react";
 import Card from "./UI/Card";
 import Button from "react-bootstrap/Button";
 import ErrorModal from "./UI/ErrorModal";
-import { useNavigate} from "react-router-dom";
 import {CoursesContext} from "./Courses"
 import { useNavigate } from "react-router-dom";
 import classes from "./RequestForm.module.css";
