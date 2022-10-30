@@ -14,8 +14,9 @@ function SquareCard(props) {
         width: "18rem",
         backgroundColor: "#28282b",
         border: "1rem",
-        padding: "1rem",
+        padding: "0.5rem",
         margin: "1rem",
+        boxShadow: "0px 0 15px rgba(0,0,0,0.6)",
       }}
     >
       <Card.Img
