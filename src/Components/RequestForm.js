@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import Card from "./UI/Card";
 import Button from "react-bootstrap/Button";
 import classes from "./RequestForm.module.css";
@@ -6,16 +6,19 @@ import ErrorModal from "./UI/ErrorModal";
 import { useNavigate } from "react-router-dom";
 import Navb from "./Navb";
 import Footer from "./UI/Footer";
+import { RCC } from "./RequestedCoursesContext";
 
 const initialFormState = {
   name: "",
   email: "",
-  date: "",
   title: "",
+  text: "",
   description: "",
+  imageURL: "",
 };
 
 const RequestForm = () => {
+  const port = useContext(RCC);
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState();
   const navigate = useNavigate();
@@ -35,36 +38,28 @@ const RequestForm = () => {
     if (
       formState.name.trim().length === 0 ||
       formState.email.trim().length === 0 ||
-      formState.date.trim().length === 0 ||
+      formState.text.trim().length === 0 ||
       formState.title.trim().length === 0 ||
       formState.description.trim().length === 0
     ) {
       setError({
         title: "Invalid input",
-        message: "Please enter a valid name, email , date and course details.",
+        message: "Please enter a valid name, email , text and course details.",
         buttontxt: "Okay",
-      });
-      return;
-    }
-    var CurrentDate = new Date();
-    var date = new Date(formState.date);
-    if (date < CurrentDate) {
-      setError({
-        title: "Invalid Date",
-        message: "Date must be greater or equal to current date",
-        buttontxt : "Okay"
       });
       return;
     }
     const userData = {
       name: formState.name,
       email: formState.email,
-      date: formState.date,
       title: formState.title,
+      text: formState.text,
+      imageURL: formState.imageURL,
       description: formState.description,
     };
     // console.log(userData);
     setFormState(initialFormState);
+    port.requestedCourses.push(userData);
     navigate("/Message", { state: userData });
   };
 
@@ -100,18 +95,26 @@ const RequestForm = () => {
               value={formState.email}
               onChange={handleFormChange}
             />
-            <label for="date">Date</label>
-            <input
-              type="date"
-              id="date"
-              value={formState.date}
-              onChange={handleFormChange}
-            ></input>
             <label>Course Title</label>
             <input
               type="text"
               id="title"
               value={formState.title}
+              onChange={handleFormChange}
+            />
+            <label>Course Text</label>
+            <input
+              type="text"
+              id="text"
+              value={formState.text}
+              onChange={handleFormChange}
+            />
+            <label>Course Image URL</label>
+            <input
+              type="text"
+              id="imageURL"
+              placeholder="Enter URL of image"
+              value={formState.imageURL}
               onChange={handleFormChange}
             />
             <label>Description</label>

@@ -45,6 +45,7 @@ function Navb() {
                 </span>
               </div>
             </Link>
+            {!ctx.isLoggedInAd && (
             <Link to="/RequestForm" style={{ textDecoration: "none" }}>
               <div className={classes.headings1}>
                 <span style={{ color: "black" }}>
@@ -52,18 +53,32 @@ function Navb() {
                 </span>
               </div>
             </Link>
+            )}
             {ctx.isLoggedInAd && (
-              <Link
-                to="/AddCourse"
-                className={classes.headings1}
-                style={{ textDecoration: "none" }}
-              >
-                <div className={classes.headings1}>
-                  <span style={{ color: "black" }}>
-                    <b>Add a course</b>
-                  </span>
-                </div>
-              </Link>
+              <>
+                <Link
+                  to="/RequestedCourses"
+                  className={classes.headings1}
+                  style={{ textDecoration: "none" }}
+                >
+                  <div className={classes.headings1}>
+                    <span style={{ color: "black" }}>
+                      <b>Requested Courses</b>
+                    </span>
+                  </div>
+                </Link>
+                <Link
+                  to="/AddCourse"
+                  className={classes.headings1}
+                  style={{ textDecoration: "none" }}
+                >
+                  <div className={classes.headings1}>
+                    <span style={{ color: "black" }}>
+                      <b>Add a course</b>
+                    </span>
+                  </div>
+                </Link>
+              </>
             )}
           </Nav>
           <Nav>
@@ -87,9 +102,8 @@ function Navb() {
                 className="d-inline-block align-top"
               />
               {"      "}
-              </Link>
+            </Link>
           </Nav>
-
         </Container>
       </Navbar>
     </>

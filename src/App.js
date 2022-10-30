@@ -11,6 +11,9 @@ import AddCourse from "./Components/AddCourse";
 import Profile from "./Components/Profile";
 import Error404 from "./Components/Error404";
 import "./App.css";
+import RequestedCourses from "./Components/RequestedCourses";
+// import Aboutus from "./Components/Aboutus";
+
 
 function App() {
   const ctx = useContext(AuthContext);
@@ -31,14 +34,19 @@ function App() {
       <main>
         {ctx.isLoggedIn && (
           <>
-            
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<Signup />} />
               <Route path="/RequestForm" element={<RequestForm />} />
               {ctx.isLoggedInAd && (
-                <Route path="/AddCourse" element={<AddCourse />} />
+                <>
+                  <Route path="/AddCourse" element={<AddCourse />} />
+                  <Route
+                    path="/RequestedCourses"
+                    element={<RequestedCourses />}
+                  />
+                </>
               )}
               <Route path="/Message" element={<Message />} />
               <Route path="/Profile" element={<Profile />} />

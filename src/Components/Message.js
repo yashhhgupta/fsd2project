@@ -1,44 +1,45 @@
 import Card from "./UI/Card";
-import classes from "./Message.module.css";
 import {useLocation} from "react-router-dom";
 import Navb from "./Navb";
 import Footer from "./UI/Footer";
 const Message = (props) => {
-  const header ={ 
-    textAlign: "center",
-    color: "black",
-    backgroundColor: "#d29a55"
-  }
+  
   const location = useLocation();
-  // console.log(location.state);
   return (
     <>
-    <Navb></Navb>
-      <div className={classes.body}>
-        <Card className={classes.input}>
-          <div style={header}>
-            <h1 style={{ color: "black", textAlign: "center" }}>
-              Request Sent
-            </h1>
-          </div>
-          <div style={{ padding: "0% 20% 0% 20%" }}>
-            {/* <div class="check"></div> */}
-            <br></br>
-            <h4 style={{ color: "white" }}>Your request for the course :</h4>
-            <h4 style={{ color: "white" }}>
-              <span>Course Title:&nbsp;</span>
-              <i> {location.state.title}</i>
-              <br></br>
-              <span>Course Description:&nbsp;</span>
-
-              <i> {location.state.description}</i>
-            </h4>
-
-            <p style={{ color: "white" }}>
-              on date <u>{location.state.date}</u> has been sent.
-              <br></br> We will consider and work on your request and get back
-              to you as soon as possible.
-            </p>
+      <Navb></Navb>
+      <div className="p-5">
+        <Card>
+          <div style={{ padding: "1%" }}>
+            <h3> Your request for the course :</h3>
+            <div style={{ padding: "1%" }}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-around",
+                }}
+              >
+                <img src={location.state.imageURL} width="200px"></img>
+                <div>
+                  <h4>Course Requested by:</h4>
+                  <h5>User: {location.state.name}</h5>
+                  <h5>Email: {location.state.email}</h5>
+                </div>
+              </div>
+              <div style={{ padding: "1% 3%" }}>
+                <h2>
+                  <u>{location.state.title}</u>
+                </h2>
+                <h5>{location.state.text}</h5>
+                <p>{location.state.description}</p>
+              </div>
+            </div>
+            <h3>has been sent to us.</h3>
+            <h6>
+              We will consider your request and add this course as soon as
+              possible.
+            </h6>
           </div>
         </Card>
       </div>
