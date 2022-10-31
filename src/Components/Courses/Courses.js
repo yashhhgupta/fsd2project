@@ -3,6 +3,7 @@ import { createContext } from "react";
 export const CoursesContext = createContext({
   courses: [
     {
+      id: "rubix",
       title: "Rubik's Cube",
       text: "Master the Rubik's cube - Learn to solve it AND Get faster",
       description:
@@ -20,6 +21,7 @@ export const CoursesContext = createContext({
     ],
     },
     {
+      id : "chess",
       title: "Chess",
       text: "The Complete Beginner's Guide to Chess",
       description:
@@ -37,6 +39,7 @@ export const CoursesContext = createContext({
         ],
     },
     {
+      id:"basketball",
       title: "Basketball",
       text: "Basketball Dribbling and Ball Handling. Workout",
       description:
@@ -55,6 +58,7 @@ export const CoursesContext = createContext({
       ],
     },
     {
+      id:"poker",
       title: "Poker",
       text: "Poker: The Complete Mastery Guide",
       description:
@@ -74,6 +78,7 @@ export const CoursesContext = createContext({
         ],
     },
     {
+      id:"guitar",
       title: "Guitar",
       text: "Ultimate Beginner Guitar Masterclass",
       description:
@@ -90,6 +95,7 @@ export const CoursesContext = createContext({
         ],
     },
     {
+      id :"cycle",
       title: "Cycle",
       text: "Learn to wheelie a bicycle",
       description:

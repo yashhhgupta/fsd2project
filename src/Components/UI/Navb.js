@@ -35,17 +35,7 @@ function Navb() {
             </Link>
           </Navbar.Brand>
           <Nav>
-            <Link
-              to="/Course"
-              className={classes.headings1}
-              style={{ textDecoration: "none" }}
-            >
-              <div className={classes.headings1}>
-                <span style={{ color: "black" }}>
-                  <b>Courses</b>
-                </span>
-              </div>
-            </Link>
+            
             {!ctx.isLoggedInAd && (
             <Link to="/RequestForm" style={{ textDecoration: "none" }}>
               <div className={classes.headings1}>

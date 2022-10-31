@@ -3,13 +3,15 @@ import Card from "react-bootstrap/Card";
 import Progress from "./Progress"
 import Star from "./Star";
 import classes from "./SquareCard.module.css";
+import { Link } from "react-router-dom";
 
 function SquareCard(props) {
   const buttonHandler = () => {
     props.check(props.title);
-
   }
+  console.log(props);
   return (
+    <Link to={`/course/${props.id}`}>
     <Card
       style={{
         width: "18rem",
@@ -39,6 +41,7 @@ function SquareCard(props) {
         )}
       </Card.Body>
     </Card>
+    </Link>
   );
 }
 

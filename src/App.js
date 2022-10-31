@@ -58,7 +58,7 @@ function App() {
               <Route path="/Message" element={<Message />} />
               <Route path="/Profile" element={<Profile />} />
               <Route
-                path="/Course"
+                path="/Course/:id"
                 element={<SingleCourse course={course} />}
               />
               <Route path="*" element={<Error404 />} />
