@@ -29,12 +29,11 @@ export const CoursesContext = createContext({
       imageURL:
         "https://content.instructables.com/ORIG/FPI/EUBU/FD80BVW8/FPIEUBUFD80BVW8.jpg?auto=webp&fit=bounds&frame=1",
         contentList: [
-          "Step 1: Learn to make a White Cross",
-          "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
-          "Step 3: Learn to arrange the top layers of the side of the cube",
-          "Step 4: Learn to arrang the second layer of the side of the cube",
-          "Step 5: Learn to arrange the third layer of the sides of the cube",
-          "Step 6: Learn to arrange the base of the cube",
+          "Step 1: Setting up the chess board and moving the pieces",
+          "Step 2: Discover the special rules",
+          "Step 3: Studying the basic strategies",
+          "Step 4: Learn how to check the oppenent",
+          "Step 5: The three step checkmate strategy",
         ],
     },
     {
@@ -47,12 +46,12 @@ export const CoursesContext = createContext({
         "https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkyNDUyMzI2MDA5NjExNTc3/duke-basketball-logo.jpg",
       progress: 25,
       contentList: [
-        "Step 1: Learn to make a White Cross",
-        "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
-        "Step 3: Learn to arrange the top layers of the side of the cube",
-        "Step 4: Learn to arrang the second layer of the side of the cube",
-        "Step 5: Learn to arrange the third layer of the sides of the cube",
-        "Step 6: Learn to arrange the base of the cube",
+        "Step 1: Learn to Dribble the ball",
+        "Step 2: Learn to have movements with ball",
+        "Step 3: Learn to Shoot the ball",
+        "Step 4: Learn Lay up shots",
+        "Step 5: Learn to fake pass a ball",
+        "Step 6: Tips for better movement with the ball",
       ],
     },
     {
@@ -82,12 +81,11 @@ export const CoursesContext = createContext({
         imageURL:
         "http://cdn.shopify.com/s/files/1/0151/0741/products/a11b624fde54661c0202be302b4c69b7_1024x1024.jpg?v=1578647607",
         contentList: [
-          "Step 1: Learn to make a White Cross",
-          "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
-          "Step 3: Learn to arrange the top layers of the side of the cube",
-          "Step 4: Learn to arrang the second layer of the side of the cube",
-          "Step 5: Learn to arrange the third layer of the sides of the cube",
-          "Step 6: Learn to arrange the base of the cube",
+          "Step 1: Learn the parts of the guitar",
+          "Step 2: Learn how to hold a guitar",
+          "Step 3: Learn the cords and the notations",
+          "Step 4: Learn how to place the fingers on the guitar with numbering",
+          "Step 5: Pick up songs by ear and learn to play it",
         ],
     },
     {
@@ -99,12 +97,9 @@ export const CoursesContext = createContext({
         imageURL:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
         contentList: [
-          "Step 1: Learn to make a White Cross",
-          "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
-          "Step 3: Learn to arrange the top layers of the side of the cube",
-          "Step 4: Learn to arrang the second layer of the side of the cube",
-          "Step 5: Learn to arrange the third layer of the sides of the cube",
-          "Step 6: Learn to arrange the base of the cube",
+          "Step 1: Learn the posture",
+          "Step 2: Learn when to paddle",
+          "Step 3: Avoid cross chaining the gears",
         ],
     },
   ],
