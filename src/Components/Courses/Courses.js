@@ -64,12 +64,13 @@ export const CoursesContext = createContext({
       imageURL:
         "https://assets.entrepreneur.com/content/3x2/2000/20151023204134-poker-game-gambling-gamble-cards-money-chips-game.jpeg?crop=4:3",
         contentList: [
-          "Step 1: Learn to make a White Cross",
-          "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
-          "Step 3: Learn to arrange the top layers of the side of the cube",
-          "Step 4: Learn to arrang the second layer of the side of the cube",
-          "Step 5: Learn to arrange the third layer of the sides of the cube",
-          "Step 6: Learn to arrange the base of the cube",
+          "Step 1: Know the cards",
+          "Step 2: Each player is dealt five cards ",
+          "Step 3: PreFlop",
+          "Step 4: Flop",
+          "Step 5: Turn",
+          "Step 6: River",
+          "Step 7: Tips and tricks",
         ],
     },
     {
