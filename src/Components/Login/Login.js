@@ -76,7 +76,8 @@ const Login = () => {
     // console.log("yes");
   };
   return (
-    <div className={classes.background}>
+    <>
+  
     <Card className={classes.input}>
       <div className={classes.header} >
         <h1 style={{ color: "beige" }}>
@@ -136,7 +137,7 @@ const Login = () => {
         </p>
       </div>
     </Card>
-    </div>
+    </>
   );
 };
 export default Login;

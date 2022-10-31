@@ -67,7 +67,7 @@ const RequestForm = () => {
   return (
     <>
       <Navb></Navb>
-      <div className={classes.body}>
+      <div>
         {error && (
           <ErrorModal
             title={error.title}
