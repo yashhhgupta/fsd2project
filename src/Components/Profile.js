@@ -19,20 +19,16 @@ import Navb from "./UI/Navb";
 import ProfilePic from "./assets/ProfilePic.jpg";
 import React from "react";
 import styles from "./Profile.module.css";
-import { useContext } from "react";
+import { useContext,useState } from "react";
 
 // import Chess from "./assets/Chess.jpg";
 
 
-
-
-
-
-
-
-
-
 export default function Profile() {
+  const [name,setName] =useState("John Doe");
+  const [email,setEmail] =useState("johndoe@gmail.com");
+  const [phone,setPhone] =useState("1234567890");
+  const [address,setAddress] =useState("Sri city");
     const port = useContext(CoursesContext);
     let myCourses = port.courses.filter((course) => {
       return course.progress !== undefined;
@@ -57,8 +53,8 @@ export default function Profile() {
                       style={{ width: "150px", backgroundColor: "white" }}
                       fluid
                     />
-                    <p className="text-muted mb-1">Johnatan Smith</p>
-                    <p className="text-muted mb-4">Sri City, Andhra Pradesh</p>
+                    <p className="text-muted mb-1">{name}</p>
+                    <p className="text-muted mb-4">{address}</p>
                   </MDBCardBody>
                 </MDBCard>
               </div>
@@ -76,7 +72,10 @@ export default function Profile() {
                       </MDBCol>
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                          Johnatan Smith
+                          <input
+                            value={name}
+                            onChange={(event) => setName(event.target.value)}
+                          ></input>
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
@@ -88,7 +87,10 @@ export default function Profile() {
                       </MDBCol>
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                          johnatan.smith@gmail.com
+                          <input
+                            value={email}
+                            onChange={(event) => setEmail(event.target.value)}
+                          ></input>
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
@@ -100,7 +102,10 @@ export default function Profile() {
                       </MDBCol>
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                          +91 1234567890
+                          <input
+                            value={phone}
+                            onChange={(event) => setPhone(event.target.value)}
+                          ></input>
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
@@ -112,7 +117,11 @@ export default function Profile() {
                       </MDBCol>
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
-                          Sri City, Andhra Pradesh
+                          <input
+                            value={address}
+                            onChange={(event) => setPhone(event.target.value)}
+                          ></input>
+
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
