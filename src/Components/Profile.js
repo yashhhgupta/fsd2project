@@ -40,7 +40,7 @@ export default function Profile() {
   return (
     <>
       <Navb></Navb>
-      <section style={{ backgroundColor: "#eee" }}>
+      <section style={{ backgroundColor: "#beige" }}>
         <MDBContainer className="py-5">
           <MDBRow>
             <MDBCol lg="4">
