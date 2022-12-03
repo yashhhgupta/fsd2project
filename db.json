@@ -1,869 +1,145 @@
 {
+  "courses": [
+    {
+      "id": "rubix",
+      "title": "Rubik's Cube",
+      "text": "Master the Rubik's cube - Learn to solve it AND Get faster",
+      "description": "Learn a beginner friendly method to solve a cube, and advanced techniques to get faster. Taught by a UK semi-finalist",
+      "creator": "Ross",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-sNGlXGfEerbW8D09xP6155A0fo4QD7MKZg&usqp=CAU",
+      "contentList": [
+        "Step 1: Learn to make a White Cross",
+        "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
+        "Step 3: Learn to arrange the top layers of the side of the cube",
+        "Step 4: Learn to arrang the second layer of the side of the cube",
+        "Step 5: Learn to arrange the third layer of the sides of the cube",
+        "Step 6: Learn to arrange the base of the cube"
+      ]
+    },
+    {
+      "id": "chess",
+      "title": "Chess",
+      "text": "The Complete Beginner's Guide to Chess",
+      "description": "This course will take you from absolute chess beginner to a good intermediate level chess player",
+      "creator": "Ross",
+      "imageURL": "https://content.instructables.com/ORIG/FPI/EUBU/FD80BVW8/FPIEUBUFD80BVW8.jpg?auto=webp&fit=bounds&frame=1",
+      "contentList": [
+        "Step 1: Setting up the chess board and moving the pieces",
+        "Step 2: Discover the special rules",
+        "Step 3: Studying the basic strategies",
+        "Step 4: Learn how to check the oppenent",
+        "Step 5: The three step checkmate strategy"
+      ]
+    },
+    {
+      "id": "basketball",
+      "title": "Basketball",
+      "text": "Basketball Dribbling and Ball Handling. Workout",
+      "description": "Improve Your Dribble, Ball Handling, Basketball Skills. Basketball Dribbling and Ball Handling Fundamentals, Drills, and Workouts",
+      "creator": "Ross",
+      "imageURL": "https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkyNDUyMzI2MDA5NjExNTc3/duke-basketball-logo.jpg",
+      "progress": 25,
+      "contentList": [
+        "Step 1: Learn to Dribble the ball",
+        "Step 2: Learn to have movements with ball",
+        "Step 3: Learn to Shoot the ball",
+        "Step 4: Learn Lay up shots",
+        "Step 5: Learn to fake pass a ball",
+        "Step 6: Tips for better movement with the ball"
+      ]
+    },
+    {
+      "id": "poker",
+      "title": "Poker",
+      "text": "Poker: The Complete Mastery Guide",
+      "description": "Learn to Master Online Micro Stakes 6-Max and Full Ring No Limit Hold’em Poker Games!",
+      "creator": "Ross",
+      "progress": 90,
+      "imageURL": "https://assets.entrepreneur.com/content/3x2/2000/20151023204134-poker-game-gambling-gamble-cards-money-chips-game.jpeg?crop=4:3",
+      "contentList": [
+        "Step 1: Know the cards",
+        "Step 2: Each player is dealt five cards ",
+        "Step 3: PreFlop",
+        "Step 4: Flop",
+        "Step 5: Turn",
+        "Step 6: River",
+        "Step 7: Tips and tricks"
+      ]
+    },
+    {
+      "id": "guitar",
+      "title": "Guitar",
+      "text": "Ultimate Beginner Guitar Masterclass",
+      "description": "Beginner Guitar Lessons: Learn Acoustic Guitar, Blues Guitar, Basic Fingerstyle Guitar, Guitar Chords, Guitar Technique",
+      "creator": "Ross",
+      "imageURL": "http://cdn.shopify.com/s/files/1/0151/0741/products/a11b624fde54661c0202be302b4c69b7_1024x1024.jpg?v=1578647607",
+      "contentList": [
+        "Step 1: Learn the parts of the guitar",
+        "Step 2: Learn how to hold a guitar",
+        "Step 3: Learn the cords and the notations",
+        "Step 4: Learn how to place the fingers on the guitar with numbering",
+        "Step 5: Pick up songs by ear and learn to play it"
+      ]
+    },
+    {
+      "id": "cycle",
+      "title": "Cycle",
+      "text": "Learn to wheelie a bicycle",
+      "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
+      "creator": "Ross",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
+      "contentList": [
+        "Step 1: Learn the posture",
+        "Step 2: Learn when to paddle",
+        "Step 3: Avoid cross chaining the gears"
+      ]
+    }
+  ],
   "users": [
     {
       "id": "41da7c8c-6d19-4fce-9246-b6fb273594c0",
-      "username": "Claudie_Kreiger",
-      "email": "Erica_Deckow@hotmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/978.jpg",
-      "password": "8g_k9QLc_up3c1t"
+      "username": "Yash Gupta",
+      "email": "yashg@gmail.com",
+      "password": "yashyash",
+      "mycourses": [
+        {
+          "id": "cycle",
+          "title": "Cycle",
+          "text": "Learn to wheelie a bicycle",
+          "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
+          "creator": "Ross",
+          "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
+          "contentList": [
+            "Step 1: Learn the posture",
+            "Step 2: Learn when to paddle",
+            "Step 3: Avoid cross chaining the gears"
+          ]
+        }
+      ]
     },
     {
-      "id": "f68f02e8-c5e4-41aa-a8bd-a387ea75f0d2",
-      "username": "Javonte13",
-      "email": "Shanelle.OReilly28@yahoo.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/427.jpg",
-      "password": "CqOtqslU_t7PEDh"
+      "username": "yash",
+      "email": "yashyashyash@gupta.com",
+      "password": "12345678",
+      "id": "I3eA2xC"
     },
     {
-      "id": "728c612b-d6bc-4c63-8724-26674eaaedca",
-      "username": "Tabitha17",
-      "email": "Tatyana_Huel73@gmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1123.jpg",
-      "password": "CUXustPBpPXnWSh"
-    },
-    {
-      "id": "a47dd157-fd3c-4ee1-a43c-d0681e136eac",
-      "username": "Tristin.Crona7",
-      "email": "Arne_Hane57@hotmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/116.jpg",
-      "password": "xXFyD7sVkypRnAO"
-    },
-    {
-      "id": "dc694611-46b3-4a18-8121-ed2634bdf3b8",
-      "username": "Vance_Williamson",
-      "email": "Tiffany81@yahoo.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/723.jpg",
-      "password": "rq9QBwDio93_kmY"
-    },
-    {
-      "id": "59312ac1-6474-497a-9ed1-3f04ccc58d8e",
-      "username": "Cleta72",
-      "email": "Hanna.DAmore@gmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/469.jpg",
-      "password": "4Lt_z_9F59z8mhy"
-    },
-    {
-      "id": "77011b49-175f-41a5-ace6-72ea1ea117f9",
-      "username": "Glen_Schultz",
-      "email": "Violette43@hotmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/440.jpg",
-      "password": "IIEpQuUEUczbtUi"
-    },
-    {
-      "id": "284df114-947b-4c8f-8a19-9f7317632a5d",
-      "username": "Cora.Feeney95",
-      "email": "Daren_Maggio@gmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/973.jpg",
-      "password": "3AnoO7e6tQVkjOA"
-    },
-    {
-      "id": "a2e32d3c-33f0-49c2-94fa-39f704c7ab28",
-      "username": "Raven_Schmitt",
-      "email": "Sydney.Schmitt@gmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/752.jpg",
-      "password": "ke_RxdOS49HHInQ"
-    },
-    {
-      "id": "f973878c-a48e-4e54-b16b-548de1f3ebdd",
-      "username": "Delfina.Lakin94",
-      "email": "Brandon.Sanford67@hotmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/448.jpg",
-      "password": "Zj3hMWCHBzp3uxj"
-    },
-    {
-      "id": "8b045552-118b-4f47-a9ed-b93c2dfbe4bb",
-      "username": "Stephen.Balistreri87",
-      "email": "Faustino0@hotmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/582.jpg",
-      "password": "WcvsJ6kqWLG8WLb"
-    },
-    {
-      "id": "c6966ad4-8990-4eff-9406-81609f154a3e",
-      "username": "Margot30",
-      "email": "Julien.Hudson33@yahoo.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/377.jpg",
-      "password": "ERv3KaCsFTtfj7j"
-    },
-    {
-      "id": "9478a6e2-d1d8-4dc7-97cd-870db4112cf8",
-      "username": "Jaunita.Schaefer",
-      "email": "Fleta.Fritsch@hotmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/879.jpg",
-      "password": "RSJo0xFy_CHdMcD"
-    },
-    {
-      "id": "0a26dd47-dd8e-499f-83fc-2a00ed9d5035",
-      "username": "Phoebe_Larson",
-      "email": "Clifton.Kessler@hotmail.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/348.jpg",
-      "password": "eQeLVRQIgC0moR2"
-    },
-    {
-      "id": "ca750933-5fd0-48a3-8099-86edc84a6a0b",
-      "username": "Keven52",
-      "email": "Neha23@yahoo.com",
-      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1089.jpg",
-      "password": "NJw1g6b1VWzLm49"
+      "username": "admin",
+      "email": "admin123@gmail.com",
+      "password": "admin@123",
+      "id": "b0pSlIe"
     }
   ],
-  "products": [
-    {
-      "id": "ead9686a-49b8-4255-a23d-2fd9c7276c7d",
-      "name": "Tuna",
-      "price": "848.59"
-    },
-    {
-      "id": "b7804bc4-27ff-4c7b-b7dd-c5edf1a1bb52",
-      "name": "Bacon",
-      "price": "872.00"
-    },
-    {
-      "id": "4bed7f2e-9df1-48ba-9d71-8b812d8b7abc",
-      "name": "Ball",
-      "price": "817.81"
-    },
-    {
-      "id": "c8695065-5a3c-4336-beda-e59cf9e653e1",
-      "name": "Bacon",
-      "price": "892.93"
-    },
-    {
-      "id": "28aab93a-9fba-46a3-8480-093536260b28",
-      "name": "Pants",
-      "price": "684.34"
-    },
-    {
-      "id": "4bbfd1c2-c5ed-435f-b034-75ae5f19f102",
-      "name": "Towels",
-      "price": "445.24"
-    },
-    {
-      "id": "06c2fd81-3ffb-4ef1-92fa-ac30f6540d09",
-      "name": "Chicken",
-      "price": "188.95"
-    },
-    {
-      "id": "e8f246bb-fe31-4a73-8eea-64cb1249f46d",
-      "name": "Hat",
-      "price": "250.01"
-    },
-    {
-      "id": "75ebde80-d794-4539-ad88-7e5e82105fc4",
-      "name": "Shirt",
-      "price": "642.71"
-    },
-    {
-      "id": "a2eecd63-18f1-4e0a-b82a-79954c40660e",
-      "name": "Chair",
-      "price": "444.90"
-    },
-    {
-      "id": "2d9e1350-bc95-4b75-ad89-f73bcd6132d4",
-      "name": "Fish",
-      "price": "262.53"
-    },
-    {
-      "id": "76c17992-5350-4208-9900-bc8eda38bac2",
-      "name": "Computer",
-      "price": "542.65"
-    },
-    {
-      "id": "473dfa5b-e009-4cfe-86c0-e1c9797d9dbf",
-      "name": "Bike",
-      "price": "903.05"
-    },
-    {
-      "id": "29994f2c-d9fe-496f-9fe5-06de99c7a1c2",
-      "name": "Mouse",
-      "price": "102.09"
-    },
-    {
-      "id": "e8867f3f-c346-4fbc-b9de-44399f7b754f",
-      "name": "Soap",
-      "price": "733.24"
-    },
-    {
-      "id": "6c32505f-77bf-4222-87fc-63de6269bc6b",
-      "name": "Fish",
-      "price": "402.54"
-    },
-    {
-      "id": "dd1b4f22-1281-4bc0-85b3-ab6edba84f29",
-      "name": "Table",
-      "price": "455.56"
-    },
-    {
-      "id": "02f1b639-36cb-4820-b303-2e766f445fbd",
-      "name": "Chicken",
-      "price": "540.69"
-    },
-    {
-      "id": "fe79295a-7939-4c88-bb8a-d99e71236738",
-      "name": "Bacon",
-      "price": "871.44"
-    },
-    {
-      "id": "8aea97de-bd73-4fe0-b36a-ae8f8f06ae22",
-      "name": "Tuna",
-      "price": "416.51"
-    },
-    {
-      "id": "ca1dff95-7ace-4987-9dc9-2e8379562840",
-      "name": "Keyboard",
-      "price": "405.06"
-    },
-    {
-      "id": "60705cc1-755e-4f13-a023-6cd017a323d5",
-      "name": "Pants",
-      "price": "830.50"
-    },
-    {
-      "id": "0a133207-c885-438b-895f-0e2e8ed54c75",
-      "name": "Mouse",
-      "price": "726.86"
-    },
-    {
-      "id": "cfe01bfe-a2b3-4181-b3b4-36ced10765a7",
-      "name": "Computer",
-      "price": "682.83"
-    },
-    {
-      "id": "fc9c1005-b259-4c5a-88cb-e7f1132e42e7",
-      "name": "Chair",
-      "price": "317.43"
-    },
-    {
-      "id": "40d04c49-1dba-4c92-9d6d-a107b9fcdf97",
-      "name": "Bike",
-      "price": "455.64"
-    },
-    {
-      "id": "947b5cfd-1eeb-454f-bfbb-92fa4e703efa",
-      "name": "Shirt",
-      "price": "462.07"
-    },
-    {
-      "id": "350351c2-a9d2-4fd6-8551-bb460568fcdd",
-      "name": "Bike",
-      "price": "498.81"
-    },
-    {
-      "id": "e176d9d9-979e-438b-a893-e06868f6e1c9",
-      "name": "Chair",
-      "price": "688.80"
-    },
-    {
-      "id": "39ea2242-e902-4e65-bbe6-18024081fa51",
-      "name": "Hat",
-      "price": "909.32"
-    },
-    {
-      "id": "b0e54ed9-a88d-4197-9a28-d564638c5c36",
-      "name": "Tuna",
-      "price": "612.55"
-    },
-    {
-      "id": "6e653443-5fda-4fca-ad6e-a6a84e1e729c",
-      "name": "Bacon",
-      "price": "919.34"
-    },
-    {
-      "id": "9de19c54-a830-4494-a0c0-e113b60cc417",
-      "name": "Cheese",
-      "price": "217.77"
-    },
-    {
-      "id": "0e3dbc65-eeee-4614-9a57-fd88b0f80177",
-      "name": "Mouse",
-      "price": "169.93"
-    },
-    {
-      "id": "ad869f8f-6340-41ec-a561-e205d62f1538",
-      "name": "Pants",
-      "price": "127.81"
-    },
-    {
-      "id": "37531212-0e35-4f6b-ad18-31674dcfa93d",
-      "name": "Cheese",
-      "price": "589.01"
-    },
-    {
-      "id": "ddf9310d-3b83-4d7d-a7a0-f262b03828fe",
-      "name": "Chair",
-      "price": "487.05"
-    },
-    {
-      "id": "8178ce61-2f15-4449-9b79-9f21c5e87ddc",
-      "name": "Chips",
-      "price": "211.91"
-    },
-    {
-      "id": "234a965f-519c-41a4-948a-c9e7d654793c",
-      "name": "Hat",
-      "price": "298.24"
-    },
-    {
-      "id": "1e201ef6-32e5-4a85-acf6-c75dc3c75ae2",
-      "name": "Soap",
-      "price": "714.89"
-    },
-    {
-      "id": "c80f1026-81e0-44c8-b5e4-92e2d5b4354c",
-      "name": "Sausages",
-      "price": "901.89"
-    },
-    {
-      "id": "20eeb6d2-eae2-4f08-af14-eef05c601349",
-      "name": "Shoes",
-      "price": "288.83"
-    },
-    {
-      "id": "3f52ddc9-0175-4a7e-bc4f-aca549095809",
-      "name": "Shirt",
-      "price": "346.55"
-    },
-    {
-      "id": "9ee6bf84-52a3-4bde-82f6-235b1324e466",
-      "name": "Car",
-      "price": "448.18"
-    },
-    {
-      "id": "310878e5-8070-4afb-a24a-2415679db85b",
-      "name": "Towels",
-      "price": "533.47"
-    },
-    {
-      "id": "3936fa4d-9f73-4ae3-9a92-b79c92e63248",
-      "name": "Pizza",
-      "price": "742.72"
-    },
-    {
-      "id": "dcc50838-80a4-4fcd-8a20-c7e3ebe8cd5f",
-      "name": "Ball",
-      "price": "159.60"
-    },
-    {
-      "id": "66d4728d-226f-422f-b3b6-97d470c1a4b9",
-      "name": "Table",
-      "price": "405.00"
-    },
-    {
-      "id": "26d5416c-e8fe-4271-9d94-a15732cd04af",
-      "name": "Table",
-      "price": "479.22"
-    },
-    {
-      "id": "62d2e14a-4816-4965-88ab-f230c6e8673f",
-      "name": "Salad",
-      "price": "446.88"
-    },
-    {
-      "id": "df7a1ab9-7667-4a15-bab4-7d25c6c1a7e1",
-      "name": "Mouse",
-      "price": "281.05"
-    },
-    {
-      "id": "89b7996a-4872-4d44-9e62-9f0b0d46050f",
-      "name": "Ball",
-      "price": "146.32"
-    },
-    {
-      "id": "4c42f1f5-3d8d-4b89-aa73-ae5dbadc9fca",
-      "name": "Salad",
-      "price": "750.83"
-    },
-    {
-      "id": "eee38531-3e23-4df0-8e96-95375857fecc",
-      "name": "Bacon",
-      "price": "552.36"
-    },
-    {
-      "id": "d941e129-6d35-45f5-afaa-b44fb6e5c1d1",
-      "name": "Mouse",
-      "price": "19.15"
-    },
-    {
-      "id": "fa2c0500-6e5f-48df-9a36-b32314baf648",
-      "name": "Bike",
-      "price": "109.41"
-    },
-    {
-      "id": "af95bbc0-bbba-41d8-8fb5-89b722376164",
-      "name": "Towels",
-      "price": "187.69"
-    },
-    {
-      "id": "1994c791-1171-4692-b7a8-7c973f20ec7a",
-      "name": "Table",
-      "price": "420.10"
-    },
-    {
-      "id": "87336b53-3e0f-4af2-9ecd-33e5099a0012",
-      "name": "Shoes",
-      "price": "410.52"
-    },
-    {
-      "id": "05b273f1-6748-4382-9c54-d6fbd3cb6156",
-      "name": "Car",
-      "price": "578.30"
-    },
-    {
-      "id": "f4877087-cdb8-42dd-8c1f-29276c5bfb4f",
-      "name": "Cheese",
-      "price": "706.91"
-    },
-    {
-      "id": "c47e1180-5de4-4f98-94ae-0599823aec98",
-      "name": "Chicken",
-      "price": "545.66"
-    },
-    {
-      "id": "2a505a80-53c2-49fa-aa4f-510d821de3af",
-      "name": "Fish",
-      "price": "291.09"
-    },
-    {
-      "id": "3c501d89-ac43-4eb2-9604-96418a1833c5",
-      "name": "Towels",
-      "price": "127.63"
-    },
-    {
-      "id": "556aa526-143d-422e-a754-16109a73a1f5",
-      "name": "Soap",
-      "price": "305.72"
-    },
-    {
-      "id": "bec3040e-27cd-4dff-a908-7475621cffc4",
-      "name": "Mouse",
-      "price": "358.48"
-    },
-    {
-      "id": "b0ad6162-ec84-4be0-8643-27024c249208",
-      "name": "Gloves",
-      "price": "507.99"
-    },
-    {
-      "id": "f8f2cea0-2506-43a2-b737-6a3005c3b4be",
-      "name": "Chicken",
-      "price": "502.90"
-    },
-    {
-      "id": "ed8436a5-7e64-486a-ac4d-fe4d240d5e75",
-      "name": "Fish",
-      "price": "471.29"
-    },
-    {
-      "id": "7afe31dc-21db-4f12-a339-865b5f85daa0",
-      "name": "Soap",
-      "price": "19.74"
-    },
-    {
-      "id": "5e8f726f-149f-40c5-b4fb-dab14f38130a",
-      "name": "Car",
-      "price": "938.66"
-    },
-    {
-      "id": "a3844401-afa9-446b-9e9e-95b88c7e44a4",
-      "name": "Tuna",
-      "price": "507.22"
-    },
-    {
-      "id": "8eaa4ad9-8dbe-46e0-b42c-d5090d6ac304",
-      "name": "Table",
-      "price": "63.24"
-    },
-    {
-      "id": "0379e32c-8dfe-4c5f-b035-72ddae3aa82f",
-      "name": "Chair",
-      "price": "913.91"
-    },
-    {
-      "id": "ba81d9fc-8310-4cef-876a-8dbcd54b5d16",
-      "name": "Fish",
-      "price": "253.63"
-    },
-    {
-      "id": "224525a3-bcaa-4587-b73c-aacdc0c32633",
-      "name": "Shirt",
-      "price": "885.83"
-    },
-    {
-      "id": "83f4b06a-5d5f-4786-9b1f-6d68e659d042",
-      "name": "Ball",
-      "price": "856.45"
-    },
-    {
-      "id": "bb75a060-eaf4-4798-b811-9874a9b2185d",
-      "name": "Gloves",
-      "price": "132.03"
-    },
-    {
-      "id": "03fdf5f1-00b9-425e-95c5-8015474e3060",
-      "name": "Bike",
-      "price": "508.72"
-    },
-    {
-      "id": "c3fa10ad-b88c-4081-8da1-710c4050ed21",
-      "name": "Chips",
-      "price": "520.34"
-    },
-    {
-      "id": "c07a8544-8cbb-4eb7-8740-77b0252f73c3",
-      "name": "Shoes",
-      "price": "887.84"
-    },
-    {
-      "id": "538a1d7f-0ee5-4726-80e5-84f3ee423e6e",
-      "name": "Gloves",
-      "price": "94.83"
-    },
-    {
-      "id": "870f9cfe-5c0e-4884-bd59-6edf07eecac8",
-      "name": "Shoes",
-      "price": "251.61"
-    },
-    {
-      "id": "74dc04ee-7825-4c7a-947c-130742411d25",
-      "name": "Keyboard",
-      "price": "945.41"
-    },
-    {
-      "id": "85ea8a21-23cc-4307-a951-01f5c23c89bc",
-      "name": "Keyboard",
-      "price": "11.61"
-    },
-    {
-      "id": "d93a6fea-f4b6-4e2b-b88a-cab0e70a03a9",
-      "name": "Bacon",
-      "price": "980.24"
-    },
-    {
-      "id": "f2335d74-daf0-4e5a-9ff2-bf71ad502558",
-      "name": "Shirt",
-      "price": "680.09"
-    },
-    {
-      "id": "e02e4b35-c06b-4b51-999d-23e4012391d3",
-      "name": "Salad",
-      "price": "366.98"
-    },
-    {
-      "id": "6acb5a6c-3c5b-4c28-bbfe-55b88ee70a69",
-      "name": "Soap",
-      "price": "954.17"
-    },
-    {
-      "id": "a65795c0-eb6e-4e7c-9260-2a858008e6e9",
-      "name": "Bacon",
-      "price": "60.26"
-    },
-    {
-      "id": "e11b541d-692b-45f1-9dbe-bfd7b6b35f17",
-      "name": "Chair",
-      "price": "107.60"
-    },
-    {
-      "id": "ae11cd33-753b-49f8-909f-754f0e20c7aa",
-      "name": "Salad",
-      "price": "265.66"
-    },
-    {
-      "id": "6a8945b6-6c81-4877-82fa-990660609d2b",
-      "name": "Keyboard",
-      "price": "956.47"
-    },
-    {
-      "id": "5a269c90-6796-47ff-9123-a48a919e1ccc",
-      "name": "Keyboard",
-      "price": "912.48"
-    },
-    {
-      "id": "99b8f661-dade-446f-a25c-10bc8cd084ec",
-      "name": "Table",
-      "price": "911.86"
-    },
-    {
-      "id": "46bc83fa-c76c-4572-b228-d40d6dcf47fe",
-      "name": "Gloves",
-      "price": "192.95"
-    },
-    {
-      "id": "1447f64d-20b5-4353-9c8c-880606f3ece7",
-      "name": "Fish",
-      "price": "927.77"
-    },
-    {
-      "id": "e306a7cf-4ae5-4a48-b8fd-c36cdf56b5e0",
-      "name": "Towels",
-      "price": "864.64"
-    },
-    {
-      "id": "99d707e3-41e9-4c5b-99a1-0a830be4d0bb",
-      "name": "Pants",
-      "price": "851.73"
-    },
-    {
-      "id": "c7af4111-1a91-42ec-8a74-69e68e482b04",
-      "name": "Computer",
-      "price": "349.43"
-    },
-    {
-      "id": "1be5e84f-53c7-45b9-aba5-80fe2df0ca66",
-      "name": "Tuna",
-      "price": "581.03"
-    },
-    {
-      "id": "89165aae-5ec1-49a0-81ca-e72f51e62061",
-      "name": "Cheese",
-      "price": "190.84"
-    },
-    {
-      "id": "ac742c13-2727-4df8-a3ea-34ad5ac71f37",
-      "name": "Mouse",
-      "price": "492.56"
-    },
-    {
-      "id": "fb8808d9-0804-4b96-b417-9b974236813b",
-      "name": "Hat",
-      "price": "274.23"
-    },
-    {
-      "id": "79268e1a-767a-46d4-a68c-84f2e27b04b0",
-      "name": "Towels",
-      "price": "838.93"
-    },
-    {
-      "id": "a1fb6449-b0fa-4891-a215-f0212adb2b7a",
-      "name": "Keyboard",
-      "price": "177.27"
-    },
-    {
-      "id": "411dd676-2599-4a17-aa75-076a8f9ae89c",
-      "name": "Mouse",
-      "price": "264.24"
-    },
-    {
-      "id": "15e8dbdb-5746-4560-9ad0-71e0ad1f5c05",
-      "name": "Gloves",
-      "price": "880.46"
-    },
-    {
-      "id": "715b7762-1c54-4f31-9c22-bd1ef7347195",
-      "name": "Towels",
-      "price": "571.41"
-    },
-    {
-      "id": "bfd7b8ec-2435-4590-9260-0d3c5ee99f59",
-      "name": "Shoes",
-      "price": "887.17"
-    },
-    {
-      "id": "5edd424b-3235-4672-a57c-64eb20165efc",
-      "name": "Tuna",
-      "price": "597.38"
-    },
-    {
-      "id": "8480c976-0081-4319-932e-dd5b45c4e77b",
-      "name": "Shoes",
-      "price": "410.73"
-    },
-    {
-      "id": "ba6bb115-9c41-4df2-9e7d-6bc9c557fbc7",
-      "name": "Soap",
-      "price": "509.04"
-    },
-    {
-      "id": "c54c9f23-a2fa-4f05-81bf-3f73b20b57e9",
-      "name": "Fish",
-      "price": "679.85"
-    },
-    {
-      "id": "89bed0ab-8b8c-4e88-b4eb-f9bcd08aa8be",
-      "name": "Cheese",
-      "price": "446.28"
-    },
-    {
-      "id": "3b8aa820-96e2-48d8-aa83-f13ba9fc064c",
-      "name": "Ball",
-      "price": "191.22"
-    },
-    {
-      "id": "eb184e00-31af-433b-8fad-d0cd61165158",
-      "name": "Fish",
-      "price": "622.95"
-    },
-    {
-      "id": "40c3e682-ab62-4ac5-a478-84f96b58bdbd",
-      "name": "Table",
-      "price": "120.96"
-    },
-    {
-      "id": "f39726f8-9196-4e96-82f7-937659a02c99",
-      "name": "Pizza",
-      "price": "546.59"
-    },
-    {
-      "id": "c22ca44f-9857-4a79-8f50-54c1d73de2dd",
-      "name": "Cheese",
-      "price": "124.67"
-    },
-    {
-      "id": "31b3647b-80f8-4ae4-a884-ad4f452ec9b2",
-      "name": "Table",
-      "price": "187.26"
-    },
-    {
-      "id": "be749daf-186c-4e97-84cc-2d508797ed80",
-      "name": "Car",
-      "price": "361.14"
-    },
-    {
-      "id": "a80771b0-01e8-431f-ac4c-d04efd1355fa",
-      "name": "Shirt",
-      "price": "88.38"
-    },
-    {
-      "id": "0d8de2f4-b462-4684-9f27-b4908e75b594",
-      "name": "Pizza",
-      "price": "560.84"
-    },
-    {
-      "id": "dbda0d93-6a8e-4ee5-9f39-02091e93dc35",
-      "name": "Towels",
-      "price": "890.07"
-    },
-    {
-      "id": "eb535c3f-67bf-48ae-b360-bf4e6ab53bb1",
-      "name": "Computer",
-      "price": "812.80"
-    },
-    {
-      "id": "734b12fc-be41-4992-9114-239a3cf8123c",
-      "name": "Towels",
-      "price": "98.64"
-    },
-    {
-      "id": "57d56a54-0e9c-4869-bc39-44e29ce73844",
-      "name": "Gloves",
-      "price": "128.07"
-    },
-    {
-      "id": "32341d52-ad03-4f5f-89e1-0e4aacecdadf",
-      "name": "Pizza",
-      "price": "73.10"
-    },
-    {
-      "id": "4b3ada91-6e7d-4ac5-99dd-ba074f07dd0d",
-      "name": "Mouse",
-      "price": "135.98"
-    },
-    {
-      "id": "b447a531-6a02-4de8-862b-eaeface09092",
-      "name": "Salad",
-      "price": "876.51"
-    },
-    {
-      "id": "2035886f-c732-459c-9d25-022f4c10a64d",
-      "name": "Mouse",
-      "price": "795.17"
-    },
-    {
-      "id": "3cf2a843-755d-4fca-86ea-494dd242ed74",
-      "name": "Sausages",
-      "price": "266.06"
-    },
-    {
-      "id": "7d270271-0b92-4474-b81f-f6ca9bc1a906",
-      "name": "Computer",
-      "price": "43.88"
-    },
-    {
-      "id": "88102ae0-f8ca-4e67-af84-3a910439c7d3",
-      "name": "Chair",
-      "price": "539.59"
-    },
-    {
-      "id": "96a8bcb6-d9ed-46c4-b86a-2f659d2fec56",
-      "name": "Chips",
-      "price": "374.14"
-    },
-    {
-      "id": "8bf1572c-16aa-44b0-b350-755f7f38fb1e",
-      "name": "Chips",
-      "price": "140.97"
-    },
-    {
-      "id": "c91894aa-924c-4727-bd2e-0e1aef50b5f2",
-      "name": "Ball",
-      "price": "134.24"
-    },
-    {
-      "id": "de7aaf46-9ba7-4357-b557-90042e39ad06",
-      "name": "Chips",
-      "price": "262.64"
-    },
-    {
-      "id": "05c3a6c4-331a-46ab-b0ea-04f33a957030",
-      "name": "Salad",
-      "price": "22.54"
-    },
-    {
-      "id": "4e67bb9a-2815-4ad1-b8d6-758c3eca1b4c",
-      "name": "Mouse",
-      "price": "249.93"
-    },
-    {
-      "id": "bbcafb5b-909a-4aa6-9cc2-bd53ba52aaa6",
-      "name": "Sausages",
-      "price": "421.57"
-    },
-    {
-      "id": "6e61f2e3-889e-41cc-995c-f198c670de20",
-      "name": "Salad",
-      "price": "265.81"
-    },
-    {
-      "id": "713d13f7-3b33-44b7-8fc8-fbafcc9d2b8b",
-      "name": "Pants",
-      "price": "135.49"
-    },
-    {
-      "id": "133f19ef-8ad6-4681-9135-db0cb4c659c2",
-      "name": "Gloves",
-      "price": "553.38"
-    },
-    {
-      "id": "f1dc976b-6e5c-4285-beb7-6a97b2a92ee9",
-      "name": "Bacon",
-      "price": "667.54"
-    },
-    {
-      "id": "f16686af-7923-42e5-a4eb-53802b1cfb55",
-      "name": "Hat",
-      "price": "819.08"
-    },
-    {
-      "id": "874b315d-f459-4b76-bcaf-68e8ef2675c4",
-      "name": "Mouse",
-      "price": "556.05"
-    },
-    {
-      "id": "4b0221f2-9b9d-4b7a-9564-66e9386ca1b5",
-      "name": "Chicken",
-      "price": "65.71"
-    },
-    {
-      "id": "937ff3f2-09c5-4574-a5ca-d1c6516e43d3",
-      "name": "Fish",
-      "price": "679.26"
-    }
-  ],
-  "cartItems" : [
-    {
-        "id" : 1,
-        "userid" : "41da7c8c-6d19-4fce-9246-b6fb273594c0",
-        "productid" : "937ff3f2-09c5-4574-a5ca-d1c6516e43d3",
-        "quantity" : 3
+  "requestedCourses": [
+    {
+      "id": "5GH3B2",
+      "name": "Yash",
+      "email": "yashgupta@gmail.com",
+      "date": "2021-06-01",
+      "title": "React",
+      "text": "This is the react course",
+      "description": "Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!",
+      "imageURL": "https://avatars.githubusercontent.com/u/6412038?s=280&v=4"
     }
   ]
 }

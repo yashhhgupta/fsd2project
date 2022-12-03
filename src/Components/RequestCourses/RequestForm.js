@@ -5,7 +5,6 @@ import Card from "../UI/Card";
 import ErrorModal from "../UI/ErrorModal";
 import Footer from "../UI/Footer";
 import Navb from "../UI/Navb";
-import { RCC } from "./RequestedCoursesContext";
 import classes from "./RequestForm.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +18,6 @@ const initialFormState = {
 };
 
 const RequestForm = () => {
-  const port = useContext(RCC);
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState();
   const navigate = useNavigate();
@@ -60,7 +58,11 @@ const RequestForm = () => {
     };
     // console.log(userData);
     setFormState(initialFormState);
-    port.requestedCourses.push(userData);
+    fetch("http://localhost:3001/requestedCourses", {
+      method: "POST",
+      body: JSON.stringify(userData),
+      headers: { "Content-Type": "application/json" },
+    });
     navigate("/Message", { state: userData });
   };
 

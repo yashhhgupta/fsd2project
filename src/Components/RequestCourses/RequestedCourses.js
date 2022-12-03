@@ -1,21 +1,35 @@
-import { useContext, useState } from "react";
+import { useState ,useEffect } from "react";
 
 import Card from "../UI/Card";
 import Footer from "../UI/Footer";
 import Navb from "../UI/Navb";
-import { RCC } from "./RequestedCoursesContext";
 
 const RequestedCourses=()=>{
     
-    const port = useContext(RCC);
     // console.log(port.requestedCourses);
+    const [reCourses, setReCourses] = useState([]);
+    useEffect(() => {
+      const fetchitems = () => {
+        fetch("http://localhost:3001/requestedCourses")
+          .then((response) => response.json())
+          .then((data) => {
+            setReCourses(data);
+            // console.log(data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        // const data = response.json();
+      };
+      fetchitems();
+    }, []);
     return (
       <>
         <Navb></Navb>
         <h1 style={{ textAlign: "center", fontWeight: "bold", padding: "1%" }}>
           Requested Courses
         </h1>
-        {port.requestedCourses.map((course) => {
+        {reCourses.map((course) => {
           return (
             <div className="p-4">
               <Card>

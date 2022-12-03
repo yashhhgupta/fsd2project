@@ -67,7 +67,7 @@ function App() {
         )}
         {!ctx.isLoggedIn && (
           <Routes>
-            <Route path="/" element={<Login />}></Route>
+            <Route path="/" element={<Login/>}></Route>
             {/* <Routes><Route path='/' element={<Signup />}></Route> */}
             <Route path="/Signup" element={<Signup />}></Route>
           </Routes>

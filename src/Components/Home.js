@@ -1,8 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useState ,useEffect} from "react";
 
 import Card from "./UI/Card";
 import CourseCards from "./Courses/CourseCards";
-import { CoursesContext } from "./Courses/Courses";
 import Footer from "./UI/Footer";
 import Navb from "./UI/Navb";
 import SimpleCarousel from "./UI/SimpleCarousel";
@@ -10,11 +9,26 @@ import classes from "./RequestCourses/RequestForm.module.css";
 import { useLocation } from "react-router-dom";
 
 const Home = (props) => {
-  const port = useContext(CoursesContext);
   // console.log(port.courses);
   const location = useLocation();
-  const [courses, setCourses] = useState(port.courses);
-
+  
+  
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    const fetchitems = () => {
+      fetch("http://localhost:3001/courses")
+        .then((response) => response.json())
+        .then((data) => {
+          setCourses(data);
+          // console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // const data = response.json();
+    };
+    fetchitems();
+  }, []);
   const registerCourseHandler = (title) => {
     setCourses(
       courses.map((course) => {

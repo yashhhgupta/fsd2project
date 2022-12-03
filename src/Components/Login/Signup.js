@@ -5,6 +5,8 @@ import Card from "../UI/Card";
 import ErrorModal from "../UI/ErrorModal";
 import classes from "./Signup.module.css";
 import {useNavigate} from "react-router-dom";
+import { v4 as uuid } from "uuid";
+
 
 const Signup = () => {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -70,12 +72,18 @@ const Signup = () => {
      });
      return;
     } 
+    // const id = uuid();
       const userData = {
         username: enteredUsername,
         email: enteredEmail,
         password: enteredPassword,
       };
-      console.log(userData);
+      // console.log(userData);
+      fetch("http://localhost:3001/users",{
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {'Content-Type': "application/json"},
+      })
       setEnteredUsername("");
       setEnteredEmail("");
       setEnteredPassword("");

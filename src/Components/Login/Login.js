@@ -69,15 +69,29 @@ const Login = () => {
   const validatePasswordHandler = () => {
     dispatchPassword({ type: "INPUT_BLUR" });
   };
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    authCtx.onLogin(emailState.value, passwordState.value);
+    const user = await fetch("http://localhost:3001/users?email=" + emailState.value)
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data[0].id);
+        if(data[0].password === passwordState.value){
+        authCtx.onLogin(data[0].id);
+        }
+        else{
+          alert("Wrong Password");
+        }
+      })
+      .catch((err) => {
+        alert("No email found");
+      });
+    // authCtx.onLogin(emailState.value, passwordState.value); 
     // console.log(emailState.value, passwordState.value);
     // console.log("yes");
+    
   };
   return (
     <>
-  
     <Card className={classes.input}>
       <div className={classes.header} >
         <h1 style={{ color: "beige" }}>

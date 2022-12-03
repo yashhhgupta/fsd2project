@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
+  userId :null,
   onLogout: () => {},
-  onLogin: (email, password) => {
+  onLogin: (id) => {
   },
 });
 
@@ -29,11 +30,11 @@ export const AuthContextProvider = (props) => {
     navigate("/");
   };
 
-  const loginHandler = (email, password) => {
-    localStorage.setItem("isLoggedIn", "1");
+  const loginHandler = (id) => {
+    localStorage.setItem("userId", id);
     setIsLoggedIn(true);
-    // console.log(email, password);
-    if (email === "admin123@gmail.com" && password === "admin123") {
+    // console.log(id);
+    if (id == "b0pSlIe") {
       setIsLoggedInAd(true);
     } 
   };

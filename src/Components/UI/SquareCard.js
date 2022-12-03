@@ -9,9 +9,9 @@ function SquareCard(props) {
   const buttonHandler = () => {
     props.check(props.title);
   }
-  console.log(props);
+  // console.log(props);
   return (
-    <Link to={`/course/${props.id}`}>
+    
     <Card
       style={{
         width: "18rem",
@@ -22,10 +22,13 @@ function SquareCard(props) {
         boxShadow: "0px 0 15px rgba(0,0,0,0.6)",
       }}
     >
+      <Link to={`/course/${props.id}`}>
+
       <Card.Img
         variant="top"
         src={props.imageURL}
-      />
+        />
+        </Link>
       <Card.Body>
         <Card.Title style={{ color: "beige" }}>{props.title}</Card.Title>
         <Star />
@@ -41,7 +44,6 @@ function SquareCard(props) {
         )}
       </Card.Body>
     </Card>
-    </Link>
   );
 }
 
