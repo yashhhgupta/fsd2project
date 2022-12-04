@@ -128,6 +128,12 @@
       "email": "admin123@gmail.com",
       "password": "admin@123",
       "id": "b0pSlIe"
+    },
+    {
+      "username": "Saathvika",
+      "email": "saathvika.b20@iiits.in",
+      "password": "Saathu1234",
+      "id": "MaZcYUK"
     }
   ],
   "requestedCourses": [
@@ -140,6 +146,23 @@
       "text": "This is the react course",
       "description": "Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!",
       "imageURL": "https://avatars.githubusercontent.com/u/6412038?s=280&v=4"
+    }
+  ],
+  "feedbacks": [
+    {
+      "name": "Saathvika",
+      "course": "basketball",
+      "review": "Useful Course"
+    },
+    {
+      "name": "Yash",
+      "course": "basketball",
+      "review": "Good"
+    },
+    {
+      "name": "Saathvika",
+      "course": "chess",
+      "review": "Useful Course"
     }
   ]
 }
