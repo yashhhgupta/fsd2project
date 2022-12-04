@@ -3,21 +3,16 @@ import { useParams } from "react-router-dom";
 
 const Feedback=(props)=>{
     // const {course} = useParams();
-    const course = props;
+    const id = props;
     const [reCourses, setReCourses] = useState([]);
-    // console.log(course.course)
+    console.log(id.course)
     useEffect(() => {
       const fetchitems = () => {
-        fetch("http://localhost:3001/feedbacks?course="+course.course)
-        // fetch("http://localhost:3001/feedbacks?course=chess")
+        fetch("http://localhost:3001/feedbacks?courseid="+id.course)
+        // fetch("http://localhost:3001/feedbacks?courseid=chess")
           .then((response) => response.json())
-          .then((feedbacks) => {
-            setReCourses(feedbacks);
-            // console.log(data);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+          .then((data) => {setReCourses(data);console.log(data);})
+          .catch((err) => {console.log(err);});
         //   const data = response.json();
       };
       fetchitems();

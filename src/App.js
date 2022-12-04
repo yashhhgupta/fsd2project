@@ -16,6 +16,7 @@ import Signup from "./Components/Login/Signup";
 import SingleCourse from "./Components/Courses/SingleCourse";
 import Feedback from "./Components/Feedback/Feedback";
 import GetFeedback from "./Components/Feedback/GetFeedback";
+import Feedbackconfirmation from "./Components/UI/Feedbackconfirmation";
 
 // import Aboutus from "./Components/Aboutus";
 
@@ -72,6 +73,7 @@ function App() {
                   />
                 </>
               )}
+              <Route path = "/Feedbackconfirmation" element={<Feedbackconfirmation/>}/>
               <Route path="*" element={<Error404 />} />
             </Routes>
           </>

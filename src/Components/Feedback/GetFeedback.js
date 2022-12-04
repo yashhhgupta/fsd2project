@@ -4,6 +4,7 @@ import ErrorModal from "../UI/ErrorModal";
 import classes from "../RequestCourses/RequestForm.module.css";
 import { useNavigate } from "react-router-dom";
 import Card from "../UI/Card"
+import Feedbackconfirmation from "../UI/Feedbackconfirmation";
 const initialFormState = {
   name: "",
   course: "",
@@ -54,7 +55,7 @@ const GetFeedback = () => {
     .catch((err) => {
         console.log(err);
       });
-    navigate("/home", { state: userData });
+    navigate("/Feedbackconfirmation", { state: userData });
   };
 
   return (
@@ -79,14 +80,14 @@ const GetFeedback = () => {
               onChange={handleFormChange}
               style = {{borderRadius:'2%',margin:"0.5%",marginLeft:"2.7%",width:"21%"}}
             />
-            <label style={{fontWeight:"bold",marginLeft:"20%"}}>Course :</label>
+            {/* <label style={{fontWeight:"bold",marginLeft:"20%"}}>Course :</label>
             <input
               type="text"
               id="course"
               value={formState.course}
               onChange={handleFormChange}
               style = {{borderRadius:'2%',margin:"0.5%",marginLeft:"2%" ,width:"21.5%"}}
-            />
+            /> */}
             <br></br>
             <label style={{fontWeight:"bold",marginLeft:"7%"}}>Feedback : </label>
             <input

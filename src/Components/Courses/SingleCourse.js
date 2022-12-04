@@ -37,7 +37,7 @@ const SingleCourse = (props) => {
     const handleShow = () => {
         setShow(!show);
     }
-    // console.log(courseToShow);
+    console.log(courseToShow);
     return (
       <>
         <Navb />
@@ -71,7 +71,7 @@ const SingleCourse = (props) => {
             
           </div>
           <div className = {classes.reviews}>
-            <Feedback />
+            <Feedback course = {courseToShow.id}/>
             <GetFeedback />
           </div>
         </div>
