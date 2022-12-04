@@ -1,19 +1,20 @@
 {
   "courses": [
     {
-      "id": "cycle",
-      "title": "Cycle",
-      "text": "Learn to wheelie a bicycle",
-      "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
-      "creator": "Ross",
-      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
-      "contentList": [
-        "Step 1: Learn the posture",
-        "Step 2: Learn when to paddle",
-        "Step 3: Avoid cross chaining the gears"
-      ]
-    },
-    {
+          "id": "cycle",
+          "title": "Cycle",
+          "text": "Learn to wheelie a bicycle",
+          "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
+          "creator": "Ross",
+          "progress": 0,
+          "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
+          "contentList": [
+            "Step 1: Learn the posture",
+            "Step 2: Learn when to paddle",
+            "Step 3: Avoid cross chaining the gears"
+          ]
+        },
+        {
       "id": "chess",
       "title": "Chess",
       "text": "The Complete Beginner's Guide to Chess",
@@ -91,6 +92,13 @@
         "Step 4: Learn how to place the fingers on the guitar with numbering",
         "Step 5: Pick up songs by ear and learn to play it"
       ]
+    },
+    {
+      "title": "Lawn Tennis",
+      "text": "Be like Roger federer",
+      "description": "Learn to play lawn tennis in 5 days",
+      "imageURL": "https://www.shutterstock.com/image-vector/vector-illustration-kids-playing-tennis-260nw-1042791307.jpg",
+      "id": "qBuuxvZ"
     }
   ],
   "users": [
@@ -123,22 +131,19 @@
       "username": "yash",
       "email": "yashyashyash@gupta.com",
       "password": "12345678",
-      "id": "I3eA2xC",
-      "mycourses": []
+      "id": "I3eA2xC"
     },
     {
       "username": "admin",
       "email": "admin123@gmail.com",
       "password": "admin@123",
-      "id": "b0pSlIe",
-      "mycourses": []
+      "id": "b0pSlIe"
     },
     {
       "username": "Saathvika",
       "email": "saathvika.b20@iiits.in",
       "password": "Saathu1234",
-      "id": "MaZcYUK",
-      "mycourses": []
+      "id": "MaZcYUK"
     },
     {
       "username": "pranjay",
@@ -146,32 +151,13 @@
       "password": "smallpp1",
       "id": "rxZ061w",
       "phone": "+918279994612",
-      "address": "Flat No.203 Mayur Elite Rambagh Agra UP",
-      "mycourses": [
-        {
-          "id": "chess",
-          "title": "Chess",
-          "text": "The Complete Beginner's Guide to Chess",
-          "description": "This course will take you from absolute chess beginner to a good intermediate level chess player",
-          "creator": "Ross",
-          "imageURL": "https://content.instructables.com/ORIG/FPI/EUBU/FD80BVW8/FPIEUBUFD80BVW8.jpg?auto=webp&fit=bounds&frame=1",
-          "contentList": [
-            "Step 1: Setting up the chess board and moving the pieces",
-            "Step 2: Discover the special rules",
-            "Step 3: Studying the basic strategies",
-            "Step 4: Learn how to check the oppenent",
-            "Step 5: The three step checkmate strategy"
-          ],
-          "progress": 0
-        }
-      ]
+      "address": "Flat No.203 Mayur Elite Rambagh Agra UP"
     },
     {
       "username": "as",
       "email": "as@gmail.com",
       "password": "12345678",
-      "id": "mQhsE-a",
-      "mycourses": []
+      "id": "mQhsE-a"
     }
   ],
   "requestedCourses": [
@@ -184,15 +170,6 @@
       "text": "This is the react course",
       "description": "Dive in and learn React.js from scratch! Learn Reactjs, Hooks, Redux, React Routing, Animations, Next.js and way more!",
       "imageURL": "https://avatars.githubusercontent.com/u/6412038?s=280&v=4"
-    },
-    {
-      "name": "Pranjay Gupta",
-      "email": "pranjay@gmail.com",
-      "title": "Lawn Tennis",
-      "text": "Be like Roger federer",
-      "imageURL": "https://media.istockphoto.com/id/824841522/es/vector/tenistas-masculinos-y-femeninos.jpg?s=612x612&w=0&k=20&c=E2B_ruA964fW_Qns6hEkESFJ5ZYn8VYxz2U1fZnNa-g=",
-      "description": "Learn to play Lawn Tennis",
-      "id": "UDL3MBg"
     }
   ],
   "feedbacks": [
@@ -219,12 +196,6 @@
       "course": "chess",
       "review": "nais",
       "id": "QFqV6s2"
-    },
-    {
-      "name": "pranjay",
-      "course": "Chess",
-      "review": "Need improvement",
-      "id": "eG4Cyml"
     }
   ]
 }

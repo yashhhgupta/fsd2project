@@ -7,6 +7,9 @@ const CourseCards = (props) => {
   const checkHandler = (title) => {
     props.setc(title);
   }
+  const deleteHandler = (title) => {
+    props.setd(title);
+  }
   return (
     <div className="row m-2">
       {props.items.map((course) => {
@@ -30,6 +33,8 @@ const CourseCards = (props) => {
                 progress={course.progress}
                 id = {course.id}
                 check={checkHandler}
+                delete={deleteHandler}
+
               />
             </div>
           </OverlayTrigger>

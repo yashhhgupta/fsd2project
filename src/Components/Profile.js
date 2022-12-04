@@ -17,15 +17,18 @@ import Guitar from "./assets/Guitar.jpg";
 import Navb from "./UI/Navb";
 import React from "react";
 import styles from "./Profile.module.css";
-import {useState,useEffect } from "react";
+import {useState,useEffect,useContext } from "react";
 import Button from "react-bootstrap/Button";
 import classes from "./UI/SquareCard.module.css";
+import AuthContext from "../store/auth-context.js";
 
 
 // import Chess from "./assets/Chess.jpg";
 
 
 export default function Profile() {
+  const ctx = useContext(AuthContext);
+
   const [userD,setUserD]=useState({})
   const [myCourses, setMyCourses] = useState(undefined);
   const [haveMyCourses, setHaveMyCourses] = useState(false);
@@ -202,13 +205,16 @@ export default function Profile() {
                       </MDBCol>
                     </MDBRow>
                   </MDBCardBody>
-                      <Button className={classes.Button} onClick={submitHandler}>Submit</Button>
+                  <Button className={classes.Button} onClick={submitHandler}>
+                    Submit
+                  </Button>
                 </MDBCard>
               </div>
             </MDBCol>
           </MDBRow>
         </MDBContainer>
       </section>
+          {!ctx.isLoggedInAd && (
       <div className={styles.heading}>
         <Card>
           <h1
@@ -221,16 +227,21 @@ export default function Profile() {
             Badges Earned
           </h1>
         </Card>
-        <div className={styles.badges}>
-          <div className={styles.innerbadge}>
-            <Badge name={Guitar} title="Plectrum Guitar for beginners"></Badge>
+        
+          <div className={styles.badges}>
+            <div className={styles.innerbadge}>
+              <Badge
+                name={Guitar}
+                title="Plectrum Guitar for beginners"
+              ></Badge>
+            </div>
+            <div className={styles.innerbadge}>
+              <Badge name={BasketBall} title="Basics of Basket Ball"></Badge>
+            </div>
+            {/* <Badge name={Chess} title="Basics of Chess" ></Badge> */}
           </div>
-          <div className={styles.innerbadge}>
-            <Badge name={BasketBall} title="Basics of Basket Ball"></Badge>
-          </div>
-          {/* <Badge name={Chess} title="Basics of Chess" ></Badge> */}
-        </div>
       </div>
+        )}
       <div style={{ padding: "1%" }}>
         <Card>
           <h1
@@ -244,7 +255,7 @@ export default function Profile() {
           </h1>
         </Card>
         {haveMyCourses && <CourseCards items={myCourses}></CourseCards>}
-      {!haveMyCourses && (
+        {!haveMyCourses && (
           <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
             No Registered Courses{" "}
           </h3>
