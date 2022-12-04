@@ -16,41 +16,40 @@ const Home = (props) => {
   const [courses, setCourses] = useState([]);
   const [myCourses, setMyCourses] = useState(undefined);
   const [haveMyCourses, setHaveMyCourses] = useState(false);
-  const [courseData, setCourseData] = useState({});
-  
-  const registerCourseHandler =  (id) => {
-     fetch("http://localhost:3001/courses?id=" + id)
+  const [update ,setUpdate]= useState(false);
+  let courseDataVar =  {};
+  const registerCourseHandler =  async (id) => {
+     await fetch("http://localhost:3001/courses?id=" + id)
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
-        setCourseData(data[0]);
-        console.log(courseData);
+        courseDataVar = data[0] 
       })
       .catch((err) => {
         console.log(err);
       });
-    console.log(courseData);
-    setCourseData({
-      ...courseData,
-      progress: 0
-    });
-    console.log(courseData);
   const uid = localStorage.getItem("userId");
-  fetch("http://localhost:3001/users/" + uid)
-    .then((response) => response.json())
-    .then((data) => {
-      const usercourses = data.mycourses;
-      usercourses.push(courseData);
-      fetch("http://localhost:3001/users/" + uid, {
-        method: "PATCH",
-        body: JSON.stringify({ mycourses: usercourses }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
+  // if (courseDataVar !== undefined) {
+    await fetch("http://localhost:3001/users/" + uid)
+      .then((response) => response.json())
+      .then((data) => {
+        const usercourses = data.mycourses;
+        usercourses.push({...courseDataVar,
+          progress: 0,});
+        fetch("http://localhost:3001/users/" + uid, {
+          method: "PATCH",
+          body: JSON.stringify({ mycourses: usercourses }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        });
+      });
+  // }
+    if(update){
+      setUpdate(false);
     }
-    );
-  
+    else
+    setUpdate(true);
   };
   useEffect(() => {
     const fetchitems = () => {
@@ -66,7 +65,7 @@ const Home = (props) => {
       // const data = response.json();
     };
     fetchitems();
-  }, []);
+  }, [update]);
   useEffect(() => {
     const fetchitems = () => {
       const uid = localStorage.getItem('userId');
@@ -85,9 +84,18 @@ const Home = (props) => {
       // const data = response.json();
     };
     fetchitems();
-  }, []);
+  }, [update]);
   
-  
+  const deleteCourseHandler = (id) => {
+    fetch(("http://localhost:3001/courses/"+id), {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+    });
+    if (update) {
+      setUpdate(false);
+    } else setUpdate(true);
+    // console.log(id);
+  }
   return (
     <>
       <Navb></Navb>
@@ -138,6 +146,7 @@ const Home = (props) => {
             <CourseCards
               items={courses}
               setc={registerCourseHandler}
+              setd={deleteCourseHandler}
             ></CourseCards>
           )}
           {courses.length === 0 && (

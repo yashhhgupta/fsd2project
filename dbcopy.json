@@ -1,20 +1,20 @@
 {
   "courses": [
     {
-      "id": "cycle",
-      "title": "Cycle",
-      "text": "Learn to wheelie a bicycle",
-      "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
-      "creator": "Ross",
-      "progress": 0,
-      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
-      "contentList": [
-        "Step 1: Learn the posture",
-        "Step 2: Learn when to paddle",
-        "Step 3: Avoid cross chaining the gears"
-      ]
-    },
-    {
+          "id": "cycle",
+          "title": "Cycle",
+          "text": "Learn to wheelie a bicycle",
+          "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
+          "creator": "Ross",
+          "progress": 0,
+          "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
+          "contentList": [
+            "Step 1: Learn the posture",
+            "Step 2: Learn when to paddle",
+            "Step 3: Avoid cross chaining the gears"
+          ]
+        },
+        {
       "id": "chess",
       "title": "Chess",
       "text": "The Complete Beginner's Guide to Chess",
@@ -121,39 +121,6 @@
             "Step 2: Learn when to paddle",
             "Step 3: Avoid cross chaining the gears"
           ]
-        },
-        {
-          "id": "chess",
-          "title": "Chess",
-          "text": "The Complete Beginner's Guide to Chess",
-          "description": "This course will take you from absolute chess beginner to a good intermediate level chess player",
-          "creator": "Ross",
-          "imageURL": "https://content.instructables.com/ORIG/FPI/EUBU/FD80BVW8/FPIEUBUFD80BVW8.jpg?auto=webp&fit=bounds&frame=1",
-          "contentList": [
-            "Step 1: Setting up the chess board and moving the pieces",
-            "Step 2: Discover the special rules",
-            "Step 3: Studying the basic strategies",
-            "Step 4: Learn how to check the oppenent",
-            "Step 5: The three step checkmate strategy"
-          ],
-          "progress": 0
-        },
-        {
-          "id": "rubix",
-          "title": "Rubik's Cube",
-          "text": "Master the Rubik's cube - Learn to solve it AND Get faster",
-          "description": "Learn a beginner friendly method to solve a cube, and advanced techniques to get faster. Taught by a UK semi-finalist",
-          "creator": "Ross",
-          "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-sNGlXGfEerbW8D09xP6155A0fo4QD7MKZg&usqp=CAU",
-          "contentList": [
-            "Step 1: Learn to make a White Cross",
-            "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
-            "Step 3: Learn to arrange the top layers of the side of the cube",
-            "Step 4: Learn to arrang the second layer of the side of the cube",
-            "Step 5: Learn to arrange the third layer of the sides of the cube",
-            "Step 6: Learn to arrange the base of the cube"
-          ],
-          "progress": 0
         }
       ],
       "name": "Yash Gupta",
