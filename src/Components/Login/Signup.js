@@ -77,6 +77,7 @@ const Signup = () => {
         username: enteredUsername,
         email: enteredEmail,
         password: enteredPassword,
+        myCourses: [],
       };
       // console.log(userData);
       fetch("http://localhost:3001/users",{
