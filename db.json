@@ -199,30 +199,30 @@
     {
       "id": "djhsshj",
       "name": "Saathvika",
-      "course": "basketball",
+      "courseid": "basketball",
       "review": "Useful Course"
     },
     {
       "id": "djhss",
       "name": "Yash",
-      "course": "basketball",
+      "courseid": "basketball",
       "review": "Good"
     },
     {
       "id": "dj",
       "name": "Saathvika",
-      "course": "chess",
+      "courseid": "chess",
       "review": "Useful Course"
     },
     {
       "name": "yash",
-      "course": "chess",
+      "courseid": "chess",
       "review": "nais",
       "id": "QFqV6s2"
     },
     {
       "name": "pranjay",
-      "course": "Chess",
+      "courseid": "Chess",
       "review": "Need improvement",
       "id": "eG4Cyml"
     }
