@@ -14,6 +14,8 @@ import RequestForm from "./Components/RequestCourses/RequestForm";
 import RequestedCourses from "./Components/RequestCourses/RequestedCourses";
 import Signup from "./Components/Login/Signup";
 import SingleCourse from "./Components/Courses/SingleCourse";
+import Feedback from "./Components/Feedback/Feedback";
+import GetFeedback from "./Components/Feedback/GetFeedback";
 
 // import Aboutus from "./Components/Aboutus";
 
@@ -61,6 +63,15 @@ function App() {
                 path="/Course/:id"
                 element={<SingleCourse course={course} />}
               />
+              <Route path="/GetFeedback" element={<GetFeedback />} />
+              {ctx.isLoggedInAd && (
+                <>
+                  <Route
+                    path="/Feedback"
+                    element={<Feedback />}
+                  />
+                </>
+              )}
               <Route path="*" element={<Error404 />} />
             </Routes>
           </>

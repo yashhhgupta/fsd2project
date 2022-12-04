@@ -4,7 +4,8 @@ import React from 'react';
 import bootstrap from 'bootstrap';
 import classes from "./SingleCourse.module.css";
 import { useState,useContext,useEffect } from 'react';
-
+import Feedback from "../Feedback/Feedback.js";
+import GetFeedback from "../Feedback/GetFeedback";
 import { useParams } from "react-router-dom";
 // import { Player } from 'video-react';
 
@@ -58,6 +59,9 @@ const SingleCourse = (props) => {
             <button onClick={handleShow} className={classes.button}>
               Show Content
             </button>
+            <button onClick="" className={classes.button}>
+              Take Quiz
+            </button>
             {show && (
               <ul>
                 {courseToShow.contentList.map((content) => {
@@ -65,7 +69,10 @@ const SingleCourse = (props) => {
                 })}
               </ul>
             )}
+            
           </div>
+          <Feedback />
+        <GetFeedback course = "basketball" name = "Saathvika"/>
         </div>
         <Footer />
       </>
