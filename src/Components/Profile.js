@@ -12,27 +12,82 @@ import Badge from "./UI/Badge.js";
 import BasketBall from "./assets/BasketBall.jpg";
 import Card from "./UI/Card";
 import CourseCards from "./Courses/CourseCards";
-import { CoursesContext } from "./Courses/Courses";
 import Footer from "./UI/Footer";
 import Guitar from "./assets/Guitar.jpg";
 import Navb from "./UI/Navb";
-import ProfilePic from "./assets/ProfilePic.jpg";
 import React from "react";
 import styles from "./Profile.module.css";
-import { useContext,useState } from "react";
+import {useState,useEffect } from "react";
+import Button from "react-bootstrap/Button";
+import classes from "./UI/SquareCard.module.css";
+
 
 // import Chess from "./assets/Chess.jpg";
 
 
 export default function Profile() {
-  const [name,setName] =useState("John Doe");
-  const [email,setEmail] =useState("johndoe@gmail.com");
-  const [phone,setPhone] =useState("1234567890");
-  const [address,setAddress] =useState("Sri city");
-    const port = useContext(CoursesContext);
-    let myCourses = port.courses.filter((course) => {
-      return course.progress !== undefined;
+  const [userD,setUserD]=useState({})
+  const [myCourses, setMyCourses] = useState(undefined);
+  const [haveMyCourses, setHaveMyCourses] = useState(false);
+
+
+  useEffect(() => {
+    const uid = localStorage.getItem("userId");
+    const fetchitems = () => {
+      fetch("http://localhost:3001/users/"+uid)
+        .then((response) => response.json())
+        .then((data) => {
+          setUserD({
+            username : data.username,
+            email : data.email,
+            phone : data.phone,
+            address : data.address,
+          }
+          );
+          // console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // const data = response.json();
+    };
+    fetchitems();
+  }, []);
+  useEffect(() => {
+    const fetchitems = () => {
+      const uid = localStorage.getItem("userId");
+      // console.log(uid);
+      fetch("http://localhost:3001/users?id=" + uid)
+        .then((response) => response.json())
+        .then((data) => {
+          setMyCourses(data[0].mycourses);
+          if (data[0].mycourses.length > 0) {
+            setHaveMyCourses(true);
+          }
+
+          // console.log(myCourses.length);
+          // console.log(data[0].mycourses);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // const data = response.json();
+    };
+    fetchitems();
+  }, []);
+
+  const submitHandler=()=>{
+    const uid = localStorage.getItem("userId");
+    fetch(("http://localhost:3001/users/"+uid), {
+      method: "PATCH",
+      body: JSON.stringify(userD),
+      headers: { "Content-Type": "application/json" },
     });
+  }
+    // const port = useContext(CoursesContext);
+    // let myCourses = port.courses.filter((course) => {
+    //   return course.progress !== undefined;
+    // });
   return (
     <>
       <Navb></Navb>
@@ -53,8 +108,8 @@ export default function Profile() {
                       style={{ width: "150px", backgroundColor: "white" }}
                       fluid
                     />
-                    <p className="text-muted mb-1">{name}</p>
-                    <p className="text-muted mb-4">{address}</p>
+                    <p className="text-muted mb-1">{userD.username}</p>
+                    <p className="text-muted mb-4">{userD.address}</p>
                   </MDBCardBody>
                 </MDBCard>
               </div>
@@ -73,8 +128,13 @@ export default function Profile() {
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
                           <input
-                            value={name}
-                            onChange={(event) => setName(event.target.value)}
+                            value={userD.username}
+                            onChange={(event) =>
+                              setUserD({
+                                ...userD,
+                                username: event.target.value,
+                              })
+                            }
                           ></input>
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
@@ -88,8 +148,13 @@ export default function Profile() {
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
                           <input
-                            value={email}
-                            onChange={(event) => setEmail(event.target.value)}
+                            value={userD.email}
+                            onChange={(event) =>
+                              setUserD({
+                                ...userD,
+                                email: event.target.value,
+                              })
+                            }
                           ></input>
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
@@ -103,8 +168,13 @@ export default function Profile() {
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
                           <input
-                            value={phone}
-                            onChange={(event) => setPhone(event.target.value)}
+                            value={userD.phone}
+                            onChange={(event) =>
+                              setUserD({
+                                ...userD,
+                                phone: event.target.value,
+                              })
+                            }
                           ></input>
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
@@ -118,8 +188,13 @@ export default function Profile() {
                       <MDBCol sm="9">
                         <MDBCardText className="text-muted">
                           <input
-                            value={address}
-                            onChange={(event) => setPhone(event.target.value)}
+                            value={userD.address}
+                            onChange={(event) =>
+                              setUserD({
+                                ...userD,
+                                address: event.target.value,
+                              })
+                            }
                           ></input>
 
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
@@ -127,6 +202,7 @@ export default function Profile() {
                       </MDBCol>
                     </MDBRow>
                   </MDBCardBody>
+                      <Button className={classes.Button} onClick={submitHandler}>Submit</Button>
                 </MDBCard>
               </div>
             </MDBCol>
@@ -167,8 +243,8 @@ export default function Profile() {
             My Courses
           </h1>
         </Card>
-        {myCourses.length > 0 && <CourseCards items={myCourses}></CourseCards>}
-        {myCourses.length === 0 && (
+        {haveMyCourses && <CourseCards items={myCourses}></CourseCards>}
+      {!haveMyCourses && (
           <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
             No Registered Courses{" "}
           </h3>

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function SquareCard(props) {
   const buttonHandler = () => {
-    props.check(props.title);
+    props.check(props.id);
   }
   // console.log(props);
   return (
@@ -23,6 +23,7 @@ function SquareCard(props) {
       }}
     >
       <Link to={`/course/${props.id}`}>
+        {/* {console.log(props.id)} */}
 
       <Card.Img
         variant="top"

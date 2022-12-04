@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Card from "../UI/Card";
-import {CoursesContext} from "./Courses"
 import ErrorModal from "../UI/ErrorModal";
 import Footer from "../UI/Footer";
 import Navb from "../UI/Navb";
@@ -17,7 +16,6 @@ const initialFormState = {
 };
 let CourseData={};
 const AddCourse = () => {
-  const port = useContext(CoursesContext);
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState();
   const navigate = useNavigate();
@@ -73,7 +71,11 @@ const AddCourse = () => {
   };
 
   const SubmitHandler = () => {
-    port.courses.push(CourseData);
+    fetch("http://localhost:3001/courses", {
+      method: "POST",
+      body: JSON.stringify(CourseData),
+      headers: { "Content-Type": "application/json" },
+    });
     navigate("/");
   }
   return (

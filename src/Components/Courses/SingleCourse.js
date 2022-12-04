@@ -3,26 +3,39 @@ import Navb from "../UI/Navb";
 import React from 'react';
 import bootstrap from 'bootstrap';
 import classes from "./SingleCourse.module.css";
-import { useState,useContext } from 'react';
+import { useState,useContext,useEffect } from 'react';
 
 import { useParams } from "react-router-dom";
-import { CoursesContext } from "./Courses";
 // import { Player } from 'video-react';
 
 const SingleCourse = (props) => {
-    const port = useContext(CoursesContext);
     const {id}= useParams();
-    const courseToShow = port.courses.filter((course)=>{
-      return course.id === id;
-    })
-    console.log("course to show", courseToShow);
-  console.log(id);
-    const {image , title , creator,description, contentList} = props.course;
+    // console.log(id);
+    const [courseToShow,setCourseToShow] = useState([]); 
+    useEffect(() => {
+      const fetchitems = () => {
+        console.log(id);
+        fetch("http://localhost:3001/courses/" + id)
+          .then((response) => response.json())
+          .then((data) => {
+            setCourseToShow(data);
+            // console.log(data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        // const data = response.json();
+      };
+      fetchitems();
+    }, []);
+  //   console.log("course to show", courseToShow);
+  // console.log(id);
+    // const {image , title , creator,description, contentList} = props.course;
     const [show , setShow] = useState(false);
     const handleShow = () => {
         setShow(!show);
     }
-    console.log(port.courses);
+    // console.log(courseToShow);
     return (
       <>
         <Navb />
@@ -30,13 +43,13 @@ const SingleCourse = (props) => {
         <div className={classes.main}>
           <div className={classes.course}>
             <div className={classes.course__image}>
-              <img src={courseToShow[0].imageURL} alt="course" height="200" />
+              <img src={courseToShow.imageURL} alt="course" height="200" />
             </div>
             <div className={classes.description}>
-              <p className={classes.title}>{courseToShow[0].title}</p>
-              <p className={classes.desc}>{courseToShow[0].description}</p>
+              <p className={classes.title}>{courseToShow.title}</p>
+              <p className={classes.desc}>{courseToShow.description}</p>
               <p className={classes.creator}>
-                Content Creator : {courseToShow[0].creator}
+                Content Creator : {courseToShow.creator}
               </p>
             </div>
           </div>
@@ -47,7 +60,7 @@ const SingleCourse = (props) => {
             </button>
             {show && (
               <ul>
-                {courseToShow[0].contentList.map((content) => {
+                {courseToShow.contentList.map((content) => {
                   return <li className={classes.steps}>{content}</li>;
                 })}
               </ul>
