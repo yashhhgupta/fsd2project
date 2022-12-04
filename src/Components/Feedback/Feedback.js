@@ -1,5 +1,4 @@
 import { useState ,useEffect } from "react";
-import classes from "./Feedback.module.css";
 
 const Feedback=()=>{
     const [reCourses, setReCourses] = useState([]);
@@ -19,16 +18,16 @@ const Feedback=()=>{
     }, []);
     return (
       <>
-      <div className={classes.box}>
-        <h1 style={{ paddingLeft:"2%", paddingTop:"3%" }}>
-          Feedback
-        </h1>
+      <div>
+        <h4 style={{ paddingTop:"3%", fontWeight:"bold" }}>
+          Reviews
+        </h4>
         <div>
             {reCourses.map((feedback) => {
             return (
                         <div>
-                        <h6>{feedback.name} : {feedback.review}</h6>
-                        <h5></h5>
+                        <h5 style = {{fontWeight:"bold",paddingLeft:"0.9%"}}>{feedback.name} :</h5>
+                        <h6 style = {{paddingLeft:"1.4%",}}>{feedback.review}</h6>
                         </div>
             );
             })}

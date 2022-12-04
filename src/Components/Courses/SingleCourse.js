@@ -7,6 +7,7 @@ import { useState,useContext,useEffect } from 'react';
 import Feedback from "../Feedback/Feedback.js";
 import GetFeedback from "../Feedback/GetFeedback";
 import { useParams } from "react-router-dom";
+
 // import { Player } from 'video-react';
 
 const SingleCourse = (props) => {
@@ -59,9 +60,7 @@ const SingleCourse = (props) => {
             <button onClick={handleShow} className={classes.button}>
               Show Content
             </button>
-            <button onClick="" className={classes.button}>
-              Take Quiz
-            </button>
+
             {show && (
               <ul>
                 {courseToShow.contentList.map((content) => {
@@ -71,8 +70,10 @@ const SingleCourse = (props) => {
             )}
             
           </div>
-          <Feedback />
-        <GetFeedback course = "basketball" name = "Saathvika"/>
+          <div className = {classes.reviews}>
+            <Feedback />
+            <GetFeedback />
+          </div>
         </div>
         <Footer />
       </>

@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import ErrorModal from "../UI/ErrorModal";
 import classes from "../RequestCourses/RequestForm.module.css";
@@ -47,15 +46,15 @@ const GetFeedback = () => {
     };
     console.log(userData)
     setFormState(initialFormState);
-    // fetch("http://localhost:3001/feedbacks", {
-    //   method: "POST",
-    //   body: JSON.stringify(userData),
-    //   headers: { "Content-Type": "application/json" },
-    // })
-    // .catch((err) => {
-    //     console.log(err);
-    //   });
-    navigate("/Message", { state: userData });
+    fetch("http://localhost:3001/feedbacks", {
+      method: "POST",
+      body: JSON.stringify(userData),
+      headers: { "Content-Type": "application/json" },
+    })
+    .catch((err) => {
+        console.log(err);
+      });
+    navigate("/home", { state: userData });
   };
 
   return (
@@ -68,32 +67,38 @@ const GetFeedback = () => {
             buttontxt={error.buttontxt}
           ></ErrorModal>
         )}
+        <h4 style={{fontWeight:"bold"}}>Give your feedback</h4>
           <form onSubmit={handleFormSubmit}>
-            <label>Feedback</label>
             <div>
+            <label style={{fontWeight:"bold"}}>Name : </label>
             <input
               type="text"
               id="name"
               value={formState.name}
               onChange={handleFormChange}
+              style = {{borderRadius:'2%',margin:"0.5%",marginLeft:"2.7%"}}
             />
-            <label>Email</label>
+            <br></br>
+            <label style={{fontWeight:"bold"}}>Course :</label>
             <input
               type="text"
               id="course"
               value={formState.course}
               onChange={handleFormChange}
+              style = {{borderRadius:'2%',margin:"0.5%",marginLeft:"2%"}}
             />
-            <label>Course Title</label>
+            <br></br>
+            <label style={{fontWeight:"bold"}}>Feedback : </label>
             <input
               type="text"
               id="review"
               value={formState.review}
               onChange={handleFormChange}
+              style = {{borderRadius:'2%',margin:"0.5%",marginLeft:"0.5%"}}
             />
             </div>
             <div class="text-center">
-              <Button variant="info" type="submit" className={classes.Button}>
+              <Button variant="info" type="submit" className={classes.Button} style = {{float:"left",marginLeft:"10% "}}>
                 Submit
               </Button>
             </div>
