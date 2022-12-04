@@ -66,7 +66,7 @@ const Home = (props) => {
       // const data = response.json();
     };
     fetchitems();
-  }, [registerCourseHandler]);
+  }, []);
   useEffect(() => {
     const fetchitems = () => {
       const uid = localStorage.getItem('userId');
