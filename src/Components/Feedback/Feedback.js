@@ -1,18 +1,24 @@
 import { useState ,useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const Feedback=()=>{
+const Feedback=(props)=>{
+    // const {course} = useParams();
+    const course = props;
     const [reCourses, setReCourses] = useState([]);
+    // console.log(course.course)
     useEffect(() => {
       const fetchitems = () => {
-        fetch("http://localhost:3001/feedbacks")
+        fetch("http://localhost:3001/feedbacks?course="+course.course)
+        // fetch("http://localhost:3001/feedbacks?course=chess")
           .then((response) => response.json())
-          .then((data) => {
-            setReCourses(data);
+          .then((feedbacks) => {
+            setReCourses(feedbacks);
             // console.log(data);
           })
           .catch((err) => {
             console.log(err);
           });
+        //   const data = response.json();
       };
       fetchitems();
     }, []);
@@ -22,7 +28,7 @@ const Feedback=()=>{
         <h4 style={{ paddingTop:"3%", fontWeight:"bold" }}>
           Reviews
         </h4>
-        <div>
+        <div style={{height:"150px",overflowY:"scroll", border: "1px solid black",marginRight:"2%"}}>
             {reCourses.map((feedback) => {
             return (
                         <div>
