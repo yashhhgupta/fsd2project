@@ -11,6 +11,12 @@
 
 .course{
   display:flex;
+  background-color: #d29a55;
+  margin-right: 60px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+  padding: 20px;
 }
 
 .button {
@@ -25,6 +31,8 @@
 .course__image{
   height:300px;
   width:300px;
+  margin-left: 20%;
+  margin-top: 2.5%;
 }
 
 .steps {

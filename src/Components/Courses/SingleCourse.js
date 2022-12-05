@@ -44,15 +44,15 @@ const SingleCourse = (props) => {
 
         <div className={classes.main}>
           <div className={classes.course}>
-            <div className={classes.course__image}>
-              <img src={courseToShow.imageURL} alt="course" height="200" />
-            </div>
             <div className={classes.description}>
               <p className={classes.title}>{courseToShow.title}</p>
               <p className={classes.desc}>{courseToShow.description}</p>
               <p className={classes.creator}>
                 Content Creator : {courseToShow.creator}
               </p>
+            </div>
+            <div className={classes.course__image}>
+              <img src={courseToShow.imageURL} alt="course" height="200" />
             </div>
           </div>
           <div className={classes.course__content}>
