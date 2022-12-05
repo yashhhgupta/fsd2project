@@ -9,7 +9,7 @@ const Feedback=(props)=>{
     useEffect(() => {
       const fetchitems = () => {
         
-        fetch("http://localhost:3001/feedbacks?courseid="+props.course)
+        fetch("http://localhost:3001/feedbacks")
         // fetch("http://localhost:3001/feedbacks?courseid=chess")
           .then((response) => response.json())
           .then((data) => {setReCourses(data);
