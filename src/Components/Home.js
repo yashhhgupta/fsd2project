@@ -85,8 +85,29 @@ const Home = (props) => {
     };
     fetchitems();
   }, [update]);
+
+  const restCourses = courses.filter((course) =>{
+    if(myCourses){
+      return !myCourses.some((myCourse) => myCourse.id === course.id);
+    }
+    else{
+      return true;
+    }
+
+  })
   
   const deleteCourseHandler = (id) => {
+    fetch("http://localhost:3001/users?q="+id)
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log(data);
+        let temp = data;
+        if(temp.length>0) {
+          alert("Admin can't delete course if a user is registered for it");
+          return;
+        }
+      })
+
     fetch(("http://localhost:3001/courses/"+id), {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
@@ -144,7 +165,7 @@ const Home = (props) => {
           </Card>
           {courses.length > 0 && (
             <CourseCards
-              items={courses}
+              items={restCourses}
               setc={registerCourseHandler}
               setd={deleteCourseHandler}
             ></CourseCards>

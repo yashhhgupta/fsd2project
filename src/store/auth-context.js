@@ -16,9 +16,8 @@ export const AuthContextProvider = (props) => {
 
 
   useEffect(() => {
-    const storedUserLoggedInInformation = localStorage.getItem("isLoggedIn");
-
-    if (storedUserLoggedInInformation === "1") {
+    if (localStorage.hasOwnProperty("userId")) {
+      // setuserId(localStorage.getItem("userid"));
       setIsLoggedIn(true);
     }
   }, []);
@@ -38,6 +37,7 @@ export const AuthContextProvider = (props) => {
       setIsLoggedInAd(true);
     } 
   };
+
 
   return (
     <AuthContext.Provider

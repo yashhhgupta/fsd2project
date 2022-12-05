@@ -30,14 +30,14 @@ const SingleCourse = (props) => {
       };
       fetchitems();
     }, []);
-  //   console.log("course to show", courseToShow);
+    // console.log("course to show", courseToShow);
   // console.log(id);
     // const {image , title , creator,description, contentList} = props.course;
     const [show , setShow] = useState(false);
     const handleShow = () => {
         setShow(!show);
     }
-    console.log(courseToShow);
+    // console.log(courseToShow);
     return (
       <>
         <Navb />

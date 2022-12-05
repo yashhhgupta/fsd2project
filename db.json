@@ -1,19 +1,6 @@
 {
   "courses": [
     {
-      "id": "cycle",
-      "title": "Cycle",
-      "text": "Learn to wheelie a bicycle",
-      "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
-      "creator": "Ross",
-      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
-      "contentList": [
-        "Step 1: Learn the posture",
-        "Step 2: Learn when to paddle",
-        "Step 3: Avoid cross chaining the gears"
-      ]
-    },
-    {
       "id": "chess",
       "title": "Chess",
       "text": "The Complete Beginner's Guide to Chess",
@@ -45,22 +32,6 @@
       ]
     },
     {
-      "id": "basketball",
-      "title": "Basketball",
-      "text": "Basketball Dribbling and Ball Handling. Workout",
-      "description": "Improve Your Dribble, Ball Handling, Basketball Skills. Basketball Dribbling and Ball Handling Fundamentals, Drills, and Workouts",
-      "creator": "Ross",
-      "imageURL": "https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkyNDUyMzI2MDA5NjExNTc3/duke-basketball-logo.jpg",
-      "contentList": [
-        "Step 1: Learn to Dribble the ball",
-        "Step 2: Learn to have movements with ball",
-        "Step 3: Learn to Shoot the ball",
-        "Step 4: Learn Lay up shots",
-        "Step 5: Learn to fake pass a ball",
-        "Step 6: Tips for better movement with the ball"
-      ]
-    },
-    {
       "id": "poker",
       "title": "Poker",
       "text": "Poker: The Complete Mastery Guide",
@@ -75,6 +46,22 @@
         "Step 5: Turn",
         "Step 6: River",
         "Step 7: Tips and tricks"
+      ]
+    },
+    {
+      "id": "basketball",
+      "title": "Basketball",
+      "text": "Basketball Dribbling and Ball Handling. Workout",
+      "description": "Improve Your Dribble, Ball Handling, Basketball Skills. Basketball Dribbling and Ball Handling Fundamentals, Drills, and Workouts",
+      "creator": "Ross",
+      "imageURL": "https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkyNDUyMzI2MDA5NjExNTc3/duke-basketball-logo.jpg",
+      "contentList": [
+        "Step 1: Learn to Dribble the ball",
+        "Step 2: Learn to have movements with ball",
+        "Step 3: Learn to Shoot the ball",
+        "Step 4: Learn Lay up shots",
+        "Step 5: Learn to fake pass a ball",
+        "Step 6: Tips for better movement with the ball"
       ]
     },
     {
@@ -113,6 +100,23 @@
             "Step 2: Learn when to paddle",
             "Step 3: Avoid cross chaining the gears"
           ]
+        },
+        {
+          "id": "rubix",
+          "title": "Rubik's Cube",
+          "text": "Master the Rubik's cube - Learn to solve it AND Get faster",
+          "description": "Learn a beginner friendly method to solve a cube, and advanced techniques to get faster. Taught by a UK semi-finalist",
+          "creator": "Ross",
+          "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-sNGlXGfEerbW8D09xP6155A0fo4QD7MKZg&usqp=CAU",
+          "contentList": [
+            "Step 1: Learn to make a White Cross",
+            "Step 2: Learn to arrange the colors on the middle lane of side of the cubes",
+            "Step 3: Learn to arrange the top layers of the side of the cube",
+            "Step 4: Learn to arrang the second layer of the side of the cube",
+            "Step 5: Learn to arrange the third layer of the sides of the cube",
+            "Step 6: Learn to arrange the base of the cube"
+          ],
+          "progress": 0
         }
       ],
       "name": "Yash Gupta",
