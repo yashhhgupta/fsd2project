@@ -18,12 +18,20 @@ export const AuthContextProvider = (props) => {
   useEffect(() => {
     if (localStorage.hasOwnProperty("userId")) {
       // setuserId(localStorage.getItem("userid"));
+      let id = localStorage.getItem("userid");
+      // console.log(id);
+      if (id == "b0pSlIe") {
+        setIsLoggedInAd(true);
+      }
+      else{
       setIsLoggedIn(true);
+      }
+
     }
   }, []);
 
   const logoutHandler = () => {
-    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("userId");
     setIsLoggedIn(false);
     setIsLoggedInAd(false);
     navigate("/");

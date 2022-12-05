@@ -1,6 +1,19 @@
 {
   "courses": [
     {
+          "id": "cycle",
+          "title": "Cycle",
+          "text": "Learn to wheelie a bicycle",
+          "description": "Easy to follow step by step guide to learn how to wheelie a bicycle",
+          "creator": "Ross",
+          "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvZtIu6ZRxEi6O4mX6aY2AkkYdZmIjiZSeIQ&usqp=CAU",
+          "contentList": [
+            "Step 1: Learn the posture",
+            "Step 2: Learn when to paddle",
+            "Step 3: Avoid cross chaining the gears"
+          ]
+        },
+        {
       "id": "chess",
       "title": "Chess",
       "text": "The Complete Beginner's Guide to Chess",
@@ -32,6 +45,22 @@
       ]
     },
     {
+      "id": "basketball",
+      "title": "Basketball",
+      "text": "Basketball Dribbling and Ball Handling. Workout",
+      "description": "Improve Your Dribble, Ball Handling, Basketball Skills. Basketball Dribbling and Ball Handling Fundamentals, Drills, and Workouts",
+      "creator": "Ross",
+      "imageURL": "https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkyNDUyMzI2MDA5NjExNTc3/duke-basketball-logo.jpg",
+      "contentList": [
+        "Step 1: Learn to Dribble the ball",
+        "Step 2: Learn to have movements with ball",
+        "Step 3: Learn to Shoot the ball",
+        "Step 4: Learn Lay up shots",
+        "Step 5: Learn to fake pass a ball",
+        "Step 6: Tips for better movement with the ball"
+      ]
+    },
+    {
       "id": "poker",
       "title": "Poker",
       "text": "Poker: The Complete Mastery Guide",
@@ -49,22 +78,6 @@
       ]
     },
     {
-      "id": "basketball",
-      "title": "Basketball",
-      "text": "Basketball Dribbling and Ball Handling. Workout",
-      "description": "Improve Your Dribble, Ball Handling, Basketball Skills. Basketball Dribbling and Ball Handling Fundamentals, Drills, and Workouts",
-      "creator": "Ross",
-      "imageURL": "https://www.si.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkyNDUyMzI2MDA5NjExNTc3/duke-basketball-logo.jpg",
-      "contentList": [
-        "Step 1: Learn to Dribble the ball",
-        "Step 2: Learn to have movements with ball",
-        "Step 3: Learn to Shoot the ball",
-        "Step 4: Learn Lay up shots",
-        "Step 5: Learn to fake pass a ball",
-        "Step 6: Tips for better movement with the ball"
-      ]
-    },
-    {
       "id": "guitar",
       "title": "Guitar",
       "text": "Ultimate Beginner Guitar Masterclass",
@@ -78,6 +91,13 @@
         "Step 4: Learn how to place the fingers on the guitar with numbering",
         "Step 5: Pick up songs by ear and learn to play it"
       ]
+    },
+    {
+      "title": "Lawn Tennis",
+      "text": "Be like Roger federer",
+      "description": "Learn to play lawn tennis in 5 days",
+      "imageURL": "https://www.shutterstock.com/image-vector/vector-illustration-kids-playing-tennis-260nw-1042791307.jpg",
+      "id": "qBuuxvZ"
     }
   ],
   "users": [
