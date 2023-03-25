@@ -111,6 +111,9 @@ export default function Profile() {
                       style={{ width: "150px", backgroundColor: "white" }}
                       fluid
                     />
+                    <form >
+                      <input type="file" className="text-muted mb-1"></input>
+                    </form>
                     <p className="text-muted mb-1">{userD.username}</p>
                     <p className="text-muted mb-4">{userD.address}</p>
                   </MDBCardBody>
@@ -214,20 +217,20 @@ export default function Profile() {
           </MDBRow>
         </MDBContainer>
       </section>
-          {!ctx.isLoggedInAd && (
-      <div className={styles.heading}>
-        <Card>
-          <h1
-            style={{
-              textAlign: "center",
-              fontWeight: "bold",
-              padding: "1%",
-            }}
-          >
-            Badges Earned
-          </h1>
-        </Card>
-        
+      {!ctx.isLoggedInAd && (
+        <div className={styles.heading}>
+          <Card>
+            <h1
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                padding: "1%",
+              }}
+            >
+              Badges Earned
+            </h1>
+          </Card>
+
           <div className={styles.badges}>
             <div className={styles.innerbadge}>
               <Badge
@@ -240,27 +243,30 @@ export default function Profile() {
             </div>
             {/* <Badge name={Chess} title="Basics of Chess" ></Badge> */}
           </div>
-      </div>
-        )}
-      <div style={{ padding: "1%" }}>
-        <Card>
-          <h1
-            style={{
-              textAlign: "center",
-              fontWeight: "bold",
-              padding: "1%",
-            }}
-          >
-            My Courses
-          </h1>
-        </Card>
-        {haveMyCourses && <CourseCards items={myCourses}></CourseCards>}
-        {!haveMyCourses && (
-          <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
-            No Registered Courses{" "}
-          </h3>
-        )}
-      </div>
+        </div>
+      )}
+      {!ctx.isLoggedInAd && (
+        <div style={{ padding: "1%" }}>
+          <Card>
+            <h1
+              style={{
+                textAlign: "center",
+                fontWeight: "bold",
+                padding: "1%",
+              }}
+            >
+              My Courses
+            </h1>
+          </Card>
+          {haveMyCourses && <CourseCards items={myCourses}></CourseCards>}
+          {!haveMyCourses && (
+            <h3 style={{ color: "black", textAlign: "center", padding: "1%" }}>
+              No Registered Courses{" "}
+            </h3>
+          )}
+        </div>
+      )}
+
       <Footer></Footer>
     </>
   );
