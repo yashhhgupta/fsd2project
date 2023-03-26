@@ -12,6 +12,7 @@ exports.getUsers = (req, res, next) => {
       console.log(err);
     });
 };
+
 exports.saveUsers = (req, res, next) => {
     const user = new User({
         username: req.body.username,
@@ -30,4 +31,14 @@ exports.saveUsers = (req, res, next) => {
         .catch((err) => {
         console.log(err);
         });
+}
+
+exports.getSpecificUsers = (req, res, next) => {
+  const email = req.params.email;
+  User.findOne({ email: email }).then((user) => {
+    res.status(200).json({
+      message: "User fetched successfully",
+      users: user,
+    });
+  });
 }

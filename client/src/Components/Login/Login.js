@@ -71,12 +71,12 @@ const Login = () => {
   };
   const submitHandler = async (event) => {
     event.preventDefault();
-    const user = await fetch("http://localhost:3001/users?email=" + emailState.value)
+    const user = await fetch("http://localhost:3001/users/" + emailState.value)
       .then((response) => response.json())
       .then((data) => {
-        
-        if(data.users[0].password === passwordState.value){
-        authCtx.onLogin(data.users[0].id);
+        console.log(data.users);
+        if(data.users.password === passwordState.value){
+        authCtx.onLogin(data.users.id);
         }
         else{
           alert("Wrong Password");

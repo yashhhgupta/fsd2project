@@ -6,6 +6,8 @@ const feedbackController = require('../controller/feedbackController');
 
 router.get('/users', userController.getUsers)
 
+router.get('/users/:email', userController.getSpecificUsers)
+
 router.post('/users', userController.saveUsers)
 
 router.get('/course/:id', courseController.getCourse)
