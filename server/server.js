@@ -15,7 +15,7 @@ mongoose
     "mongodb+srv://yashhh:puX0Tz2jM65KjvnZ@cluster0.0ktinyn.mongodb.net/?retryWrites=true&w=majority"
   )
   .then((result) => {
-    app.listen(3000);
+    app.listen(3001);
     console.log("connected");
   })
   .catch((err) => {
