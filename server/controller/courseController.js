@@ -1,6 +1,16 @@
 const Course = require('../model/Courses');
 
-exports.getCourse = (req, res, next) => {
+exports.getCourse= (req, res, next) => {
+    Course.find()
+        .then((courses) => {
+            res.status(200).json({
+                message: 'Courses fetched successfully',
+                courses: courses,
+            });
+        })
+}
+
+exports.getSpecificCourse = (req, res, next) => {
     const id = req.params.id;
     Course.findById(id)
         .then((course) => {
