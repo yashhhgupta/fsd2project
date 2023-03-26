@@ -56,7 +56,7 @@ const Home = (props) => {
       fetch("http://localhost:3001/courses")
         .then((response) => response.json())
         .then((data) => {
-          setCourses(data);
+          setCourses(data.courses);
           // console.log(data);
         })
         .catch((err) => {

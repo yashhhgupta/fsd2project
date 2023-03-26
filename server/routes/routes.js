@@ -10,9 +10,10 @@ router.get('/users/:email', userController.getSpecificUsers)
 
 router.post('/users', userController.saveUsers)
 
-router.get('/course/:id', courseController.getCourse)
+router.get('/courses/:id', courseController.getSpecificCourse)
+router.get('/courses', courseController.getCourse)
 
-router.post('/course', courseController.saveCourse)
+router.post('/courses', courseController.saveCourse)
 
 router.get('/requestedcourse/:id', requestedCoursesController.getRequestedCourses)
 
