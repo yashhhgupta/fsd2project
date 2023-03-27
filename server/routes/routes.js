@@ -9,6 +9,7 @@ router.get('/users', userController.getUsers)
 router.get('/users/:email', userController.getSpecificUsers)
 
 router.post('/users', userController.saveUsers)
+router.post('/getUser', userController.getUserbyId)
 
 router.get('/courses/:id', courseController.getSpecificCourse)
 router.get('/courses', courseController.getCourse)
@@ -19,8 +20,8 @@ router.get('/requestedcourse/:id', requestedCoursesController.getRequestedCourse
 
 router.post('/requestedcourse', requestedCoursesController.saveRequestedCourses)
 
-router.get('/feedback/:id', feedbackController.getFeedback)
+router.get('/feedbacks', feedbackController.getFeedback)
 
-router.post('/feedback', feedbackController.saveFeedback)
+router.post('/feedbacks', feedbackController.saveFeedback)
 
 module.exports = router

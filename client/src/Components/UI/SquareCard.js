@@ -10,7 +10,7 @@ import AuthContext from "../../store/auth-context";
 
 function SquareCard(props) {
   const ctx = useContext(AuthContext);
-
+  // console.log(props.id);
   const buttonHandler = () => {
     props.check(props.id);
   }

@@ -70,11 +70,12 @@ const Home = (props) => {
     const fetchitems = () => {
       const uid = localStorage.getItem('userId');
       // console.log(uid);
-      fetch("http://localhost:3001/users?id="+uid)
+      fetch("http://localhost:3001/getUser",{method:"POST",body:JSON.stringify({id:uid}),headers:{"Content-type":"application/json; charset=UTF-8"}})
         .then((response) => response.json())
         .then((data) => {
-          setMyCourses(data[0].mycourses);
-          if (data[0].mycourses.length > 0) {
+          // console.log(data.users);
+          setMyCourses(data.users.mycourses);
+          if (data.users.mycourses.length > 0) {
             setHaveMyCourses(true);
           }
         })

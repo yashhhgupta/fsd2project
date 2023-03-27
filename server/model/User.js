@@ -15,7 +15,9 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  courses: [Schema.Types.ObjectId],
+  mycourses: {
+    type :Array,
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

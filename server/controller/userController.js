@@ -18,7 +18,7 @@ exports.saveUsers = (req, res, next) => {
         username: req.body.username,
         email: req.body.email,
         password: req.body.password,
-        courses: req.body.courses,
+        mycourses: req.body.mycourses,
     });
     user
         .save()
@@ -36,6 +36,17 @@ exports.saveUsers = (req, res, next) => {
 exports.getSpecificUsers = (req, res, next) => {
   const email = req.params.email;
   User.findOne({ email: email }).then((user) => {
+    res.status(200).json({
+      message: "User fetched successfully",
+      users: user,
+    });
+  });
+}
+
+exports.getUserbyId =(req, res, next) => {
+  const id = req.body.id;
+  // console.log(id);
+  User.findById(id).then((user) => {
     res.status(200).json({
       message: "User fetched successfully",
       users: user,

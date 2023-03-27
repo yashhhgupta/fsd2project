@@ -5,15 +5,15 @@ const Feedback=(props)=>{
     // const {course} = useParams();
     // const id = props;
     const [reCourses, setReCourses] = useState([]);
-    console.log(props.course)
+    // console.log(props.course)
     useEffect(() => {
       const fetchitems = () => {
         
         fetch("http://localhost:3001/feedbacks")
         // fetch("http://localhost:3001/feedbacks?courseid=chess")
           .then((response) => response.json())
-          .then((data) => {setReCourses(data);
-            console.log(data);
+          .then((data) => {setReCourses(data.feedback);
+            // console.log(data);
           })
           .catch((err) => {console.log(err);});
         //   const data = response.json();

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useCallback} from "react";
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = React.createContext({
@@ -18,7 +18,7 @@ export const AuthContextProvider = (props) => {
   useEffect(() => {
     if (localStorage.hasOwnProperty("userId")) {
       // setuserId(localStorage.getItem("userid"));
-      let id = localStorage.getItem("userid");
+      let id = localStorage.getItem("userId");
       // console.log(id);
       if (id == "b0pSlIe") {
         setIsLoggedInAd(true);
@@ -37,14 +37,14 @@ export const AuthContextProvider = (props) => {
     navigate("/");
   };
 
-  const loginHandler = (id) => {
+  const loginHandler = useCallback((id) => {
     localStorage.setItem("userId", id);
     setIsLoggedIn(true);
-    // console.log(id);
+    console.log(id);  
     if (id == "b0pSlIe") {
       setIsLoggedInAd(true);
     } 
-  };
+  },[]);
 
 
   return (

@@ -20,7 +20,7 @@ const SingleCourse = (props) => {
         fetch("http://localhost:3001/courses/" + id)
           .then((response) => response.json())
           .then((data) => {
-            setCourseToShow(data);
+            setCourseToShow(data.course);
             // console.log(data);
           })
           .catch((err) => {

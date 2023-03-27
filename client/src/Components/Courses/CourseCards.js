@@ -31,7 +31,7 @@ const CourseCards = (props) => {
                 text={course.text}
                 imageURL={course.imageURL}
                 progress={course.progress}
-                id = {course.id}
+                id = {course._id}
                 check={checkHandler}
                 delete={deleteHandler}
 
