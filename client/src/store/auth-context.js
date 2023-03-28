@@ -20,11 +20,10 @@ export const AuthContextProvider = (props) => {
       // setuserId(localStorage.getItem("userid"));
       let id = localStorage.getItem("userId");
       // console.log(id);
-      if (id == "b0pSlIe") {
+      if (id == "64208825286947c9d154b570") {
         setIsLoggedInAd(true);
-      }
-      else{
-      setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(true);
       }
 
     }

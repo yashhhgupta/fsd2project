@@ -1,13 +1,14 @@
 const RequestedCourses = require("../model/RequestedCourses");
 
 exports.getRequestedCourses = (req, res, next) => {
-  const id = req.params.id;
-  RequestedCourses.findById(id).then((requestedcourse) => {
-    res.status(200).json({
-      message: "Course fetched successfully",
-      requestedcourse: requestedcourse,
+  //contains all the courses
+  RequestedCourses.find()
+    .then((requestedcourses) => {
+      res.status(200).json(requestedcourses);
+    })
+    .catch((err) => {
+      console.log(err);
     });
-  });
 };
 
 exports.saveRequestedCourses = (req, res, next) => {

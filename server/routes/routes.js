@@ -10,15 +10,15 @@ router.get('/users/:email', userController.getSpecificUsers)
 
 router.post('/users', userController.saveUsers)
 router.post('/getUser', userController.getUserbyId)
+router.post('/addCourse', userController.addCourse)
 
 router.get('/courses/:id', courseController.getSpecificCourse)
 router.get('/courses', courseController.getCourse)
-
 router.post('/courses', courseController.saveCourse)
 
-router.get('/requestedcourse/:id', requestedCoursesController.getRequestedCourses)
+router.get('/requestedCourses', requestedCoursesController.getRequestedCourses)
 
-router.post('/requestedcourse', requestedCoursesController.saveRequestedCourses)
+router.post('/requestedCourses', requestedCoursesController.saveRequestedCourses)
 
 router.get('/feedbacks', feedbackController.getFeedback)
 
