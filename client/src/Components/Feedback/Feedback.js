@@ -1,22 +1,21 @@
 import { useState ,useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const Feedback=(props)=>{
-    // const {course} = useParams();
-    // const id = props;
+const Feedback=({courseid})=>{
+    // const {} = props;
     const [reCourses, setReCourses] = useState([]);
-    // console.log(props.course)
+    // console.log("courseid: ",courseid)
     useEffect(() => {
       const fetchitems = () => {
         
-        fetch("http://localhost:3001/feedbacks")
-        // fetch("http://localhost:3001/feedbacks?courseid=chess")
+        // fetch("http://localhost:3001/feedbacks")
+        fetch(`http://localhost:3001/feedbacks?courseid=${courseid}`)
           .then((response) => response.json())
           .then((data) => {setReCourses(data.feedback);
-            // console.log(data);
+            console.log(data);
           })
           .catch((err) => {console.log(err);});
-        //   const data = response.json();
+          // const data = response.json();
       };
       fetchitems();
     }, []);

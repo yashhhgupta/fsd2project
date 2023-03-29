@@ -29,6 +29,8 @@ import AuthContext from "../store/auth-context.js";
 export default function Profile() {
   const ctx = useContext(AuthContext);
 
+  const [profile,setProfile] = useState()
+  const [imgData, setImgData] = useState(null);
   const [userD,setUserD]=useState({})
   const [myCourses, setMyCourses] = useState(undefined);
   const [haveMyCourses, setHaveMyCourses] = useState(false);
@@ -105,14 +107,22 @@ export default function Profile() {
                 >
                   <MDBCardBody className="text-center">
                     <MDBCardImage
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                      src={imgData}
                       alt="avatar"
                       className="rounded-circle"
                       style={{ width: "150px", backgroundColor: "white" }}
                       fluid
                     />
                     <form >
-                      <input type="file" className="text-muted mb-1"></input>
+                      <input type="file" onChange={(e)=>{
+                        setProfile(e.target.files[0])
+                        // setPicture(e.target.files[0]);
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        setImgData(reader.result);
+      });
+      reader.readAsDataURL(e.target.files[0]);
+                        }} className="text-muted mb-1"></input>
                     </form>
                     <p className="text-muted mb-1">{userD.username}</p>
                     <p className="text-muted mb-4">{userD.address}</p>

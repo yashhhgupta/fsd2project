@@ -7,11 +7,10 @@ import Card from "../UI/Card"
 import Feedbackconfirmation from "../UI/Feedbackconfirmation";
 const initialFormState = {
   name: "",
-  course: "",
-  review: "",
+  review: ""
 };
 
-const GetFeedback = () => {
+const GetFeedback = ({id}) => {
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState();
   const navigate = useNavigate();
@@ -30,7 +29,6 @@ const GetFeedback = () => {
     e.preventDefault();
     if (
         formState.name.trim().length === 0,
-        formState.course.trim().length === 0,
       formState.review.trim().length === 0 
     ) {
       setError({
@@ -42,7 +40,7 @@ const GetFeedback = () => {
     }
     const userData = {
       name: formState.name,
-      course: formState.course,
+      courseid: id,
       review: formState.review,
     };
     console.log(userData)

@@ -16,7 +16,7 @@ const SingleCourse = (props) => {
     const [courseToShow,setCourseToShow] = useState([]); 
     useEffect(() => {
       const fetchitems = () => {
-        console.log(id);
+        // console.log(id);
         fetch("http://localhost:3001/courses/" + id)
           .then((response) => response.json())
           .then((data) => {
@@ -71,8 +71,8 @@ const SingleCourse = (props) => {
             
           </div>
           <div className = {classes.reviews}>
-            <Feedback course = {courseToShow.id}/>
-            <GetFeedback />
+            <Feedback courseid={id}/>
+            <GetFeedback id={id}/>
           </div>
         </div>
         <Footer />
