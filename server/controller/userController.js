@@ -53,3 +53,19 @@ exports.getUserbyId =(req, res, next) => {
     });
   });
 }
+
+exports.addCourse = (req, res, next) => {
+  const {id, course} = req.body;
+
+  User.findById(id).then((user) => {
+    if(user){
+      user.mycourses.push(course);
+      user.save().then((result) => {
+        res.status(200).json({
+          message: "Course added successfully",
+          user: result,
+        });
+      });
+    }
+  });
+}

@@ -38,7 +38,7 @@ function App() {
       "Step 6: Learn to arrange the base of the cube",
     ],
   }
-  // console.log(ctx.isLoggedInAd);
+  console.log(ctx.isLoggedInAd);
   return (
     <>
       <main>

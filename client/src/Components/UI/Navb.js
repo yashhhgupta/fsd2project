@@ -80,6 +80,7 @@ function Navb() {
             >
               Logout
             </Button>
+            {!ctx.isLoggedInAd && (
             <Link
               to="/Profile"
               style={{ textDecoration: "none" }}
@@ -93,7 +94,7 @@ function Navb() {
                 className="d-inline-block align-top"
               />
               {"      "}
-            </Link>
+            </Link>)}
           </Nav>
         </Container>
       </Navbar>

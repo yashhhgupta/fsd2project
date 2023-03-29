@@ -19,38 +19,23 @@ const Home = (props) => {
   const [update ,setUpdate]= useState(false);
   let courseDataVar =  {};
   const registerCourseHandler =  async (id) => {
-     await fetch("http://localhost:3001/courses?id=" + id)
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data);
-        courseDataVar = data[0] 
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  const uid = localStorage.getItem("userId");
-  // if (courseDataVar !== undefined) {
-    await fetch("http://localhost:3001/users/" + uid)
-      .then((response) => response.json())
-      .then((data) => {
-        const usercourses = data.mycourses;
-        usercourses.push({...courseDataVar,
-          progress: 0,});
-        fetch("http://localhost:3001/users/" + uid, {
-          method: "PATCH",
-          body: JSON.stringify({ mycourses: usercourses }),
+      //change the above code to async await
+      const res = await fetch("http://localhost:3001/courses/" + id);
+      const data = await res.json();
+      courseDataVar = {...data.course,progress:0}
+      const uid = localStorage.getItem("userId");
+        const response = await fetch("http://localhost:3001/addCourse", {
+          method: "POST",
+          body: JSON.stringify({ id: uid, course: courseDataVar }),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
         });
-      });
+        setUpdate(!update);
+
   // }
-    if(update){
-      setUpdate(false);
-    }
-    else
-    setUpdate(true);
   };
+  // console.log(update);
   useEffect(() => {
     const fetchitems = () => {
       fetch("http://localhost:3001/courses")
@@ -89,14 +74,13 @@ const Home = (props) => {
 
   const restCourses = courses.filter((course) =>{
     if(myCourses){
-      return !myCourses.some((myCourse) => myCourse.id === course.id);
+      return !myCourses.some((myCourse) => myCourse._id === course._id);
     }
     else{
       return true;
     }
 
   })
-  
   const deleteCourseHandler = (id) => {
     fetch("http://localhost:3001/users?q="+id)
       .then((response) => response.json())
@@ -118,6 +102,8 @@ const Home = (props) => {
     } else setUpdate(true);
     // console.log(id);
   }
+  // console.log("my courses",myCourses);
+  // console.log("rest courses",courses);
   return (
     <>
       <Navb></Navb>
