@@ -1,19 +1,26 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const mongoose = require('mongoose');
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+const mongoose = require("mongoose");
 const app = express();
-const routes = require('./routes/routes');
-const morgan = require('morgan');
-const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger/swagger.json');
-
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.json())
+const routes = require("./routes/routes");
+const morgan = require("morgan");
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger/swagger.json");
+const fs = require("fs");
+const path = require("path");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(cors());
-app.use(routes)
-app.use(morgan('dev'));
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+const accessLogStream = fs.createWriteStream(
+  path.join(__dirname, "access.log"),
+  {
+    flags: "a",
+  }
+);
+app.use(morgan("combined", { stream: accessLogStream }));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(routes);
 
 mongoose
   .connect(

@@ -71,6 +71,7 @@ const SingleCourse = (props) => {
           <div className={classes.course}>
             <div className={classes.description}>
               <p className={classes.title}>{courseToShow.title}</p>
+              <p className={classes.te}>{courseToShow.text}</p>
               <p className={classes.desc}>{courseToShow.description}</p>
               <p className={classes.creator}>
                 Content Creator : {courseToShow.creator}

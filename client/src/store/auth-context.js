@@ -1,12 +1,11 @@
-import React, { useState, useEffect ,useCallback} from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
-  userId :null,
+  userId: null,
   onLogout: () => {},
-  onLogin: (id) => {
-  },
+  onLogin: (id) => {},
 });
 
 export const AuthContextProvider = (props) => {
@@ -14,18 +13,16 @@ export const AuthContextProvider = (props) => {
   const [isLoggedInAd, setIsLoggedInAd] = useState(false);
   const navigate = useNavigate();
 
-
   useEffect(() => {
     if (localStorage.hasOwnProperty("userId")) {
       // setuserId(localStorage.getItem("userid"));
       let id = localStorage.getItem("userId");
       // console.log(id);
-      if (id == "64208825286947c9d154b570") {
+      if (id === "64208825286947c9d154b570") {
         setIsLoggedInAd(true);
       } else {
         setIsLoggedIn(true);
       }
-
     }
   }, []);
 
@@ -39,12 +36,11 @@ export const AuthContextProvider = (props) => {
   const loginHandler = useCallback((id) => {
     localStorage.setItem("userId", id);
     setIsLoggedIn(true);
-    console.log(id);  
-    if (id == "b0pSlIe") {
+    console.log(id);
+    if (id === "64208825286947c9d154b570") {
       setIsLoggedInAd(true);
-    } 
-  },[]);
-
+    }
+  }, []);
 
   return (
     <AuthContext.Provider
@@ -56,7 +52,6 @@ export const AuthContextProvider = (props) => {
       }}
     >
       {props.children}
-      
     </AuthContext.Provider>
   );
 };
