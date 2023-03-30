@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 
 const UserDetails = ()=>{
     const [user, setUsers] = useState([]);
+    const [update,setUpdate] = useState(false);
     let k  = 1;
     useEffect(() => {
         const fetchitems = () => {
@@ -24,13 +25,27 @@ const UserDetails = ()=>{
           // const data = response.json();
         };
         fetchitems();
-      }, []);
+      }, [update]);
+      const buttonHandler = async (id) => {
+        const res = await fetch(`http://localhost:3001/deleteUser/` + id, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            // console.log(data);
+            // alert("User Deleted");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        setUpdate(!update);
+      }
     return(
         <>
             <Navb />
             
                 <Container>
-            <Table striped bordered hover>
+            <Table striped bordered hover style={{marginTop:"3em"}}>
       <thead>
         <tr>
           <th>#</th>
@@ -49,7 +64,7 @@ const UserDetails = ()=>{
                 return(
                     <tr>
                     <td>{k++}</td>
-                    <td>{user.email}</td>
+                    <th>{user.email}</th>
                     <td>{user.username}</td>
                     <td>{user.phone}</td>
                     <td>{user.address}</td>
@@ -64,7 +79,7 @@ const UserDetails = ()=>{
                       }
                     </td>
                     <td>
-                    <Button variant="outline-danger">Delete</Button>
+                    <Button variant="outline-danger" onClick={()=>buttonHandler(user._id)}>Delete</Button>
                     </td>
                   </tr>
                 )

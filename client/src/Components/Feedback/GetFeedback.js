@@ -25,7 +25,7 @@ const GetFeedback = ({setc,id}) => {
     setError(null);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     if (
         formState.name.trim().length === 0,
@@ -45,7 +45,7 @@ const GetFeedback = ({setc,id}) => {
     };
     // console.log(userData)
     setFormState(initialFormState);
-    fetch("http://localhost:3001/feedbacks", {
+    const res = await fetch("http://localhost:3001/feedbacks", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: { "Content-Type": "application/json" },
@@ -55,7 +55,7 @@ const GetFeedback = ({setc,id}) => {
       });
   
     setc(true);
-    navigate("/Feedbackconfirmation", { state: userData });
+    // navigate("/Feedbackconfirmation", { state: userData });
   };
 
   return (
