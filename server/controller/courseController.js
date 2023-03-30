@@ -43,3 +43,17 @@ exports.saveCourse = (req, res, next) => {
         console.log(err);
         });
 }
+
+exports.deleteCourse = (req, res, next) => {
+    const id = req.params.id;
+    Course.findByIdAndRemove(id)
+        .then((result) => {
+            res.status(200).json({
+                message: "Course deleted successfully",
+                course: result,
+            });
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+}

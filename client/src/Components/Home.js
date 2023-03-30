@@ -82,16 +82,16 @@ const Home = (props) => {
 
   })
   const deleteCourseHandler = (id) => {
-    fetch("http://localhost:3001/users?q="+id)
-      .then((response) => response.json())
-      .then((data) => {
-        // console.log(data);
-        let temp = data;
-        if(temp.length>0) {
-          alert("Admin can't delete course if a user is registered for it");
-          return;
-        }
-      })
+    // fetch("http://localhost:3001/users?q="+id)
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     // console.log(data);
+    //     let temp = data;
+    //     if(temp.length>0) {
+    //       alert("Admin can't delete course if a user is registered for it");
+    //       return;
+    //     }
+    //   })
 
     fetch(("http://localhost:3001/courses/"+id), {
       method: "DELETE",

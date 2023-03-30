@@ -11,6 +11,7 @@ import { useParams } from "react-router-dom";
 // import { Player } from 'video-react';
 
 const SingleCourse = (props) => {
+  const [update, setUpdate] = useState(false);
     const {id}= useParams();
     // console.log(id);
     const [courseToShow,setCourseToShow] = useState([]); 
@@ -30,12 +31,34 @@ const SingleCourse = (props) => {
       };
       fetchitems();
     }, []);
+    const [reCourses, setReCourses] = useState([]);
+    // console.log("courseid: ",courseid)
+    useEffect(() => {
+      const fetchitems = () => {
+        // fetch("http://localhost:3001/feedbacks")
+        fetch(`http://localhost:3001/feedbacks?courseid=${id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            setReCourses(data.feedback);
+            // console.log(data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        // const data = response.json();
+      };
+      fetchitems();
+    }, [update]);
     // console.log("course to show", courseToShow);
   // console.log(id);
     // const {image , title , creator,description, contentList} = props.course;
     const [show , setShow] = useState(false);
     const handleShow = () => {
         setShow(!show);
+    }
+    // console.log(update);
+    const feedbackHandler = (feedback) => {
+      setUpdate(!update);
     }
     // console.log(courseToShow);
     return (
@@ -68,11 +91,10 @@ const SingleCourse = (props) => {
                 })}
               </ul>
             )}
-            
           </div>
-          <div className = {classes.reviews}>
-            <Feedback courseid={id}/>
-            <GetFeedback id={id}/>
+          <div className={classes.reviews}>
+            <Feedback courseid={id} reCourses={reCourses} />
+            <GetFeedback id={id} setc={feedbackHandler} />
           </div>
         </div>
         <Footer />

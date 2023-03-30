@@ -13,6 +13,7 @@ router.post('/getUser', userController.getUserbyId)
 router.post('/addCourse', userController.addCourse)
 
 router.get('/courses/:id', courseController.getSpecificCourse)
+router.delete('/courses/:id', courseController.deleteCourse)
 router.get('/courses', courseController.getCourse)
 router.post('/courses', courseController.saveCourse)
 

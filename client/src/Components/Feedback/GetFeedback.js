@@ -10,7 +10,7 @@ const initialFormState = {
   review: ""
 };
 
-const GetFeedback = ({id}) => {
+const GetFeedback = ({setc,id}) => {
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState();
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ const GetFeedback = ({id}) => {
       ...prevFormState,
       [e.target.id]: e.target.value
     }));
-    console.log(e.target.name);
+    // console.log(e.target.name);
   };
   const errorHandler = (event) => {
     setError(null);
@@ -43,7 +43,7 @@ const GetFeedback = ({id}) => {
       courseid: id,
       review: formState.review,
     };
-    console.log(userData)
+    // console.log(userData)
     setFormState(initialFormState);
     fetch("http://localhost:3001/feedbacks", {
       method: "POST",
@@ -53,6 +53,8 @@ const GetFeedback = ({id}) => {
     .catch((err) => {
         console.log(err);
       });
+  
+    setc(true);
     navigate("/Feedbackconfirmation", { state: userData });
   };
 
