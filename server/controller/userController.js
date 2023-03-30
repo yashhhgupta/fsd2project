@@ -69,3 +69,34 @@ exports.addCourse = (req, res, next) => {
     }
   });
 }
+
+exports.deleteUser = (req, res, next) => {
+  const id = req.params.id;
+  User.findByIdAndRemove(id).then((user) => {
+    res.status(200).json({
+      message: "User deleted successfully",
+      users: user,
+    });
+  });
+}
+
+//update user details
+exports.updateUserDetails = (req, res, next) => {
+  //write a post request to update user details
+  const { id, username, email, phone,address } = req.body;
+  // console.log(id, username, email, phone,address);
+  User.findById(id).then((user) => {
+    if (user) {
+      user.username = username;
+      user.email = email;
+      user.phone = phone;
+      user.address = address;
+      user.save().then((result) => {
+        res.status(200).json({
+          message: "User details updated successfully",
+          user: result,
+        });
+      });
+    }
+  });
+}

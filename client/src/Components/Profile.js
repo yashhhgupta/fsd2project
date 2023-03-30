@@ -32,8 +32,8 @@ export default function Profile() {
   const [profile,setProfile] = useState()
   const [imgData, setImgData] = useState(null);
   const [userD,setUserD]=useState({})
-  const [myCourses, setMyCourses] = useState(undefined);
-  const [haveMyCourses, setHaveMyCourses] = useState(false);
+  const [myCourses, setMyCourses] = useState([]);
+  const [haveMyCourses, setHaveMyCourses] = useState(true);
 
 
   useEffect(() => {
@@ -62,16 +62,24 @@ export default function Profile() {
     const fetchitems = () => {
       const uid = localStorage.getItem("userId");
       // console.log(uid);
-      fetch("http://localhost:3001/users?id=" + uid)
+      fetch("http://localhost:3001/getUser", {
+        method: "POST",
+        body: JSON.stringify({ id: uid }),
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+      })
         .then((response) => response.json())
         .then((data) => {
-          setMyCourses(data[0].mycourses);
-          if (data[0].mycourses.length > 0) {
-            setHaveMyCourses(true);
-          }
-
+          // console.log(data.users.mycourses);
+          setMyCourses(data.users.mycourses);
           // console.log(myCourses.length);
           // console.log(data[0].mycourses);
+          setUserD({
+            username : data.users.username,
+            email : data.users.email,
+            phone : data.users.phone,
+            address : data.users.address,
+          })
+          
         })
         .catch((err) => {
           console.log(err);
@@ -80,14 +88,16 @@ export default function Profile() {
     };
     fetchitems();
   }, []);
-
+  // console.log(haveMyCourses);
   const submitHandler=()=>{
     const uid = localStorage.getItem("userId");
-    fetch(("http://localhost:3001/users/"+uid), {
-      method: "PATCH",
-      body: JSON.stringify(userD),
-      headers: { "Content-Type": "application/json" },
-    });
+    // console.log(userD);
+    fetch("http://localhost:3001/updateUserDetails", {
+      method: "POST",
+      body: JSON.stringify({ id: uid,email:userD.email,phone:userD.phone,address:userD.address,username:userD.username }),
+      
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+    })
   }
     // const port = useContext(CoursesContext);
     // let myCourses = port.courses.filter((course) => {
