@@ -69,6 +69,17 @@ function Navb() {
                     </span>
                   </div>
                 </Link>
+                <Link
+                  to="/UserDetails"
+                  className={classes.headings1}
+                  style={{ textDecoration: "none" }}
+                >
+                  <div className={classes.headings1}>
+                    <span style={{ color: "black" }}>
+                      <b>User Details</b>
+                    </span>
+                  </div>
+                </Link>
               </>
             )}
           </Nav>

@@ -17,6 +17,7 @@ import SingleCourse from "./Components/Courses/SingleCourse";
 import Feedback from "./Components/Feedback/Feedback";
 import GetFeedback from "./Components/Feedback/GetFeedback";
 import Feedbackconfirmation from "./Components/UI/Feedbackconfirmation";
+import UserDetails from "./Components/User/UserDetails";
 
 // import Aboutus from "./Components/Aboutus";
 
@@ -71,6 +72,7 @@ function App() {
                     path="/Feedback"
                     element={<Feedback />}
                   />
+                  <Route path="/UserDetails" element={<UserDetails />} />
                 </>
               )}
               <Route path = "/Feedbackconfirmation" element={<Feedbackconfirmation/>}/>

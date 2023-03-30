@@ -49,6 +49,8 @@ const SingleCourse = (props) => {
       };
       fetchitems();
     }, [update]);
+    console.log(courseToShow.contentLinks)
+
     // console.log("course to show", courseToShow);
   // console.log(id);
     // const {image , title , creator,description, contentList} = props.course;
@@ -91,6 +93,21 @@ const SingleCourse = (props) => {
                 })}
               </ul>
             )}
+
+            {show && (
+              
+                    <div>
+                      <iframe
+                        width="560"
+                        height="315"
+                        src={courseToShow.contentLinks}
+                        title="Youtube Player"
+                        frameborder="0"
+                        allowFullScreen
+                      />
+                    </div>
+                  )
+            }
           </div>
           <div className={classes.reviews}>
             <Feedback courseid={id} reCourses={reCourses} />
@@ -100,6 +117,5 @@ const SingleCourse = (props) => {
         <Footer />
       </>
     );
-
 }
 export default SingleCourse;
