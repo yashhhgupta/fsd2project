@@ -59,7 +59,6 @@ const AddCourse = () => {
       title: formState.title,
       text: formState.text,
       description: formState.description,
-      imageURL: formState.imageURL,
     };
     // console.log(CourseData);
     setFormState(initialFormState);
@@ -121,14 +120,14 @@ const AddCourse = () => {
               value={formState.description}
               onChange={handleFormChange}
             ></textarea>
-            <label>Course Image URL</label>
+            {/* <label>Course Image URL</label>
             <input
               type="text"
               id="imageURL"
               placeholder="Enter URL of image"
               value={formState.imageURL}
               onChange={handleFormChange}
-            />
+            /> */}
           </div>
           <br></br>
           <div class="text-center">
