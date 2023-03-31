@@ -12,6 +12,8 @@ const path = require("path");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
+const multer = require('multer');
+const upload = multer({ dest: 'uploads/' });
 const accessLogStream = fs.createWriteStream(
   path.join(__dirname, "access.log"),
   {
