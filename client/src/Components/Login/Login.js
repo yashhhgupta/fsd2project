@@ -71,15 +71,23 @@ const Login = () => {
   };
   const submitHandler = async (event) => {
     event.preventDefault();
-    const user = await fetch("http://localhost:3001/users/" + emailState.value)
+    const user = await fetch("http://localhost:3001/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: emailState.value,
+        password: passwordState.value,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
         // console.log(data.users.id);
-        if(data.users.password === passwordState.value){
-        authCtx.onLogin(data.users._id);
-        }
-        else{
-          alert("Wrong Password");
+        if(data.isLoggedIn){
+          authCtx.onLogin(data.users._id);
+        }else{
+          alert("Wrong password");
         }
       })
       .catch((err) => {

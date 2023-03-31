@@ -94,7 +94,7 @@ export default function Profile() {
     // console.log(userD);
     fetch("http://localhost:3001/updateUserDetails", {
       method: "POST",
-      body: JSON.stringify({ id: uid,email:userD.email,phone:userD.phone,address:userD.address,username:userD.username }),
+      body: JSON.stringify({ id: uid,phone:userD.phone,address:userD.address}),
       
       headers: { "Content-type": "application/json; charset=UTF-8" },
     })
@@ -123,19 +123,31 @@ export default function Profile() {
                       style={{ width: "150px", backgroundColor: "white" }}
                       fluid
                     />
-                    <form >
-                      <input type="file" onChange={(e)=>{
-                        setProfile(e.target.files[0])
-                        // setPicture(e.target.files[0]);
-      const reader = new FileReader();
-      reader.addEventListener("load", () => {
-        setImgData(reader.result);
-      });
-      reader.readAsDataURL(e.target.files[0]);
-                        }} className="text-muted mb-1"></input>
+                    <form>
+                      <input
+                        type="file"
+                        onChange={(e) => {
+                          setProfile(e.target.files[0]);
+                          // setPicture(e.target.files[0]);
+                          const reader = new FileReader();
+                          reader.addEventListener("load", () => {
+                            setImgData(reader.result);
+                          });
+                          reader.readAsDataURL(e.target.files[0]);
+                        }}
+                        className="text-muted mb-1"
+                      ></input>
                     </form>
-                    <p className="text-muted mb-1">{userD.username}</p>
-                    <p className="text-muted mb-4">{userD.address}</p>
+                    <p
+                      className="text-muted mb-1"
+                    >
+                      {userD.username}
+                    </p>
+                    <p
+                      className="text-muted mb-4"
+                    >
+                      {userD.address}
+                    </p>
                   </MDBCardBody>
                 </MDBCard>
               </div>
@@ -162,6 +174,9 @@ export default function Profile() {
                               })
                             }
                           ></input>
+                          {/* <div style={{ fontWeight: "bold" }}>
+                            {userD.username}
+                          </div> */}
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
@@ -182,6 +197,10 @@ export default function Profile() {
                               })
                             }
                           ></input>
+                          {/* <div style={{ fontWeight: "bold" }}>
+                            {userD.email}
+                          </div> */}
+                          {/* {userD.email} */}
                           <i className="fa-solid fa-pen-to-square mx-3"></i>
                         </MDBCardText>
                       </MDBCol>
