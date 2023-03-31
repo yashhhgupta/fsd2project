@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState ,useEffect } from "react";
 
 import Card from "../UI/Card";
@@ -23,6 +24,23 @@ const RequestedCourses=()=>{
       };
       fetchitems();
     }, []);
+
+    const Photo = (e)=>{
+      var kk 
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        // setFile(reader.result);
+        kk = reader.result
+      });
+      // const [file,setFile] = useState(null)
+      axios.get(`http://localhost:3001/${e}`,{responseType:'blob'})
+.then(res=>{
+
+          reader.readAsDataURL(res.data);
+})
+return kk
+    }
+
     return (
       <>
         <Navb></Navb>

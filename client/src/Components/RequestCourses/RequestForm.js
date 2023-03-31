@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "../UI/Card";
 import ErrorModal from "../UI/ErrorModal";
@@ -6,6 +6,7 @@ import Footer from "../UI/Footer";
 import Navb from "../UI/Navb";
 import classes from "./RequestForm.module.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const initialFormState = {
   name: "",
@@ -13,13 +14,19 @@ const initialFormState = {
   title: "",
   text: "",
   description: "",
-  imageURL: "",
+  image: "",
 };
 
 const RequestForm = () => {
   const [formState, setFormState] = useState(initialFormState);
+  const [img,setImg] = useState(null)
   const [error, setError] = useState();
   const navigate = useNavigate();
+  const image = useRef()
+  const postImageHandler =(e)=>{
+    setImg(URL.createObjectURL(e.target.files[0]))
+  }
+  const formData = new FormData()
   const handleFormChange = (e) => {
     setFormState((prevFormState) => ({
       ...prevFormState,
@@ -27,6 +34,15 @@ const RequestForm = () => {
     }));
     // console.log(e.target.name);
   };
+
+  const handleFormFile = (e) => {
+    setFormState((prevFormState) => ({
+      ...prevFormState,
+      'course_img': e.target.files[0]
+    }));
+    // console.log(e.target.name);
+  };
+
   const errorHandler = (event) => {
     setError(null);
   };
@@ -47,22 +63,38 @@ const RequestForm = () => {
       });
       return;
     }
-    const userData = {
-      name: formState.name,
-      email: formState.email,
-      title: formState.title,
-      text: formState.text,
-      imageURL: formState.imageURL,
-      description: formState.description,
-    };
+
     // console.log(userData);
     setFormState(initialFormState);
-    fetch("http://localhost:3001/requestedCourses", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: { "Content-Type": "application/json" },
-    });
-    navigate("/Message", { state: userData });
+    formData.append("course_img",image.current.files[0])
+    formData.append("name", formState.name)
+    formData.append("email", formState.email)
+    formData.append("title", formState.title)
+    formData.append("text",formState.text)
+    formData.append( "description",formState.description)
+    // formData.append("user",userData)
+    // fetch("http://localhost:3001/requestedCourses", {
+    //   method: "POST",
+    //   // body: JSON.stringify(userData),
+    //   headers: { "Content-Type": "application/json" },
+    // });
+  
+    axios.post("http://localhost:3001/requestedCourses",formData)
+    .then(res=>{
+      console.log(res)
+      const userData = {
+        // image:img,
+        name: formState.name,
+        email: formState.email,
+        title: formState.title,
+        text: formState.text,
+        description: formState.description,
+        image: res.data.course.imageUrl
+      };
+      navigate("/Message", { state: userData });
+    })
+
+
   };
 
   return (
@@ -82,7 +114,7 @@ const RequestForm = () => {
           <div className={classes.header}>
             <h1>Request a Course</h1>
           </div>
-          <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit} enctype="multipart/form-data">
             <label>Name</label>
             <input
               type="text"
@@ -113,11 +145,12 @@ const RequestForm = () => {
             />
             <label>Course Image URL</label>
             <input
-              type="text"
-              id="imageURL"
-              placeholder="Enter URL of image"
-              value={formState.imageURL}
-              onChange={handleFormChange}
+              type="file"
+              id="image"
+              onChange={setImg}
+              // placeholder="Enter URL of image"
+              // value={formState.image}
+              ref ={image}
             />
             <label>Description</label>
             <div>

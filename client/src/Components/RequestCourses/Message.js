@@ -2,10 +2,24 @@ import Card from "../UI/Card";
 import Footer from "../UI/Footer";
 import Navb from "../UI/Navb";
 import {useLocation} from "react-router-dom";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Message = (props) => {
-  
   const location = useLocation();
+  const [file,setFile] = useState(null)
+  useEffect(()=>{
+    console.log(location.state.image)
+axios.get(`http://localhost:3001/${location.state.image}`,{responseType:'blob'})
+.then(res=>{
+  const reader = new FileReader();
+          reader.addEventListener("load", () => {
+            setFile(reader.result);
+          });
+          reader.readAsDataURL(res.data);
+})
+  },[])
+
   return (
     <>
       <Navb></Navb>
@@ -21,7 +35,7 @@ const Message = (props) => {
                   justifyContent: "space-around",
                 }}
               >
-                <img src={location.state.imageURL} alt="No image found" width="200px"></img>
+               {file !== null ?  <img src={file} alt="No image found" width="200px"></img>:<p>Loading .....</p>}
                 <div>
                   <h4>Course Requested by:</h4>
                   <h5>User: {location.state.name}</h5>
