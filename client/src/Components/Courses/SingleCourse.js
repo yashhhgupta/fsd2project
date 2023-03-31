@@ -7,6 +7,8 @@ import { useState,useContext,useEffect } from 'react';
 import Feedback from "../Feedback/Feedback.js";
 import GetFeedback from "../Feedback/GetFeedback";
 import { useParams } from "react-router-dom";
+import Table from 'react-bootstrap/Table';
+
 
 // import { Player } from 'video-react';
 
@@ -14,6 +16,8 @@ const SingleCourse = (props) => {
   const [update, setUpdate] = useState(false);
     const {id}= useParams();
     // console.log(id);
+    let k  = 1;
+
     const [courseToShow,setCourseToShow] = useState([]); 
     useEffect(() => {
       const fetchitems = () => {
@@ -88,27 +92,55 @@ const SingleCourse = (props) => {
             </button>
 
             {show && (
-              <ul>
-                {courseToShow.contentList.map((content) => {
-                  return <li className={classes.steps}>{content}</li>;
-                })}
-              </ul>
-            )}
+              
+              <div >
+                <iframe
+                  width="560"
+                  height="315"
+                  src={courseToShow.contentLinks}
+                  title="Youtube Player"
+                  frameborder="0"
+                  allowFullScreen
+                />
+              </div>
+            )
+      }
 
             {show && (
-              
-                    <div>
-                      <iframe
-                        width="560"
-                        height="315"
-                        src={courseToShow.contentLinks}
-                        title="Youtube Player"
-                        frameborder="0"
-                        allowFullScreen
-                      />
-                    </div>
-                  )
-            }
+               
+
+               <Table striped bordered hover style={{marginTop:"3em"}}>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Content</th>
+         
+           
+        </tr>
+      </thead>
+      <tbody>
+        {
+            
+            courseToShow.contentList.map((content)=>{
+                return(
+                    <tr>
+                    <td>{k++}</td>
+                    <th>{content}</th>
+                    
+                   
+                  </tr>
+                )
+                
+            })
+            
+        }
+      </tbody>
+    </Table>
+               
+
+            )}
+
+            
           </div>
           <div className={classes.reviews}>
             <Feedback courseid={id} reCourses={reCourses} />
