@@ -83,12 +83,10 @@ exports.deleteUser = (req, res, next) => {
 //update user details
 exports.updateUserDetails = (req, res, next) => {
   //write a post request to update user details
-  const { id, username, email, phone,address } = req.body;
+  const { id,  phone,address } = req.body;
   // console.log(id, username, email, phone,address);
   User.findById(id).then((user) => {
     if (user) {
-      user.username = username;
-      user.email = email;
       user.phone = phone;
       user.address = address;
       user.save().then((result) => {
