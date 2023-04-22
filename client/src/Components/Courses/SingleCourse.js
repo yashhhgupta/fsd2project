@@ -87,21 +87,13 @@ const SingleCourse = (props) => {
           </div>
           <div className={classes.course__content}>
             {/* <source src="/Videos/video1.mp4" type="video/mp4"/> */}
-            {courseToShow.contentList > 0 && (
-              <button onClick={handleShow} className={classes.button}>
-                Show Content
-              </button>
-            )}
-            {!(courseToShow.contentList > 0) && (
-              <h3
-                style={{ color: "black", textAlign: "center", padding: "4%" }}
-              >
-                No Content Available, It will be available soon.{" "}
-              </h3>
-            )}
+            <button onClick={handleShow} className={classes.button}>
+              Show Content
+            </button>
 
             {show && (
-              <div>
+              
+              <div >
                 <iframe
                   width="560"
                   height="315"
@@ -111,35 +103,49 @@ const SingleCourse = (props) => {
                   allowFullScreen
                 />
               </div>
-            )}
+            )
+      }
 
             {show && (
-              <Table striped bordered hover style={{ marginTop: "3em" }}>
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>Content</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {courseToShow.contentList.map((content) => {
-                    return (
-                      <tr>
-                        <td>{k++}</td>
-                        <th>{content}</th>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </Table>
-            )}
-          </div>
-            {(courseToShow.contentList > 0) && (
+               
 
+               <Table striped bordered hover style={{marginTop:"3em"}}>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Content</th>
+         
+           
+        </tr>
+      </thead>
+      <tbody>
+        {
+            
+            courseToShow.contentList.map((content)=>{
+                return(
+                    <tr>
+                    <td>{k++}</td>
+                    <th>{content}</th>
+                    
+                   
+                  </tr>
+                )
+                
+            })
+            
+        }
+      </tbody>
+    </Table>
+               
+
+            )}
+
+            
+          </div>
           <div className={classes.reviews}>
             <Feedback courseid={id} reCourses={reCourses} />
             <GetFeedback id={id} setc={feedbackHandler} />
-          </div>)}
+          </div>
         </div>
         <Footer />
       </>
