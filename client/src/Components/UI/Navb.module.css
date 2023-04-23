@@ -34,3 +34,8 @@
     color:black;
     border :1px solid black;
 }
+
+
+.dropdown-container {
+    width: 20px;
+}

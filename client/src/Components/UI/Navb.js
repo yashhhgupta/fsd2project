@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext,useState,useEffect} from 'react';
 
 import AuthContext from "../../store/auth-context";
 import Button from "react-bootstrap/Button";
@@ -8,12 +8,41 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import ProfilePic from "../assets/ProfilePic.jpg";
 import classes from "./Navb.module.css";
+import Select from "react-select";
+import { useNavigate } from "react-router-dom";
+
 
 function Navb() {
   const ctx = useContext(AuthContext);
+  const [selectedOptions, setSelectedOptions] = React.useState(null);
+  const optionList = [];
+  const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+  useEffect(() => {
+    const fetchitems = () => {
+      fetch("http://localhost:3001/courses")
+        .then((response) => response.json())
+        .then((data) => {
+          setCourses(data.courses);
+          // console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // const data = response.json();
+    };
+    fetchitems();
+  }, );
+  for(let i=0;i<courses.length;i++){
+    optionList.push({value:courses[i].title,label:courses[i].title , id:courses[i]._id});
+  }
+  function handleSelect(data) {
+    setSelectedOptions(data);
+    navigate("/course/"+data.id);
+  }
   return (
     <>
-      <div className ={classes.set}>
+      <div className={classes.set}>
         <Navbar className={classes.NavbarMain}>
           <Container>
             <Navbar.Brand>
@@ -110,6 +139,17 @@ function Navb() {
             </Nav>
           </Container>
         </Navbar>
+      </div>
+      <div style={{ backgroundColor: "#d29a55" }}>
+        <div style={{ width: "50%", margin: "0 auto"}}>
+          <Select
+            options={optionList}
+            placeholder="Search Courses"
+            value={selectedOptions}
+            onChange={handleSelect}
+            isSearchable={true}
+          />
+        </div>
       </div>
     </>
   );

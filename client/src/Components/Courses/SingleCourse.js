@@ -34,7 +34,7 @@ const SingleCourse = (props) => {
         // const data = response.json();
       };
       fetchitems();
-    }, []);
+    }, [id]);
     const [reCourses, setReCourses] = useState([]);
     // console.log("courseid: ",courseid)
     useEffect(() => {
@@ -52,7 +52,7 @@ const SingleCourse = (props) => {
         // const data = response.json();
       };
       fetchitems();
-    }, [update]);
+    }, [update,id]);
     console.log(courseToShow.contentLinks)
 
     // console.log("course to show", courseToShow);
