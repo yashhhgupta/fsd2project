@@ -8,11 +8,11 @@ import Feedback from "../Feedback/Feedback.js";
 import GetFeedback from "../Feedback/GetFeedback";
 import { useParams } from "react-router-dom";
 import Table from 'react-bootstrap/Table';
-
-
+import {useNavigate} from 'react-router-dom';
 // import { Player } from 'video-react';
 
 const SingleCourse = (props) => {
+  const navigate = useNavigate();
   const [update, setUpdate] = useState(false);
     const {id}= useParams();
     // console.log(id);
@@ -66,6 +66,9 @@ const SingleCourse = (props) => {
     const feedbackHandler = (feedback) => {
       setUpdate(!update);
     }
+    const buttonClickHandler = () => {
+      navigate(`/quiz/${id}`);
+    }
     // console.log(courseToShow);
     return (
       <>
@@ -80,6 +83,7 @@ const SingleCourse = (props) => {
               <p className={classes.creator}>
                 Content Creator : {courseToShow.creator}
               </p>
+              <p>Ratings : {courseToShow.rating}/5</p>
             </div>
             <div className={classes.course__image}>
               <img src={courseToShow.imageURL} alt="course" height="200" />
@@ -87,13 +91,10 @@ const SingleCourse = (props) => {
           </div>
           <div className={classes.course__content}>
             {/* <source src="/Videos/video1.mp4" type="video/mp4"/> */}
-            <button onClick={handleShow} className={classes.button}>
-              Show Content
-            </button>
+            <button onClick={handleShow} className={classes.button}>Show Content</button>
 
             {show && (
-              
-              <div >
+              <div>
                 <iframe
                   width="560"
                   height="315"
@@ -103,45 +104,31 @@ const SingleCourse = (props) => {
                   allowFullScreen
                 />
               </div>
-            )
-      }
-
-            {show && (
-               
-
-               <Table striped bordered hover style={{marginTop:"3em"}}>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Content</th>
-         
-           
-        </tr>
-      </thead>
-      <tbody>
-        {
-            
-            courseToShow.contentList.map((content)=>{
-                return(
-                    <tr>
-                    <td>{k++}</td>
-                    <th>{content}</th>
-                    
-                   
-                  </tr>
-                )
-                
-            })
-            
-        }
-      </tbody>
-    </Table>
-               
-
             )}
 
-            
+            {show && (
+              <Table striped bordered hover style={{ marginTop: "3em" }}>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Content</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {courseToShow.contentList.map((content) => {
+                    return (
+                      <tr>
+                        <td>{k++}</td>
+                        <th>{content}</th>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </Table>
+            )}
           </div>
+          <button className={classes.button} onClick={buttonClickHandler}>Take Quiz</button>
+          <button className={classes.button}>Feedbacks</button>
           <div className={classes.reviews}>
             <Feedback courseid={id} reCourses={reCourses} />
             <GetFeedback id={id} setc={feedbackHandler} />

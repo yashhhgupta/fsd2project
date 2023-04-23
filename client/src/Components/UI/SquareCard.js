@@ -2,7 +2,7 @@ import {useState,useContext} from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Progress from "./Progress"
-import Star from "./Star";
+import ReactStars from "react-stars";
 import classes from "./SquareCard.module.css";
 import { Link } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
@@ -17,7 +17,7 @@ function SquareCard(props) {
   const deleteButtonHandler = () => {
     props.delete(props.id);
   }
-  // console.log(props);
+  console.log(props);
   return (
     <Card
       style={{
@@ -35,7 +35,7 @@ function SquareCard(props) {
       </Link>
       <Card.Body>
         <Card.Title style={{ color: "beige" }}>{props.title}</Card.Title>
-        <Star />
+        <ReactStars count={5} value={props.rating} size={24} color2={'#ffd700'} />
         <Card.Text style={{ color: "beige" }}>{props.text}</Card.Text>
 
         {(!ctx.isLoggedInAd && (props.progress || props.progress === 0)) && (

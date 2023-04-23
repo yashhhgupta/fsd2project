@@ -15,6 +15,9 @@ const courseSchema = new Schema({
   creator: {
     type: String,
   },
+  rating :{
+    type: Number,
+  },
   imageUrl: {
     type: String,
   },

@@ -29,6 +29,7 @@ const CourseCards = (props) => {
               <SquareCard
                 title={course.title}
                 text={course.text}
+                rating={course.rating}
                 imageURL={course.imageURL}
                 progress={course.progress}
                 id = {course._id}

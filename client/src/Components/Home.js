@@ -112,7 +112,7 @@ const Home = (props) => {
                 My Courses
               </h1>
             </Card>
-            {/* {console.log(myCourses)} */}
+            {console.log(myCourses)}
             {haveMyCourses && (
               <CourseCards
                 items={myCourses}
