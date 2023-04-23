@@ -3,6 +3,7 @@ const userController = require('../controller/userController');
 const courseController = require('../controller/courseController');
 const requestedCoursesController = require('../controller/requestedCoursesController');
 const feedbackController = require('../controller/feedbackController');
+const quizController = require('../controller/quizController');
 const path =require('path')
 const multer = require('multer');
 const upload = multer({ dest: '../uploads/' });
@@ -26,6 +27,10 @@ router.post('/requestedCourses',upload.single('course_img'), requestedCoursesCon
 
 router.get('/feedbacks', feedbackController.getFeedback)
 router.post('/feedbacks', feedbackController.saveFeedback)
+
+router.post('/quiz',quizController.saveQuiz)
+router.get('/quiz',quizController.getQuiz)
+router.get('/quiz/:courseId',quizController.getSpecificQuiz)
 
 router.get('/:file(*)',(req,res)=>{
     let file = req.params.file;

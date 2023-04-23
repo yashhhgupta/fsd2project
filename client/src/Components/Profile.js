@@ -30,7 +30,9 @@ export default function Profile() {
   const ctx = useContext(AuthContext);
 
   const [profile,setProfile] = useState()
-  const [imgData, setImgData] = useState(null);
+  const [imgData, setImgData] = useState(
+    "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
+  );
   const [userD,setUserD]=useState({})
   const [myCourses, setMyCourses] = useState([]);
   const [haveMyCourses, setHaveMyCourses] = useState(true);

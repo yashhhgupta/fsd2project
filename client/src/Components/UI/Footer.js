@@ -11,6 +11,7 @@ import classes from "./Footer.module.css";
 
 export default function Footer() {
   return (
+    <div className={classes.set}>
     <MDBFooter className={classes.input}>
       <MDBContainer className="p-3">
         <section  style={{ textAlign: "center" }}>
@@ -32,5 +33,6 @@ export default function Footer() {
         </Link>
       </div>
     </MDBFooter>
+    </div>
   );
 }

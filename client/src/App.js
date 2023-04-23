@@ -18,6 +18,7 @@ import Feedback from "./Components/Feedback/Feedback";
 import GetFeedback from "./Components/Feedback/GetFeedback";
 import Feedbackconfirmation from "./Components/UI/Feedbackconfirmation";
 import UserDetails from "./Components/User/UserDetails";
+import Quiz from "./Components/quiz/Quiz";
 
 // import Aboutus from "./Components/Aboutus";
 
@@ -76,6 +77,7 @@ function App() {
                 </>
               )}
               <Route path = "/Feedbackconfirmation" element={<Feedbackconfirmation/>}/>
+              <Route path = "/quiz/:id" element={<Quiz/>}/>
               <Route path="*" element={<Error404 />} />
             </Routes>
           </>

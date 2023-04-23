@@ -9,8 +9,7 @@ import GetFeedback from "../Feedback/GetFeedback";
 import { useParams } from "react-router-dom";
 import Table from 'react-bootstrap/Table';
 import InputGroup from 'react-bootstrap/InputGroup';
-import Form from 'react-bootstrap/Form';
-
+import Form from 'react-bootstrap/Form';import {useNavigate} from 'react-router-dom';
 // import { Player } from 'video-react';
 
 const SingleCourse = (props) => {
@@ -22,6 +21,7 @@ const SingleCourse = (props) => {
     })
     setRevs(rev)
   }
+  const navigate = useNavigate();
   const [update, setUpdate] = useState(false);
     const {id}= useParams();
     console.log(id)
@@ -44,7 +44,7 @@ const SingleCourse = (props) => {
         // const data = response.json();
       };
       fetchitems();
-    }, []);
+    }, [id]);
     console.log(courseToShow);
    
     // console.log("courseid: ",courseid)
@@ -63,7 +63,7 @@ const SingleCourse = (props) => {
         // const data = response.json();
       };
       fetchitems();
-    }, [update]);
+    }, [update,id]);
     console.log(courseToShow.contentLinks)
 
     // console.log("course to show", courseToShow);
@@ -76,6 +76,9 @@ const SingleCourse = (props) => {
     // console.log(update);
     const feedbackHandler = (feedback) => {
       setUpdate(!update);
+    }
+    const buttonClickHandler = () => {
+      navigate(`/quiz/${id}`);
     }
     // console.log(courseToShow);
     return (
@@ -91,6 +94,7 @@ const SingleCourse = (props) => {
               <p className={classes.creator}>
                 Content Creator : {courseToShow.creator}
               </p>
+              <p>Ratings : {courseToShow.rating}/5</p>
             </div>
             <div className={classes.course__image}>
               <img src={courseToShow.imageURL} alt="course" height="200" />
@@ -98,18 +102,7 @@ const SingleCourse = (props) => {
           </div>
           <div className={classes.course__content}>
             {/* <source src="/Videos/video1.mp4" type="video/mp4"/> */}
-            {(
-              <button onClick={handleShow} className={classes.button}>
-                Show Content
-              </button>
-            )}
-            {!(courseToShow.contentList > 0) && (
-              <h3
-                style={{ color: "black", textAlign: "center", padding: "4%" }}
-              >
-                No Content Available, It will be available soon.{" "}
-              </h3>
-            )}
+            <button onClick={handleShow} className={classes.button}>Show Content</button>
 
             {show && (
               <div>
@@ -145,9 +138,8 @@ const SingleCourse = (props) => {
               </Table>
             )}
           </div>
-        
-            {(
-
+          <button className={classes.button} onClick={buttonClickHandler}>Take Quiz</button>
+          <button className={classes.button}>Feedbacks</button>
           <div className={classes.reviews}>
             <div style={{display: "flex", height: '10px'}}>
 
@@ -172,7 +164,7 @@ const SingleCourse = (props) => {
 
             <Feedback courseid={id} reCourses={revs} />
             <GetFeedback id={id} setc={feedbackHandler} />
-          </div>)}
+          </div>
         </div>
         <Footer />
       </>

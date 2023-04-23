@@ -9,9 +9,9 @@ import classes from "./RequestCourses/RequestForm.module.css";
 import { useLocation } from "react-router-dom";
 import AuthContext from "../store/auth-context";
 
-
 const Home = (props) => {
   // console.log(port.courses);
+  
   const ctx = useContext(AuthContext);
   const [courses, setCourses] = useState([]);
   const [myCourses, setMyCourses] = useState(undefined);
@@ -112,7 +112,7 @@ const Home = (props) => {
                 My Courses
               </h1>
             </Card>
-            {/* {console.log(myCourses)} */}
+            {console.log(myCourses)}
             {haveMyCourses && (
               <CourseCards
                 items={myCourses}
