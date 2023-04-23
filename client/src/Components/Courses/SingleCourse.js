@@ -8,13 +8,23 @@ import Feedback from "../Feedback/Feedback.js";
 import GetFeedback from "../Feedback/GetFeedback";
 import { useParams } from "react-router-dom";
 import Table from 'react-bootstrap/Table';
-
+import InputGroup from 'react-bootstrap/InputGroup';
+import Form from 'react-bootstrap/Form';
 
 // import { Player } from 'video-react';
 
 const SingleCourse = (props) => {
+  const [revs, setRevs] = useState([])
+  const [reCourses, setReCourses] = useState([]);
+  const search = (value) => {
+    const rev = reCourses.filter(x => {
+      return x.review.toLowerCase().includes(value.toLowerCase()) 
+    })
+    setRevs(rev)
+  }
   const [update, setUpdate] = useState(false);
     const {id}= useParams();
+    console.log(id)
     // console.log(id);
     let k  = 1;
 
@@ -35,7 +45,8 @@ const SingleCourse = (props) => {
       };
       fetchitems();
     }, []);
-    const [reCourses, setReCourses] = useState([]);
+    console.log(courseToShow);
+   
     // console.log("courseid: ",courseid)
     useEffect(() => {
       const fetchitems = () => {
@@ -87,7 +98,7 @@ const SingleCourse = (props) => {
           </div>
           <div className={classes.course__content}>
             {/* <source src="/Videos/video1.mp4" type="video/mp4"/> */}
-            {courseToShow.contentList > 0 && (
+            {(
               <button onClick={handleShow} className={classes.button}>
                 Show Content
               </button>
@@ -134,10 +145,32 @@ const SingleCourse = (props) => {
               </Table>
             )}
           </div>
-            {(courseToShow.contentList > 0) && (
+        
+            {(
 
           <div className={classes.reviews}>
-            <Feedback courseid={id} reCourses={reCourses} />
+            <div style={{display: "flex", height: '10px'}}>
+
+              <h4 style={{  fontWeight:"bold" }}>
+                Reviews
+              </h4>
+
+              <InputGroup className="mb-3" style={{width: '300px', marginLeft: '20px'}}>
+                <InputGroup.Text id="basic-addon1">🔍</InputGroup.Text>
+                <Form.Control
+                  placeholder="Search Review"
+                  aria-label="Username"
+                  onChange={(e) => search(e.target.value)} 
+                  aria-describedby="basic-addon1"
+                />
+              </InputGroup>
+
+            </div>
+            
+            <br/>
+            <br/>
+
+            <Feedback courseid={id} reCourses={revs} />
             <GetFeedback id={id} setc={feedbackHandler} />
           </div>)}
         </div>

@@ -7,9 +7,7 @@ const Feedback=(props)=>{
     return (
       <>
       <div>
-        <h4 style={{ paddingTop:"3%", fontWeight:"bold" }}>
-          Reviews
-        </h4>
+        
         <div style={{height:"150px",overflowY:"scroll", border: "1px solid black",marginRight:"2%"}}>
             {props.reCourses.map((feedback) => {
             return (
