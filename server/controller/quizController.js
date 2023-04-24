@@ -1,7 +1,7 @@
 const Quiz = require("../model/Quiz");
 const redis = require("redis");
 const client = redis.createClient({
-  url: "redis://red-rediss://red-ch3e18tgk4qarqmmtab0:guB3BUHCgHHQ5sfqAgimHucC3pDiaePq@oregon-redis.render.com:6379:6379",
+  url: "rediss://red-ch3e18tgk4qarqmmtab0:guB3BUHCgHHQ5sfqAgimHucC3pDiaePq@oregon-redis.render.com:6379",
 });
 
 client.connect();
