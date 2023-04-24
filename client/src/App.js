@@ -67,6 +67,7 @@ function App() {
                 element={<SingleCourse course={course} />}
               />
               <Route path="/GetFeedback" element={<GetFeedback />} />
+              
               {ctx.isLoggedInAd && (
                 <>
                   <Route

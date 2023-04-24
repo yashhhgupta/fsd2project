@@ -80,6 +80,7 @@ const Signup = () => {
         myCourses: [],
       };
       // console.log(userData);
+      
       fetch("https://howtobasic.onrender.com/users",{
         method: "POST",
         body: JSON.stringify(userData),
