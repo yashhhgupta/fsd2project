@@ -1,5 +1,8 @@
 const Quiz = require("../model/Quiz");
+const redis = require("redis");
+const client = redis.createClient();
 
+client.connect();
 exports.saveQuiz = (req, res, next) => {
     // console.log(req.body);
     const quiz = new Quiz({
@@ -21,9 +24,20 @@ exports.saveQuiz = (req, res, next) => {
 }
 
 //search by courseId
-exports.getSpecificQuiz = (req, res, next) => {
+exports.getSpecificQuiz = async(req, res, next) => {
+    const quiz = await client.get(`quiz_${req.params.courseId}`);
+    if (quiz) {
+        // console.log("courses from redis",courses);
+        res.status(200).json({
+            message: 'Quiz fetched successfully',
+            quiz: JSON.parse(quiz),
+        });
+        // console.log("courses from redis",courses);
+    }
+    else {
     Quiz.find({ courseId: req.params.courseId })
         .then((quiz) => {
+            client.setEx(`quiz_${req.params.courseId}`, 3600, JSON.stringify(quiz));
             res.status(200).json({
                 message: 'Quiz fetched successfully',
                 quiz: quiz,
@@ -32,6 +46,7 @@ exports.getSpecificQuiz = (req, res, next) => {
         .catch((err) => {
             console.log(err);
         });
+    }
 }
 
 exports.getQuiz = (req, res, next) => {
