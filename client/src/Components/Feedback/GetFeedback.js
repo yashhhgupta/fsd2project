@@ -45,7 +45,7 @@ const GetFeedback = ({setc,id}) => {
     };
     // console.log(userData)
     setFormState(initialFormState);
-    const res = await fetch("http://localhost:3001/feedbacks", {
+    const res = await fetch("https://howtobasic.onrender.com/feedbacks", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: { "Content-Type": "application/json" },

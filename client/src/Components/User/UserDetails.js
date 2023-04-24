@@ -13,7 +13,7 @@ const UserDetails = ()=>{
     let k  = 1;
     useEffect(() => {
         const fetchitems = () => {
-             fetch("http://localhost:3001/users")
+             fetch("https://howtobasic.onrender.com/users")
             .then((response) => response.json())
             .then((data) => {
               setUsers(data.users);
@@ -27,7 +27,7 @@ const UserDetails = ()=>{
         fetchitems();
       }, [update]);
       const buttonHandler = async (id) => {
-        const res = await fetch(`http://localhost:3001/deleteUser/` + id, {
+        const res = await fetch(`https://howtobasic.onrender.com/deleteUser/` + id, {
           method: "DELETE",
         })
           .then((response) => response.json())

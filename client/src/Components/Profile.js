@@ -41,7 +41,7 @@ export default function Profile() {
   useEffect(() => {
     const uid = localStorage.getItem("userId");
     const fetchitems = () => {
-      fetch("http://localhost:3001/users/"+uid)
+      fetch("https://howtobasic.onrender.com/users/"+uid)
         .then((response) => response.json())
         .then((data) => {
           setUserD({
@@ -64,7 +64,7 @@ export default function Profile() {
     const fetchitems = () => {
       const uid = localStorage.getItem("userId");
       // console.log(uid);
-      fetch("http://localhost:3001/getUser", {
+      fetch("https://howtobasic.onrender.com/getUser", {
         method: "POST",
         body: JSON.stringify({ id: uid }),
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -94,7 +94,7 @@ export default function Profile() {
   const submitHandler=()=>{
     const uid = localStorage.getItem("userId");
     // console.log(userD);
-    fetch("http://localhost:3001/updateUserDetails", {
+    fetch("https://howtobasic.onrender.com/updateUserDetails", {
       method: "POST",
       body: JSON.stringify({ id: uid,phone:userD.phone,address:userD.address}),
       

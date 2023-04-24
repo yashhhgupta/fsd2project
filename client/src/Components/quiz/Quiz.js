@@ -53,7 +53,7 @@ export default function App() {
   useEffect(() => {
     const fetchitems = () => {
       // console.log(id);
-      fetch("http://localhost:3001/quiz/" + id)
+      fetch("https://howtobasic.onrender.com/quiz/" + id)
         .then((response) => response.json())
         .then((data) => {
           setQuestions(data.quiz);

@@ -10,7 +10,7 @@ const Message = (props) => {
   const [file,setFile] = useState(null)
   useEffect(()=>{
     console.log(location.state.image)
-axios.get(`http://localhost:3001/${location.state.image}`,{responseType:'blob'})
+axios.get(`https://howtobasic.onrender.com/${location.state.image}`,{responseType:'blob'})
 .then(res=>{
   const reader = new FileReader();
           reader.addEventListener("load", () => {

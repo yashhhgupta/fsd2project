@@ -73,13 +73,13 @@ const RequestForm = () => {
     formData.append("text",formState.text)
     formData.append( "description",formState.description)
     // formData.append("user",userData)
-    // fetch("http://localhost:3001/requestedCourses", {
+    // fetch("https://howtobasic.onrender.com/requestedCourses", {
     //   method: "POST",
     //   // body: JSON.stringify(userData),
     //   headers: { "Content-Type": "application/json" },
     // });
   
-    axios.post("http://localhost:3001/requestedCourses",formData)
+    axios.post("https://howtobasic.onrender.com/requestedCourses",formData)
     .then(res=>{
       console.log(res)
       const userData = {

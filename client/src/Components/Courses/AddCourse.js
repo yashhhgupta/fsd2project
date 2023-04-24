@@ -70,7 +70,7 @@ const AddCourse = () => {
   };
 
   const SubmitHandler = () => {
-    fetch("http://localhost:3001/courses", {
+    fetch("https://howtobasic.onrender.com/courses", {
       method: "POST",
       body: JSON.stringify(CourseData),
       headers: { "Content-Type": "application/json" },

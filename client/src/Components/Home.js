@@ -20,11 +20,11 @@ const Home = (props) => {
   let courseDataVar =  {};
   const registerCourseHandler =  async (id) => {
       //change the above code to async await
-      const res = await fetch("http://localhost:3001/courses/" + id);
+      const res = await fetch("https://howtobasic.onrender.com/courses/" + id);
       const data = await res.json();
       courseDataVar = {...data.course,progress:0}
       const uid = localStorage.getItem("userId");
-        const response = await fetch("http://localhost:3001/addCourse", {
+        const response = await fetch("https://howtobasic.onrender.com/addCourse", {
           method: "POST",
           body: JSON.stringify({ id: uid, course: courseDataVar }),
           headers: {
@@ -38,7 +38,7 @@ const Home = (props) => {
   // console.log(update);
   useEffect(() => {
     const fetchitems = () => {
-      fetch("http://localhost:3001/courses")
+      fetch("https://howtobasic.onrender.com/courses")
         .then((response) => response.json())
         .then((data) => {
           setCourses(data.courses);
@@ -55,7 +55,7 @@ const Home = (props) => {
     const fetchitems = () => {
       const uid = localStorage.getItem('userId');
       // console.log(uid);
-      fetch("http://localhost:3001/getUser",{method:"POST",body:JSON.stringify({id:uid}),headers:{"Content-type":"application/json; charset=UTF-8"}})
+      fetch("https://howtobasic.onrender.com/getUser",{method:"POST",body:JSON.stringify({id:uid}),headers:{"Content-type":"application/json; charset=UTF-8"}})
         .then((response) => response.json())
         .then((data) => {
           // console.log(data.users);
@@ -83,7 +83,7 @@ const Home = (props) => {
   })
   const deleteCourseHandler = (id) => {
   
-    fetch(("http://localhost:3001/courses/"+id), {
+    fetch(("https://howtobasic.onrender.com/courses/"+id), {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     });

@@ -11,7 +11,7 @@ const RequestedCourses=()=>{
     const [reCourses, setReCourses] = useState([]);
     useEffect(() => {
       const fetchitems = () => {
-        fetch("http://localhost:3001/requestedCourses")
+        fetch("https://howtobasic.onrender.com/requestedCourses")
           .then((response) => response.json())
           .then((data) => {
             setReCourses(data);
@@ -33,7 +33,7 @@ const RequestedCourses=()=>{
         kk = reader.result
       });
       // const [file,setFile] = useState(null)
-      axios.get(`http://localhost:3001/${e}`,{responseType:'blob'})
+      axios.get(`https://howtobasic.onrender.com/${e}`,{responseType:'blob'})
 .then(res=>{
 
           reader.readAsDataURL(res.data);

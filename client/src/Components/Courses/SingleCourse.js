@@ -32,7 +32,7 @@ const SingleCourse = (props) => {
     useEffect(() => {
       const fetchitems = () => {
         // console.log(id);
-        fetch("http://localhost:3001/courses/" + id)
+        fetch("https://howtobasic.onrender.com/courses/" + id)
           .then((response) => response.json())
           .then((data) => {
             setCourseToShow(data.course);
@@ -50,8 +50,8 @@ const SingleCourse = (props) => {
     // console.log("courseid: ",courseid)
     useEffect(() => {
       const fetchitems = () => {
-        // fetch("http://localhost:3001/feedbacks")
-        fetch(`http://localhost:3001/feedbacks?courseid=${id}`)
+        // fetch("https://howtobasic.onrender.com/feedbacks")
+        fetch(`https://howtobasic.onrender.com/feedbacks?courseid=${id}`)
           .then((response) => response.json())
           .then((data) => {
             setReCourses(data.feedback);

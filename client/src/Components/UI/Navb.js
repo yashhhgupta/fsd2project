@@ -20,7 +20,7 @@ function Navb() {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     const fetchitems = () => {
-      fetch("http://localhost:3001/courses")
+      fetch("https://howtobasic.onrender.com/courses")
         .then((response) => response.json())
         .then((data) => {
           setCourses(data.courses);
