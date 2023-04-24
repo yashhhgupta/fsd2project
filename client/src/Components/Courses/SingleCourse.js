@@ -64,7 +64,7 @@ const SingleCourse = (props) => {
       };
       fetchitems();
     }, [update,id]);
-    console.log(courseToShow.contentLinks)
+    console.log(courseToShow)
 
     // console.log("course to show", courseToShow);
   // console.log(id);
@@ -104,7 +104,7 @@ const SingleCourse = (props) => {
             {/* <source src="/Videos/video1.mp4" type="video/mp4"/> */}
             <button onClick={handleShow} className={classes.button}>Show Content</button>
 
-            {show && (
+            {/* {show && (
               <div>
                 <iframe
                   width="560"
@@ -115,7 +115,7 @@ const SingleCourse = (props) => {
                   allowFullScreen
                 />
               </div>
-            )}
+            )} */}
 
             {show && (
               <Table striped bordered hover style={{ marginTop: "3em" }}>
