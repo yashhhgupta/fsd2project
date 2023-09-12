@@ -1,0 +1,910 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API docs for HowToBasic",
+    "version": "1.0.0"
+  },
+  "basePath": "/",
+  "host":"localhost:3001",
+  "schemes": [
+    "http"
+  ],
+  "paths":{
+    "/users":{
+      "get":{
+        "summary":"Get user details",
+        "description":"Fetch all users in the response object", 
+          "responses":{
+            "200":{
+              "description":"successful operation",
+              "content":{
+                "text/plain": {
+                  "type":"string",
+                  "example":"Users fetched successfully"
+                },
+                "application/json":{
+                  "schema":{
+                    "type":"object",
+                    "properties":{
+                        "username":{
+                          "type":"string",
+                          "example":"John"
+                        },
+                        "email":{
+                          "type":"string",
+                          "example":"john@email.com"
+                        },
+                        "password":{
+                          "type":"string",
+                          "example":"123456"
+                        },
+                        "mycourses":{
+                          "type":"array",
+                          "properties":{
+                            "type":"string",
+                            "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                          }
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          }
+        },
+      "post":{
+        "summary":"Save user",
+        "description":"Save the user details in the database", 
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                    "username":{
+                      "type":"string",
+                      "example":"John"
+                    },
+                    "email":{
+                      "type":"string",
+                      "example":"john@email.com"
+                    },
+                    "password":{
+                      "type":"string",
+                      "example":"123456"
+                    },
+                    "mycourses":{
+                      "type":"array",
+                      "properties":{
+                        "type":"string",
+                        "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses":{
+            "200":{
+              "description":"successful operation",
+              "content":{
+                "text/plain":{
+                  "type":"string",
+                  "example":"User saved successfully"
+                },
+                "application/json":{
+                  "schema":{
+                    "type":"object",
+                    "properties":{
+                        "username":{
+                          "type":"string",
+                          "example":"John"
+                        },
+                        "email":{
+                          "type":"string",
+                          "example":"john@email.com"
+                        },
+                        "password":{
+                          "type":"string",
+                          "example":"123456"
+                        },
+                        "mycourses":{
+                          "type":"array",
+                          "properties":{
+                            "type":"string",
+                            "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                          }
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          }
+        }
+  },
+  "/users/{email}":{
+    "get":{
+      "summary":"Get user details based on email",
+      "description":"Return json object with user details according to email in url", 
+        "responses":{
+          "200":{
+            "description":"successful operation",
+            "content":{
+              "text/plain":{
+                "type":"string",
+                "example":"Users fetched successfully"
+              },
+              "application/json":{
+                "schema":{
+                  "type":"object",
+                  "properties":{
+                      "username":{
+                        "type":"string",
+                        "example":"John"
+                      },
+                      "email":{
+                        "type":"string",
+                        "example":"john@email.com"
+                      },
+                      "password":{
+                        "type":"string",
+                        "example":"123456"
+                      },
+                      "mycourses":{
+                        "type":"array",
+                        "properties":{
+                          "type":"string",
+                          "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                        }
+                      }
+                    }
+                  }
+              }
+            }
+          }
+        }
+      }
+  },
+  "/getUser":{
+    "post":{
+      "summary":"Get user details based on username",
+      "description":"Return json object with user details according to username in req", 
+      "requestBody":{
+        "content":{
+          "application/json":{
+            "schema":{
+              "type":"object",
+              "properties":{
+                  "username":{
+                    "type":"username",
+                    "example":"John"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses":{
+          "200":{
+            "description":"successful operation",
+            "content":{
+              "text/plain":{
+                "type":"string",
+                "example":"Users fetched successfully"
+              },
+    
+              "application/json":{
+                "schema":{
+                  "type":"object",
+                  "properties":{
+                      "username":{
+                        "type":"string",
+                        "example":"John"
+                      },
+                      "email":{
+                        "type":"string",
+                        "example":"john@email.com"
+                      },
+                      "password":{
+                        "type":"string",
+                        "example":"123456"
+                      },
+                      "mycourses":{
+                        "type":"array",
+                        "properties":{
+                          "type":"string",
+                          "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                        }
+                      }
+                    }
+                  }
+              }
+            }
+          }
+        }
+      }
+  },
+  "deleteUser/{id}":{
+    "delete":{
+      "summary":"Delete user based on id",
+      "description":"Delete user from database", 
+        "responses":{
+          "200":{
+            "description":"successful operation",
+            "content":{
+              "text/plain":{
+                "type":"string",
+                "example":"User deleted successfully"
+              },
+              "application/json":{
+                "schema":{
+                  "type":"object",
+                  "properties":{
+                      "username":{
+                        "type":"string",
+                        "example":"John"
+                      },
+                      "email":{
+                        "type":"string",
+                        "example":"john@email.com"
+                      }
+                    }
+                  }
+              }
+            }
+          }
+        }
+      }
+  },
+  "addCourse":{
+    "post":{
+      "summary":"Add a course",
+      "description":"Add a course to a user profile by their id",
+      "requestBody":{
+        "content":{
+          "application/json":{
+            "schema":{
+              "type":"object",
+              "properties":{
+                  "id":{
+                    "type":"string",
+                    "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                  },
+                  "title":{
+                    "type":"string",
+                    "example":"How to make a sandwich"
+                  },
+                  "text":{
+                    "type":"string",
+                    "example":"Learn how to make a sandwich"
+                  },
+                  "description":{
+                    "type":"string",
+                    "example":"Learn how to make a sandwich"
+                  },
+                  "creator":{
+                    "type":"string",
+                    "example":"John"
+                  },
+                  "imageUrl":{
+                    "type":"string",
+                    "example":"https://www.google.com"
+                  },
+                  "contentList":{
+                    "type":"array",
+                    "properties":{
+                      "type":"string",
+                      "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                    }
+                  }
+                }
+              }
+            }
+          }
+          },
+          "responses":{
+            "200":{
+              "description":"successful operation",
+              "content":{
+                "text/plain":{
+                  "type":"string",
+                  "example":"Course added successfully"
+                },
+                "application/json":{
+                  "schema":{
+                    "type":"object",
+                    "properties":{
+                        "title":{
+                          "type":"string",
+                          "example":"How to make a sandwich"
+                        },
+                        "text":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "description":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "creator":{
+                          "type":"string",
+                          "example":"John"
+                        },
+                        "imageUrl":{
+                          "type":"string",
+                          "example":"https://www.google.com"
+                        },
+                        "contentList":{
+                          "type":"array",
+                          "properties":{
+                            "type":"string",
+                            "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                          }
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          }
+        }
+      },
+  
+  "updateUserDetails":{
+    "post":{
+      "summary":"Update user details",
+      "description":"Update user details by their id",
+      "requestBody":{
+        "content":{
+          "application/json":{
+            "schema":{
+              "type":"object",
+              "properties":{
+                "username":{
+                  "type":"string",
+                  "example":"John"
+                },
+                "email":{
+                  "type":"string",
+                  "example":"john@email.com"
+                },
+                "phone":{
+                  "type":"string",
+                  "example":"1234567890"
+                },
+                "address":{
+                  "type":"string",
+                  "example":"1234 Main St"
+                }
+              }
+              }
+            }
+          }
+        },
+        "responses":{
+          "200":{
+            "description":"successful operation",
+            "content":{
+              "text/plain":{
+                "type":"string",
+                "example":"User details updated successfully"
+              },
+              "application/json":{
+                "schema":{
+                  "type":"object",
+                  "properties":{
+                      "username":{
+                        "type":"string",
+                        "example":"John"
+                      },
+                      "email":{
+                        "type":"string",
+                        "example":"john@email.com"
+                      },
+                      "phone":{
+                        "type":"string",
+                        "example":"1234567890"
+                      },
+                      "address":{
+                        "type":"string",
+                        "example":"1234 Main St"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }     
+    }
+  },
+  "courses/{id}":{
+    "get":{
+      "summary":"Get course details based on id",
+      "description":"Return json object with course details according to id in url", 
+        "responses":{
+          "200":{
+            "description":"successful operation",
+            "content":{
+              "text/plain":{
+                "type":"string",
+                "example":"Course fetched successfully"
+              },
+              "application/json":{
+                "schema":{
+                  "type":"object",
+                  "properties":{
+                      "title":{
+                        "type":"string",
+                        "example":"How to make a sandwich"
+                      },
+                      "text":{
+                        "type":"string",
+                        "example":"Learn how to make a sandwich"
+                      },
+                      "description":{
+                        "type":"string",
+                        "example":"Learn how to make a sandwich"
+                      },
+                      "creator":{
+                        "type":"string",
+                        "example":"John"
+                      },
+                      "imageUrl":{
+                        "type":"string",
+                        "example":"https://www.google.com"
+                      },
+                      "contentList":{
+                        "type":"array",
+                        "properties":{
+                          "type":"string",
+                          "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                        }
+                      }
+                    }
+                  }
+              }
+            }
+          }
+        }
+      },
+      "delete":{
+        "summary":"Delete course based on id",
+        "description":"Delete course based on id in url", 
+          "responses":{
+            "200":{
+              "description":"successful operation",
+              "content":{
+                "text/plain":{
+                  "type":"string",
+                  "example":"Course deleted successfully"
+                },
+                "application/json":{
+                  "schema":{
+                    "type":"object",
+                    "properties":{
+                        "title":{
+                          "type":"string",
+                          "example":"How to make a sandwich"
+                        },
+                        "text":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "description":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "creator":{
+                          "type":"string",
+                          "example":"John"
+                        },
+                        "imageUrl":{
+                          "type":"string",
+                          "example":"https://www.google.com"
+                        },
+                        "contentList":{
+                          "type":"array",
+                          "properties":{
+                            "type":"string",
+                            "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                          }
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          }
+        }
+  },
+  "/courses":{
+    "get":{
+      "summary":"Get all courses",
+      "description":"Return json object with all courses", 
+        "responses":{
+          "200":{
+            "description":"successful operation",
+            "content":{
+              "text/plain":{
+                "type":"string",
+                "example":"Courses fetched successfully"
+              },
+              "application/json":{
+                "schema":{
+                  "type":"object",
+                  "properties":{
+                      "title":{
+                        "type":"string",
+                        "example":"How to make a sandwich"
+                      },
+                      "text":{
+                        "type":"string",
+                        "example":"Learn how to make a sandwich"
+                      },
+                      "description":{
+                        "type":"string",
+                        "example":"Learn how to make a sandwich"
+                      },
+                      "creator":{
+                        "type":"string",
+                        "example":"John"
+                      },
+                      "imageUrl":{
+                        "type":"string",
+                        "example":"https://www.google.com"
+                      },
+                      "contentList":{
+                        "type":"array",
+                        "properties":{
+                          "type":"string",
+                          "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                        }
+                      }
+                    }
+                  }
+              }
+            }
+          }
+        }
+      },
+    "post":{
+      "summary":"Create a new course",
+      "description":"Return json object with new course", 
+      "requestBody":{
+        "content":{
+          "application/json":{
+            "schema":{
+              "type":"object",
+              
+              "properties":{
+                  "title":{
+                    "type":"string",
+                    "example":"How to make a sandwich"
+                  },
+                  "text":{
+                    "type":"string",
+                    "example":"Learn how to make a sandwich"
+                  },
+                  "description":{
+                    "type":"string",
+                    "example":"Learn how to make a sandwich"
+                  },
+                  "creator":{
+                    "type":"string",
+                    "example":"John"
+                  },
+                  "imageUrl":{
+                    "type":"string",
+                    "example":"https://www.google.com"
+                  },
+                  "contentList":{
+                    "type":"array",
+                    "properties":{
+                      "type":"string",
+                      "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses":{
+          "200":{
+            "description":"successful operation",
+            "content":{
+              "text/plain":{
+                "type":"string",
+                "example":"Course created successfully"
+              },
+              "application/json":{
+                "schema":{
+                  "type":"object",
+                  "properties":{
+                      "title":{
+                        "type":"string",
+                        "example":"How to make a sandwich"
+                      },
+                      "text":{
+                        "type":"string",
+                        "example":"Learn how to make a sandwich"
+                      },
+                      "description":{
+                        "type":"string",
+                        "example":"Learn how to make a sandwich"
+                      },
+                      "creator":{
+                        "type":"string",
+                        "example":"John"
+                      },
+                      "imageUrl":{
+                        "type":"string",
+                        "example":"https://www.google.com"
+                      },
+                      "contentList":{
+                        "type":"array",
+                        "properties":{
+                          "type":"string",
+                          "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                        }
+                      }
+                    }
+                  }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/requestedCourses":{
+      "get":{
+        "summary":"Get all requested courses",
+        "description":"Return json object with all requested courses", 
+          "responses":{
+            "200":{
+              "description":"successful operation",
+              "content":{
+                "text/plain":{
+                  "type":"string",
+                  "example":"Requested courses fetched successfully"
+                },
+                "application/json":{
+                  "schema":{
+                    "type":"object",
+                    "properties":{
+                        "name":{
+                          "type":"string",
+                          "example":"John"
+                        },
+                        "email":{
+                          "type":"string",
+                          "example":"john@email.com"
+                        },
+                        "title":{
+                          "type":"string",
+                          "example":"How to make a sandwich"
+                        },
+                        "text":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "description":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "imageUrl":{
+                          "type":"string",
+                          "example":"https://www.google.com"
+                        },
+                        "contentList":{
+                          "type":"array",
+                          "properties":{
+                            "type":"string",
+                            "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                          }
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          }
+      },
+      "post":{
+        "summary":"Create a new requested course",
+        "description":"Return json object with new requested course", 
+        "requestBody":{
+          "content":{
+            "application/json":{
+              "schema":{
+                "type":"object",
+                "properties":{
+                    "name":{
+                      "type":"string",
+                      "example":"John"
+                    },
+                    "email":{
+                      "type":"string",
+                      "example":"john@email.com"
+                    },
+                    "title":{
+                      "type":"string",
+                      "example":"How to make a sandwich"
+                    },
+                    "text":{
+                      "type":"string",
+                      "example":"Learn how to make a sandwich"
+                    },
+                    "description":{
+                      "type":"string",
+                      "example":"Learn how to make a sandwich"
+                    },
+                    "imageUrl":{
+                      "type":"string",
+                      "example":"https://www.google.com"
+                    },
+                    "contentList":{
+                      "type":"array",
+                      "properties":{
+                        "type":"string",
+                        "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses":{
+            "200":{
+              "description":"successful operation",
+              "content":{
+                "text/plain":{
+                  "type":"string",
+                  "example":"Requested course created successfully"
+                },
+                "application/json":{
+                  "schema":{
+                    "type":"object",
+                    "properties":{
+                        "name":{
+                          "type":"string",
+                          "example":"John"
+                        },
+                        "email":{
+                          "type":"string",
+                          "example":"john@email.com"
+                        },
+                        "title":{
+                          "type":"string",
+                          "example":"How to make a sandwich"
+                        },
+                        "text":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "description":{
+                          "type":"string",
+                          "example":"Learn how to make a sandwich"
+                        },
+                        "imageUrl":{
+                          "type":"string",
+                          "example":"https://www.google.com"
+                        },
+                        "contentList":{
+                          "type":"array",
+                          "properties":{
+                            "type":"string",
+                            "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                          }
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          }
+        }
+    },
+    "/feedbacks":{
+      "get":{
+        "summary":"Get all feedbacks",
+        "description":"Return json object with all feedbacks", 
+          "responses":{
+            "200":{
+              "description":"successful operation",
+              "content":{
+                "text/plain":{
+                  "type":"string",
+                  "example":"Feedbacks fetched successfully"
+                },
+                "application/json":{
+                  "schema":{
+                      "type":"object",
+                      "properties":{
+                          "name":{
+                            "type":"string",
+                            "example":"John"
+                          },
+                          "courseid":{
+                            "type":"string",
+                            "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                          },
+                          "review":{
+                            "type":"string",
+                            "example":"5"
+                          }
+                        }
+                      }
+                    }
+                }
+              }
+            }
+          },
+          "post":{
+            "summary":"Create a new feedback",
+            "description":"Return json object with new feedback", 
+            "requestBody":{
+              "content":{
+                "application/json":{
+                  "schema":{
+                    "type":"object",
+                    "properties":{
+                        "name":{
+                          "type":"string",
+                          "example":"John"
+                        },
+                        "courseid":{
+                          "type":"string",
+                          "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                        },
+                        "review":{
+                          "type":"string",
+                          "example":"5"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "responses":{
+                "200":{
+                  "description":"successful operation",
+                  "content":{
+                    "text/plain":{
+                      "type":"string",
+                      "example":"Feedback created successfully"
+                    },
+                    "application/json":{
+                      "schema":{
+                        "type":"object",
+                        "properties":{
+                            "name":{
+                              "type":"string",
+                              "example":"John"
+                            },
+                            "courseid":{
+                              "type":"string",
+                              "example":"5f5f5f5f5f5f5f5f5f5f5f5f"
+                            },
+                            "review":{
+                              "type":"string",
+                              "example":"5"
+                            }
+                          }
+                        }
+                    }
+                  }
+                }
+              }
+            }
+    }
+  }
+}
+
+
+
+
+
